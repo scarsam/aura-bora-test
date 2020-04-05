@@ -8,7 +8,7 @@ const Header = () => (
         <div className="row">
           <div className="col-12">
             <nav>
-              <Link to="/">Home</Link>
+              <Link to="/">Nav here</Link>
             </nav>
           </div>
         </div>

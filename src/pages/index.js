@@ -12,7 +12,7 @@ const IndexPage = () => (
         <div className="row">
           <div className="col-12">
             <h1 className="pt-2">Aura Bora</h1>
-            <p>Welcome to Aura Bora, let's do this!</p>
+            <p>Landing page</p>
             <div>
               <Image alt="Gatsby in Space" filename="gatsby-astronaut.png" />
             </div>
