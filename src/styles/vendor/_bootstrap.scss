@@ -1,0 +1,39 @@
+@import '../mixins/mixins_breakpoints';
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
+
+.container {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+@include media_min_break(md) {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    width: 95%;
+  }
+}
+
+@include media_min_break(lg) {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    width: 95%;
+  }
+}
+
+@include media_min_break(xl) {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    width: 95%;
+  }
+}
+
+@include media_min_break(xxl) {
+  .container {
+    padding-top: 100px;
+    padding-bottom: 115px;
+  }
+}

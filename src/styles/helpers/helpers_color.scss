@@ -1,0 +1,18 @@
+$colors: (
+  white: $white,
+  off-white: $off-white,
+  sand: $sand,
+  water: $water,
+  green: $green,
+  black: $black,
+  grey-beige: $grey-beige,
+);
+
+@each $key, $val in $colors {
+  .bg-#{$key} {
+    background-color: $val !important;
+  }
+  .c-#{$key} {
+    color: $val !important;
+  }
+}
