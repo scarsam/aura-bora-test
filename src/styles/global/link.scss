@@ -1,0 +1,17 @@
+.primary-link {
+  color: $textColor;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  &:after {
+    content: '';
+    border-radius: 4px;
+    background-color: $white;
+    bottom: 4px;
+    height: 6px;
+    left: -5%;
+    position: absolute;
+    width: 110%;
+    z-index: -1;
+  }
+}
