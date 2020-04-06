@@ -7,11 +7,19 @@ import SEO from '../components/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section>
+    <section className="bg-lavender">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <h1>Aura Bora</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
             <ul>
               <p>Todo:</p>
               <li>Nav</li>

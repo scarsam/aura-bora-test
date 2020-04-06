@@ -1,0 +1,75 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+header ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+header li a {
+  text-decoration: none;
+}
+
+header li a:hover,
+header .menu-btn:hover {
+  background-color: $pool;
+}
+
+header .menu {
+  max-height: 0;
+  transition: max-height 200ms ease-out;
+}
+
+header .menu-icon {
+  cursor: pointer;
+  padding: 10px 7px 5px 0px;
+  position: relative;
+  user-select: none;
+}
+
+header .menu-icon .navicon {
+  height: 25px;
+  position: relative;
+  width: 50px;
+}
+
+header .menu-icon .navicon:after {
+  top: 15px;
+}
+
+header .menu-icon .navicon:after,
+header .menu-icon .navicon:before {
+  content: '';
+  position: absolute;
+  background-color: $white;
+  box-shadow: 3.5px 2px 0px 0px rgba(0, 0, 0, 1);
+  border: 2px solid $black;
+  border-radius: 4px;
+  display: block;
+  height: 8px;
+  left: 0;
+  transition: all 200ms ease-out;
+  width: 100%;
+}
+
+header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+header .menu-btn:checked + .menu-top .menu-icon .navicon:after,
+header .menu-btn:checked + .menu-top .menu-icon .navicon:before {
+  box-shadow: none;
+  width: 30px;
+  top: 50%;
+  transform-origin: top;
+}
+header .menu-btn:checked + .menu-top .menu-icon .navicon:after {
+  transform: rotate(45deg) translateY(-50%);
+}
+
+header .menu-btn:checked + .menu-top .menu-icon .navicon:before {
+  transform: rotate(-45deg) translateY(-50%);
+}
