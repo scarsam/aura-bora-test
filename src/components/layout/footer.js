@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer>
       <section className="bg-lightYellow">
-        <div className="container pt-4 pb-4">
+        <div className="container pt-5 pb-4">
           <div className="row">
-            <div className="col-12 d-flex justify-content-between pb-5 pt-2">
+            <div className="col-12 d-flex justify-content-between pb-5">
               <Link className="primary-link" to="/">
                 Find us
               </Link>
@@ -28,13 +28,13 @@ const Footer = () => {
           </div>
           <div className="row">
             <div className="col-md-5">
-              <strong className="mb-2 d-block">Let's be rosebuds</strong>
+              <strong className="mb-2 pt-2 d-block">Let's be rosebuds</strong>
               <p>
                 Join our newsletter for work tips, featured interviews and deals
                 on our latest products.
               </p>
             </div>
-            <div className="col-md-5 offset-md-1">
+            <div className="col-md-6 offset-md-1 col-lg-5">
               <Subscribe />
             </div>
           </div>
