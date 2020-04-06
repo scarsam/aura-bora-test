@@ -8,8 +8,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from './header'
-import Footer from './footer'
+import Header from './layout/header'
+import Footer from './layout/footer'
 import '../styles/aura-bora.scss'
 
 const Layout = ({ children }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer>
       <section className="c-white bg-water">
@@ -16,4 +16,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

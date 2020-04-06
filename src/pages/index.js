@@ -11,8 +11,9 @@ const IndexPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h1 className="pt-2">Aura Bora</h1>
+            <h1>Aura Bora</h1>
             <p>Landing page</p>
+
             <div>
               <Image alt="Gatsby in Space" filename="gatsby-astronaut.png" />
             </div>
@@ -24,3 +25,5 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+// Todo
+// Import colors
