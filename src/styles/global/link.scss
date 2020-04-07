@@ -3,6 +3,10 @@
   position: relative;
   z-index: 1;
   text-decoration: none;
+  transition: font-weight 200ms ease-in-out;
+  &:hover {
+    font-weight: bold;
+  }
   &:after {
     content: '';
     border-radius: 4px;
