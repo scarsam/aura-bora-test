@@ -22,11 +22,11 @@ const IndexPage = () => (
           <div className="col-12">
             <ul>
               <p>Todo:</p>
-              <li>Nav</li>
+              <li>Nav (Sam)</li>
               <li>Hero</li>
               <li>Value props</li>
-              <li>Product grid</li>
-              <li>Footer</li>
+              <li>Product grid (Max)</li>
+              <li>Footer (Sam)</li>
               <li>Stripe account</li>
               <li>Checkout</li>
               <li>
