@@ -8,9 +8,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from './layout/header'
-import Footer from './layout/footer'
-import '../styles/aura-bora.scss'
+import Header from 'components/layout/header'
+import Footer from 'components/layout/footer'
+import 'styles/aura-bora.scss'
 
 const Layout = ({ children }) => {
   return (
