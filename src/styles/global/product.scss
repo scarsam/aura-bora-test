@@ -1,0 +1,82 @@
+.product-wrapper {
+  font-family: 'Space Mono';
+  height: 705px;
+  max-width: 520px;
+  position: relative;
+
+  .gatsby-image-wrapper {
+    max-height: 540px;
+    max-width: 520px;
+  }
+}
+
+.product-info-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  padding: 3px 12px;
+}
+.product-info {
+  font-family: 'barlow';
+  height: 100%;
+  padding: 120px 80px 120px 60px;
+  letter-spacing: 1px;
+
+  h2 {
+    font-family: 'barlow';
+    text-shadow: 2px 2px $black;
+  }
+  p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+.product-info-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.info-close .info-close-icon {
+  height: 36px;
+  position: relative;
+  width: 30px;
+}
+
+.info-close .info-close-icon:after,
+.info-close .info-close-icon:before {
+  content: '';
+  position: absolute;
+  background-color: $white;
+  box-shadow: 2px 1px 0px 0px rgba(0, 0, 0, 1);
+  border: 2px solid $black;
+  border-radius: 4px;
+  display: block;
+  height: 6px;
+  left: 0;
+  transition: all 200ms ease-out;
+  width: 100%;
+}
+
+.info-close .info-close-icon:after,
+.info-close .info-close-icon:before {
+  box-shadow: none;
+  width: 30px;
+  top: 50%;
+  transform-origin: top;
+}
+
+.info-close .info-close-icon:after {
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.info-close .info-close-icon:before {
+  transform: rotate(-45deg) translateY(-50%);
+}
+
+.info-close {
+  cursor: pointer;
+  user-select: none;
+}

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from 'store'
 import Layout from 'components/layout'
-import Image from 'components/image'
+import Product from 'components/product'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
 
@@ -56,7 +56,16 @@ const IndexPage = () => {
               </ul>
 
               <div>
-                <Image alt="Gatsby in Space" filename="gatsby-astronaut.png" />
+                <Product
+                  bgColor="lightGrass"
+                  title="Lemongrass Coconut"
+                  price="30.00"
+                  ingredients={[
+                    'Carbonated water',
+                    'Natural coconut flavor with other natural flavor',
+                    'Lemongrass leaf extract ',
+                  ]}
+                />
               </div>
             </div>
           </div>
