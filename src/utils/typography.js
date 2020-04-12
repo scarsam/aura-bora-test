@@ -16,8 +16,8 @@ const typography = new Typography({
   headerFontFamily: ['Space Mono', 'monospace'],
   bodyFontFamily: ['Space Mono', 'monospace'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-    '.barlow': {
-      fontFamily: ['Barlow', 'sans-serif'].join(','),
+    '.text-large': {
+      ...adjustFontSizeTo('20px'),
     },
   }),
 })

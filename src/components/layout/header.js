@@ -6,7 +6,7 @@ const Header = () => (
   <header>
     <input className="menu-btn d-none" type="checkbox" id="menu-btn" />
     <section>
-      <div className="container header-container">
+      <div className="container pt-0 pb-0">
         <div className="row">
           <div className="col-12">
             <nav>
@@ -16,7 +16,7 @@ const Header = () => (
                 </label>
                 <Cart />
               </div>
-              <ul className="menu m-0 p-0 d-inline-flex flex-column">
+              <ul className="menu m-0 p-0 flex-column">
                 <li className="mb-0 mt-4 mb-2">
                   <Link className="primary-link" to="/">
                     Find us
