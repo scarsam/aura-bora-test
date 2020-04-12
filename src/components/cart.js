@@ -30,7 +30,7 @@ const Cart = () => {
           />
         </g>
       </svg>
-      <p className="cart-icon-quantity m-0 p-0">{store.count}</p>
+      <p className="cart-icon-quantity m-0 p-0 font-barlow">{store.count}</p>
     </div>
   )
 }

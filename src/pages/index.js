@@ -3,6 +3,7 @@ import { Context } from 'store'
 import Layout from 'components/layout'
 import Image from 'components/image'
 import SEO from 'components/seo'
+import ValueProps from 'components/value-props'
 
 const IndexPage = () => {
   const { dispatch } = useContext(Context)
@@ -16,6 +17,13 @@ const IndexPage = () => {
             <div className="col-12">
               <h1>Aura Bora</h1>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-lightYellow">
+        <div className="container">
+          <div className="row">
+            <ValueProps />
           </div>
         </div>
       </section>
