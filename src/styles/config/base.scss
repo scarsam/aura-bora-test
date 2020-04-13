@@ -8,6 +8,6 @@ body {
 }
 
 // This should be set as the height of the <Header />
-main > section {
-  padding-top: 110px;
+main section:first-child {
+  padding-top: 90px;
 }

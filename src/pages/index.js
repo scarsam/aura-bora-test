@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from 'store'
 import Layout from 'components/layout'
 import Product from 'components/product'
+import Hero from 'components/hero'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
 
@@ -11,22 +12,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="bg-lavender">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <h1>Aura Bora</h1>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-lightYellow">
-        <div className="container">
-          <div className="row">
-            <ValueProps />
-          </div>
-        </div>
-      </section>
+      <Hero />
+      <ValueProps />
       <section>
         <div className="container">
           <div className="row">

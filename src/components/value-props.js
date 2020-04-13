@@ -14,16 +14,24 @@ const values = [
 ]
 
 const ValueProps = () => {
-  return values.map(valueProp => (
-    <div className="col-6 col-md-4 mb-3 align-items-center d-flex">
-      <img
-        className="value-props-icon mr-3"
-        src={smileIcon}
-        alt="Happy smiling face"
-      />
-      <p className="font-barlow mb-0 text-large">{valueProp}</p>
-    </div>
-  ))
+  return (
+    <section className="bg-lightYellow">
+      <div className="container">
+        <div className="row">
+          {values.map(valueProp => (
+            <div className="col-6 col-md-4 mb-3 align-items-center d-flex">
+              <img
+                className="value-props-icon mr-3"
+                src={smileIcon}
+                alt="Happy smiling face"
+              />
+              <p className="font-barlow mb-0 text-value-props">{valueProp}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default ValueProps

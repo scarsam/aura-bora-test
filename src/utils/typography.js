@@ -16,8 +16,11 @@ const typography = new Typography({
   headerFontFamily: ['Space Mono', 'monospace'],
   bodyFontFamily: ['Space Mono', 'monospace'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-    '.text-large': {
-      ...adjustFontSizeTo('20px'),
+    '.text-value-props': {
+      ...adjustFontSizeTo('26px'),
+    },
+    '.text-hero': {
+      ...adjustFontSizeTo('38px'),
     },
   }),
 })
