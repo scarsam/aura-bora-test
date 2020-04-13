@@ -6,42 +6,46 @@ const Product = ({ title, price, ingredients, bgColor }) => {
   const [showInfoPane, setShowInfoPane] = useState(false)
 
   return (
-    <div className="product-wrapper">
+    <div className="product-wrapper relative font-space-mono">
       {!showInfoPane ? (
         <>
           <div>
             <button
-              className="product-info-icon mr-5 mt-5 primary-btn bg-white"
+              className="product-info-icon absolute z-index-2 margin-top-40px primary-btn bg-white"
               onClick={() => setShowInfoPane(true)}
             >
-              <strong>i</strong>
+              <strong>
+                <h2 className="m-0">i</h2>
+              </strong>
             </button>
             <Image alt="" filename="product__temp" className="product-image" />
           </div>
 
-          <div className="text-center">
-            <h2 className="m-0 pb-3 pt-4">{title}</h2>
-            <p className="m-0 font-weight-bold">12 x {price}</p>
-            <button className="primary-btn bg-white mt-3 mb-3">
+          <div className="text-center bg-white product-text">
+            <h2 className="m-0 padding-bottom-35px padding-top-50px">
+              {title}
+            </h2>
+            <p className="m-0">12x for ${price}</p>
+            <button className="primary-btn bg-white margin-top-35px margin-bottom-35px padding-top-10px padding-bottom-10px">
               Add to bag
             </button>
           </div>
         </>
       ) : (
         <div
-          className={`product-info c-white d-flex align-items-center bg-${bgColor}`}
+          className={`product-info font-barlow c-white d-flex align-items-center bg-${bgColor}`}
         >
           <div>
-            <div className="product-info-close mr-5 mt-5">
-              <label className="info-close d-inline-block">
+            <div className="product-info-close absolute margin-top-45px">
+              <label className="info-close relative d-inline-block">
                 <div
-                  className="info-close-icon"
+                  className="info-close-icon relative"
                   onClick={() => setShowInfoPane(false)}
                 ></div>
               </label>
             </div>
 
-            <h2 className="pb-3">
+            <h2 className="pb-3 font-barlow">
               {title &&
                 title
                   .split(' ')
@@ -56,7 +60,7 @@ const Product = ({ title, price, ingredients, bgColor }) => {
                   {item}
                 </p>
               ))}
-            <p className="pt-3">No calories</p>
+            <p className="pt-5">No calories</p>
             <p>No sugar</p>
             <p>No sodium</p>
           </div>
