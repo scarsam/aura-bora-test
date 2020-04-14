@@ -5,31 +5,33 @@ import Subscribe from '../subscribe'
 const Footer = () => {
   return (
     <footer>
-      <section className="bg-lightYellow">
-        <div className="container pt-5 pb-4">
+      <section className="bg-yellow">
+        <div className="container padding-top-50px padding-bottom-20px">
           <div className="row">
-            <div className="col-12 d-flex justify-content-between pb-5">
-              <Link className="primary-link" to="/">
+            <div className="col-12 d-flex justify-content-between padding-bottom-30px">
+              <Link className="primary-link text-large" to="/">
                 Find us
               </Link>
-              <Link className="primary-link" to="/">
+              <Link className="primary-link text-large" to="/">
                 More info
               </Link>
-              <Link className="primary-link" to="/">
+              <Link className="primary-link text-large" to="/">
                 Gallery
               </Link>
-              <Link className="primary-link" to="/">
+              <Link className="primary-link text-large" to="/">
                 Team
               </Link>
-              <Link className="primary-link" to="/">
+              <Link className="primary-link text-large" to="/">
                 Testimonials
               </Link>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-5">
-              <strong className="mb-2 pt-2 d-block">Let's be rosebuds</strong>
-              <p>
+            <div className="col-md-5 text-large">
+              <strong className="padding-top-20px d-block">
+                Let's be rosebuds
+              </strong>
+              <p className="footer-paragrah">
                 Join our newsletter for work tips, featured interviews and deals
                 on our latest products.
               </p>

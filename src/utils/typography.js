@@ -16,10 +16,13 @@ const typography = new Typography({
   headerFontFamily: ['Space Mono', 'monospace'],
   bodyFontFamily: ['Space Mono', 'monospace'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-    '.text-value-props': {
+    '.text-large': {
       ...adjustFontSizeTo('26px'),
     },
-    '.text-hero': {
+    '.footer-paragrah': {
+      ...adjustFontSizeTo('24px'),
+    },
+    '.text-xlarge': {
       ...adjustFontSizeTo('38px'),
     },
   }),

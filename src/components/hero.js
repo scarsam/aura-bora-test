@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="container pt-0 pb-0">
           <div className="row">
             <div className="col-10 offset-1">
-              <p className="text-hero text-center">
+              <p className="text-xlarge text-center">
                 Our herbal sparkling waters are made from real herbs, fruits and
                 flowers for earthly tastes and heavenly feelings.
               </p>

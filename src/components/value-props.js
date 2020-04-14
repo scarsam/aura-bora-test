@@ -25,7 +25,7 @@ const ValueProps = () => {
                 src={smileIcon}
                 alt="Happy smiling face"
               />
-              <p className="font-barlow mb-0 text-value-props">{valueProp}</p>
+              <p className="font-barlow mb-0 text-large">{valueProp}</p>
             </div>
           ))}
         </div>

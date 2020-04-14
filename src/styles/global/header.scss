@@ -21,6 +21,7 @@ header .menu-icon {
 header .menu-icon .navicon {
   height: 25px;
   position: relative;
+  top: 10px;
   width: 50px;
 }
 
@@ -52,27 +53,20 @@ header section .menu {
   max-height: 0;
 }
 
-.wave {
-  display: none;
-  height: auto;
-  max-height: 100px;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  path {
-    fill: transparent;
-  }
-}
-
-header .menu-btn:checked ~ section .wave {
-  display: block;
-  path {
-    fill: $lightYellow;
-  }
-}
-
 header .menu-btn:checked ~ section {
   background: $lightYellow;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-image: url('../images/wave.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
 
 header .menu-btn:checked ~ section .menu {

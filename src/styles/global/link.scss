@@ -6,6 +6,7 @@
   transition: font-weight 200ms ease-in-out;
   &:hover {
     font-weight: bold;
+    font-style: italic;
   }
   &:after {
     content: '';
