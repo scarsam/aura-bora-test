@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from 'store'
 import Layout from 'components/layout'
-import Product from 'components/product'
+import ProductGrid from 'components/ProductGrid'
 import Hero from 'components/hero'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
@@ -14,6 +14,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Hero />
       <ValueProps />
+      <ProductGrid />
       <section>
         <div className="container">
           <div className="row">
@@ -42,18 +43,7 @@ const IndexPage = () => {
                 </li>
               </ul>
 
-              <div>
-                <Product
-                  bgColor="lightGrass"
-                  title="Lemongrass Coconut"
-                  price="30.00"
-                  ingredients={[
-                    'Carbonated water',
-                    'Natural coconut flavor with other natural flavor',
-                    'Lemongrass leaf extract ',
-                  ]}
-                />
-              </div>
+              <div></div>
             </div>
           </div>
         </div>

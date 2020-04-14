@@ -87,3 +87,11 @@
   cursor: pointer;
   user-select: none;
 }
+
+.shop-bg {
+  background-image: url('../images/shop-bg.svg');
+  background-size: contain;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
