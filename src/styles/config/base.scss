@@ -1,5 +1,10 @@
 html {
   scroll-behavior: smooth;
+  font-size: 0.75rem;
+  transition: font-size 200ms ease-in-out;
+  @include media_min_break(md) {
+    font-size: 1rem;
+  }
 }
 
 body {
@@ -10,4 +15,20 @@ body {
 // This should be set as the height of the <Header />
 main section:first-child {
   padding-top: 90px;
+}
+
+footer a:not(:first-child) {
+  margin-left: 50px;
+}
+
+footer {
+  @include media_max_break(md) {
+    background-image: url('../images/bird-steps.svg');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: top 10% right 10%;
+    a:not(:first-child) {
+      margin-left: 0px;
+    }
+  }
 }

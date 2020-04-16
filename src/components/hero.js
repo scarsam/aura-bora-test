@@ -20,10 +20,10 @@ const Hero = () => {
       <section className="bg-lightYellow">
         <div className="container pt-0 pb-0">
           <div className="row">
-            <div className="col-10 offset-1">
-              <p className="text-xlarge text-center">
-                Our herbal sparkling waters are made from real herbs, fruits and
-                flowers for earthly tastes and heavenly feelings.
+            <div className="col-md-10 offset-md-1">
+              <p className="text-38px text-center">
+                Our herbal sparkling waters are made from real herbs, fruits,
+                and flowers for earthly tastes and heavenly feelings.
               </p>
             </div>
           </div>

@@ -2,4 +2,7 @@
   height: 20px;
   width: auto;
   margin: 0;
+  @include media_min_break(md) {
+    height: 35px;
+  }
 }

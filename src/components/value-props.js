@@ -19,13 +19,13 @@ const ValueProps = () => {
       <div className="container">
         <div className="row">
           {values.map(valueProp => (
-            <div className="col-6 col-md-4 mb-3 align-items-center d-flex">
+            <div className="col-4 mb-3 align-items-center d-flex">
               <img
                 className="value-props-icon mr-3"
                 src={smileIcon}
                 alt="Happy smiling face"
               />
-              <p className="font-barlow mb-0 text-large">{valueProp}</p>
+              <p className="font-barlow mb-0 text-26px">{valueProp}</p>
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-@import "../variables/variables_breakpoints";
+@import '../variables/variables_breakpoints';
 
 @mixin media_min_break($breakpoint) {
   @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
@@ -7,7 +7,7 @@
 }
 
 @mixin media_max_break($breakpoint) {
-  @media (max-width: #{map-get($grid-breakpoints, $breakpoint)} - 1px) {
+  @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
     @content;
   }
 }
