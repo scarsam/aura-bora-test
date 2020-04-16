@@ -9,3 +9,8 @@
   background-position: center center;
   height: 768px;
 }
+
+// Needed for the cart icon to not push the Logo
+.clear-both {
+  clear: both;
+}

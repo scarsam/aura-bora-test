@@ -25,6 +25,9 @@ const typography = new Typography({
     '.text-xlarge': {
       ...adjustFontSizeTo('38px'),
     },
+    '.text-20px': {
+      ...adjustFontSizeTo('20px'),
+    },
   }),
 })
 

@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <section className="bg-lavender top-section hero-background">
         <div className="container pt-0">
-          <div className="row pb-5">
+          <div className="row pb-5 clear-both">
             <div className="col-12 pb-5 text-center">
               <img
                 className="logo m-0"
