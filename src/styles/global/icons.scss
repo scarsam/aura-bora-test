@@ -1,8 +1,8 @@
 .value-props-icon {
   height: 20px;
   width: auto;
-  margin: 0;
+  margin: 0 10px 0 0;
   @include media_min_break(md) {
-    height: 35px;
+    height: 25px;
   }
 }

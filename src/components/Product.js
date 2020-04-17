@@ -6,7 +6,7 @@ const Product = ({ title, price, ingredients, bgColor, image }) => {
   const [showInfoPane, setShowInfoPane] = useState(false)
 
   return (
-    <div className="col-12 col-lg-6 padding-left-10px padding-right-10px padding-top-10px padding-bottom-10px">
+    <div className="col-12 col-lg-6 padding-bottom-20px">
       <div className="product-wrapper relative font-space-mono">
         {!showInfoPane ? (
           <>

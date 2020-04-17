@@ -21,11 +21,11 @@ const ValueProps = () => {
           {values.map(valueProp => (
             <div className="col-4 mb-3 align-items-center d-flex">
               <img
-                className="value-props-icon mr-3"
+                className="value-props-icon"
                 src={smileIcon}
                 alt="Happy smiling face"
               />
-              <p className="font-barlow mb-0 text-26px">{valueProp}</p>
+              <p className="font-barlow mb-0 text-20px">{valueProp}</p>
             </div>
           ))}
         </div>

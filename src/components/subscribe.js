@@ -28,7 +28,7 @@ const Subscribe = () => {
       onSubmit={handleSubmit}
     >
       <label
-        className="padding-right-20px padding-top-20px text-26px"
+        className="padding-right-20px padding-top-20px text-20px"
         htmlFor="email"
       >
         <strong>Email</strong>
@@ -42,7 +42,7 @@ const Subscribe = () => {
           type="text"
           onChange={handleEmailChange}
         />
-        <button className="primary-btn text-26px" type="submit">
+        <button className="primary-btn text-20px" type="submit">
           Sign up
         </button>
       </div>

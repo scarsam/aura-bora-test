@@ -12,17 +12,12 @@ const Header = () => (
           <ul className="menu margin-none padding-none">
             <li className="margin-none margin-top-30px margin-bottom-20px">
               <Link className="primary-link text-20px" to="/">
-                Find us
-              </Link>
-            </li>
-            <li className="margin-none margin-top-20px margin-bottom-20px">
-              <Link className="primary-link text-20px" to="/">
-                More info
+                Shop
               </Link>
             </li>
             <li className="margin-top-20px margin-bottom-20px">
               <Link className="primary-link text-20px" to="/">
-                Gallery
+                Find us
               </Link>
             </li>
           </ul>
