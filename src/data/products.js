@@ -1,5 +1,6 @@
 const Products = [
   {
+    sku: 'sku_H61A53Y6SeSbfL',
     title: 'Cactus Rose',
     ingredients: [
       'Carbonated water',
@@ -12,6 +13,7 @@ const Products = [
     image: 'cactus_rose',
   },
   {
+    sku: 'sku_H61IqN2FoI5q5Y',
     title: 'Lavender Cucumber',
     ingredients: [
       'Carbonated water',
@@ -23,6 +25,7 @@ const Products = [
     image: 'lavender_cucumber',
   },
   {
+    sku: 'sku_H61KS9lN9IQzjM',
     title: 'Peppermint Watermelon',
     ingredients: [
       'Carbonated water',
@@ -34,6 +37,7 @@ const Products = [
     image: 'peppermint_watermelon',
   },
   {
+    sku: 'sku_H61F9xaynQBkom',
     title: 'Basil Berry',
     ingredients: [
       'Carbonated water',
@@ -46,6 +50,7 @@ const Products = [
     image: 'basil_berry',
   },
   {
+    sku: 'sku_H61LsHbEGKgCAb',
     title: 'Lemongrass Coconut',
     ingredients: [
       'Carbonated water',

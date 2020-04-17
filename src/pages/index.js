@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { Context } from 'store'
 import Layout from 'components/layout'
-import ProductGrid from 'components/ProductGrid'
+import { ProductGrid } from 'components/ProductGrid'
 import Hero from 'components/hero'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
+import '@stripe/stripe-js'
 
 const IndexPage = () => {
   const { dispatch } = useContext(Context)

@@ -18,8 +18,8 @@ const ValueProps = () => {
     <section className="bg-lightYellow">
       <div className="container">
         <div className="row">
-          {values.map(valueProp => (
-            <div className="col-4 mb-3 align-items-center d-flex">
+          {values.map((valueProp, index) => (
+            <div key={index} className="col-4 mb-3 align-items-center d-flex">
               <img
                 className="value-props-icon"
                 src={smileIcon}

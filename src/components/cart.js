@@ -1,12 +1,38 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { Context } from 'store'
+import { loadStripe } from '@stripe/stripe-js'
+import {
+  formatPrice,
+  cartTotalPrice,
+  cartItemsCount,
+} from '../helpers/numberHelpers'
 
 const Cart = () => {
-  const { store } = useContext(Context)
+  const [showMenu, setShowMenu] = useState(false)
+  const cartMenu = useRef()
+  const { store, dispatch } = useContext(Context)
+  const { items } = store
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick, false)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClick, false)
+    }
+  }, [])
+
+  const handleClick = e => {
+    if (cartMenu.current && !cartMenu.current.contains(e.target)) {
+      setShowMenu(false)
+    }
+  }
 
   return (
-    <div className="cart">
-      <div className="cart-icon-wrapper">
+    <div className="cart" ref={cartMenu}>
+      <button
+        className="cart-icon-wrapper"
+        onClick={() => setShowMenu(!showMenu)}
+      >
         <svg width={48} height={64} xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
             <path
@@ -32,11 +58,93 @@ const Cart = () => {
           </g>
         </svg>
         <strong className="cart-icon-quantity m-0 p-0 font-barlow">
-          {store.count}
+          {cartItemsCount(items)}
         </strong>
-      </div>
+      </button>
+      {showMenu && (
+        <div className="cart-menu absolute bg-lightYellow z-index-3">
+          <div className="padding-top-60px padding-bottom-60px padding-left-30px padding-right-30px">
+            <h2>Order Summary</h2>
+            {items &&
+              items.map((product, index) => (
+                <div key={index} className="padding-top-20px">
+                  <p>{product.name}</p>
+                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-20px">
+                    <span>12x {formatPrice(product.price)}</span>
+                    <div className="d-flex align-items-center">
+                      <button
+                        onClick={() =>
+                          dispatch({
+                            type: 'remove',
+                            product: { id: product.sku },
+                          })
+                        }
+                        className="primary-btn"
+                      >
+                        -
+                      </button>
+                      <span className="padding-left-10px padding-right-10px">
+                        {product.quantity}
+                      </span>
+                      <button
+                        onClick={() =>
+                          dispatch({
+                            type: 'add',
+                            product: { id: product.sku },
+                          })
+                        }
+                        className="primary-btn"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            {items && items.length ? (
+              <>
+                {' '}
+                <div className="d-flex justify-content-between padding-top-60px">
+                  <p>SUBTOTAL</p>
+                  <p>{cartTotalPrice(items)}</p>
+                </div>
+                <button
+                  onClick={e => redirectToCheckout(e, items)}
+                  className="primary-btn"
+                >
+                  Check out
+                </button>
+              </>
+            ) : (
+              <p>Your cart is empty</p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
 export default Cart
+
+const stripePromise = loadStripe('pk_test_WemDrwL9FdctlL3poeIB3Ilm00b57CDtd8')
+
+const redirectToCheckout = async (event, cart) => {
+  event.preventDefault()
+  const stripe = await stripePromise
+
+  const items =
+    cart &&
+    cart.map(item => {
+      return { sku: item.sku, quantity: item.quantity }
+    })
+
+  const { error } = await stripe.redirectToCheckout({
+    items,
+    successUrl: `http://localhost:8000/page-2/`,
+    cancelUrl: `http://localhost:8000/`,
+  })
+  if (error) {
+    console.log('Error:', error)
+  }
+}

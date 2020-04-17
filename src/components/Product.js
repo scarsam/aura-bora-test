@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Image from 'components/image'
+import { formatPrice } from '../helpers/numberHelpers'
 import PropTypes from 'prop-types'
+import { Context } from 'store'
 
-const Product = ({ title, price, ingredients, bgColor, image }) => {
+const Product = ({ name, price, description, bgColor, image, id }) => {
   const [showInfoPane, setShowInfoPane] = useState(false)
+  const { dispatch } = useContext(Context)
 
   return (
     <div className="col-12 col-lg-6 padding-bottom-20px">
@@ -24,10 +27,18 @@ const Product = ({ title, price, ingredients, bgColor, image }) => {
 
             <div className="text-center bg-white product-text">
               <h2 className="m-0 padding-bottom-35px padding-top-50px">
-                {title}
+                {name}
               </h2>
-              <p className="m-0">12x for ${price}</p>
-              <button className="primary-btn bg-white margin-top-35px padding-top-10px padding-bottom-10px">
+              <p className="m-0">12x for {formatPrice(price)}</p>
+              <button
+                className="primary-btn bg-white margin-top-35px padding-top-10px padding-bottom-10px"
+                onClick={() =>
+                  dispatch({
+                    type: 'add',
+                    product: { id, price, name },
+                  })
+                }
+              >
                 Add to bag
               </button>
             </div>
@@ -47,16 +58,16 @@ const Product = ({ title, price, ingredients, bgColor, image }) => {
               </div>
 
               <h2 className="pb-3 font-barlow">
-                {title &&
-                  title
+                {name &&
+                  name
                     .split(' ')
                     .map((word, index) => <div key={index}>{word}</div>)}
               </h2>
               <p>
                 <strong>Ingredients</strong>
               </p>
-              {ingredients &&
-                ingredients.map((item, index) => (
+              {description &&
+                description.split(',').map((item, index) => (
                   <p className="m-0" key={index}>
                     {item}
                   </p>
@@ -75,8 +86,10 @@ const Product = ({ title, price, ingredients, bgColor, image }) => {
 export default Product
 
 Product.propTypes = {
+  image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.string.isRequired,
 }

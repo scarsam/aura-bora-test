@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -24,6 +28,13 @@ module.exports = {
       options: {
         endpoint:
           'https://gmail.us19.list-manage.com/subscribe/post?u=c16583a0d003cfb8daa716099&amp;id=253318e9e4',
+      },
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Sku', 'Product'],
+        secretKey: 'sk_test_Zy0cOQcIEjbbyQido9m82Gd700p1U9C9Ve',
+        // secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true,
       },
     },
     `gatsby-transformer-sharp`,

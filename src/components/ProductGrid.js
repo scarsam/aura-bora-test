@@ -1,8 +1,10 @@
 import React from 'react'
 import Product from './Product'
-import products from '../data/products'
+import { graphql, useStaticQuery } from 'gatsby'
 
-const ProductGrid = () => {
+export const ProductGrid = () => {
+  const data = useProducts()
+
   return (
     <section>
       <div className="container">
@@ -10,15 +12,16 @@ const ProductGrid = () => {
         <div className="row justify-content-center">
           <div className="col-11">
             <div className="row">
-              {products &&
-                products.map((product, index) => (
+              {data &&
+                data.map(({ node }, index) => (
                   <Product
                     key={index}
-                    title={product.title}
-                    ingredients={product.ingredients}
-                    bgColor={product.color}
-                    price={product.price}
-                    image={product.image}
+                    id={node.id}
+                    name={node.product.name}
+                    description={node.product.metadata.description}
+                    bgColor={node.product.metadata.ref}
+                    price={node.price}
+                    image={node.localFiles[0].name}
                   />
                 ))}
             </div>
@@ -29,4 +32,36 @@ const ProductGrid = () => {
   )
 }
 
-export default ProductGrid
+export const useProducts = () => {
+  const { skus } = useStaticQuery(
+    graphql`
+      query SkusForProduct {
+        skus: allStripeSku {
+          edges {
+            node {
+              localFiles {
+                name
+              }
+              product {
+                name
+                metadata {
+                  ref
+                  description
+                  isInStock
+                }
+              }
+              image
+              id
+              currency
+              price
+              attributes {
+                name
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  return skus.edges
+}
