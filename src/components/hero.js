@@ -5,11 +5,11 @@ const Hero = () => {
   return (
     <>
       <section className="bg-lavender top-section hero-background">
-        <div className="container pt-0">
-          <div className="row pb-5 clear-both">
-            <div className="col-12 pb-5 text-center">
+        <div className="container padding-top-15px">
+          <div className="row padding-bottom-50px clear-both">
+            <div className="col-12 padding-bottom-50px text-center">
               <img
-                className="logo m-0"
+                className="logo margin-none"
                 src={auraBoraLogo}
                 alt="Aura Bora Logo"
               />
@@ -18,7 +18,7 @@ const Hero = () => {
         </div>
       </section>
       <section className="bg-lightYellow">
-        <div className="container pt-0 pb-0">
+        <div className="container padding-top-none padding-bottom-none">
           <div className="row">
             <div className="col-md-10 offset-md-1">
               <p className="text-32px text-center">

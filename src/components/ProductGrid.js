@@ -9,23 +9,19 @@ export const ProductGrid = () => {
     <section>
       <div className="container">
         <div className="shop-bg margin-bottom-50px"></div>
-        <div className="row justify-content-center">
-          <div className="col-11">
-            <div className="row">
-              {data &&
-                data.map(({ node }, index) => (
-                  <Product
-                    key={index}
-                    id={node.id}
-                    name={node.product.name}
-                    description={node.product.metadata.description}
-                    bgColor={node.product.metadata.ref}
-                    price={node.price}
-                    image={node.localFiles[0].name}
-                  />
-                ))}
-            </div>
-          </div>
+        <div className="row">
+          {data &&
+            data.map(({ node }, index) => (
+              <Product
+                key={index}
+                id={node.id}
+                name={node.product.name}
+                description={node.product.metadata.description}
+                bgColor={node.product.metadata.ref}
+                price={node.price}
+                image={node.localFiles[0].name}
+              />
+            ))}
         </div>
       </div>
     </section>

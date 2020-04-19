@@ -16,11 +16,14 @@ const typography = new Typography({
   headerFontFamily: ['Space Mono', 'monospace'],
   bodyFontFamily: ['Space Mono', 'monospace'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    '.text-20px': {
+      ...adjustFontSizeTo('20px'),
+    },
     '.text-24px': {
       ...adjustFontSizeTo('24px'),
     },
-    '.text-20px': {
-      ...adjustFontSizeTo('20px'),
+    '.text-26px': {
+      ...adjustFontSizeTo('26px'),
     },
     '.text-32px': {
       ...adjustFontSizeTo('32px'),

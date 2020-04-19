@@ -15,11 +15,17 @@ const Cart = () => {
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
-
+    if (showMenu) {
+      document.querySelector('main').classList.add('cart-overlay')
+      document.querySelector('header').classList.add('cart-open')
+    } else {
+      document.querySelector('main').classList.remove('cart-overlay')
+      document.querySelector('header').classList.remove('cart-open')
+    }
     return () => {
       document.removeEventListener('mousedown', handleClick, false)
     }
-  }, [])
+  }, [showMenu])
 
   const handleClick = e => {
     if (cartMenu.current && !cartMenu.current.contains(e.target)) {
@@ -28,9 +34,9 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart" ref={cartMenu}>
+    <div className="cart relative" ref={cartMenu}>
       <button
-        className="cart-icon-wrapper"
+        className="cart-icon-wrapper padding-right-none"
         onClick={() => setShowMenu(!showMenu)}
       >
         <svg width={48} height={64} xmlns="http://www.w3.org/2000/svg">

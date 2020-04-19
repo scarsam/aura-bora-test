@@ -28,7 +28,7 @@ const Subscribe = () => {
       onSubmit={handleSubmit}
     >
       <label
-        className="padding-right-20px padding-top-20px text-20px"
+        className="padding-right-20px padding-top-20px text-24px"
         htmlFor="email"
       >
         <strong>Email</strong>

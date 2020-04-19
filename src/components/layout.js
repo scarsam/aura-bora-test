@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="cart-overlay">{children}</main>
       <Footer />
     </>
   )

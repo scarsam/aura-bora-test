@@ -1,7 +1,13 @@
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
+  &.cart-open {
+    overflow: auto;
+    bottom: 0;
+  }
 }
 
 nav {

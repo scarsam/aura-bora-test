@@ -9,7 +9,7 @@ const Product = ({ name, price, description, bgColor, image, id }) => {
   const { dispatch } = useContext(Context)
 
   return (
-    <div className="col-12 col-lg-6 padding-bottom-20px">
+    <div className="col-12 col-md-6 padding-bottom-20px">
       <div className="product-wrapper relative font-space-mono">
         {!showInfoPane ? (
           <>

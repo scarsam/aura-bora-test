@@ -1,0 +1,10 @@
+.value-props-row > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  &:first-child {
+    padding-left: 0px;
+  }
+  &:last-child {
+    padding-right: 0px;
+  }
+}
