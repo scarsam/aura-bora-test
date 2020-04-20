@@ -16,6 +16,7 @@ const Cart = () => {
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
     if (showMenu) {
+      document.getElementById('menu-btn').checked = false
       document.querySelector('main').classList.add('cart-overlay')
       document.querySelector('header').classList.add('cart-open')
     } else {
@@ -68,14 +69,22 @@ const Cart = () => {
         </strong>
       </button>
       {showMenu && (
-        <div className="cart-menu absolute bg-lightYellow z-index-3">
+        <div
+          className={`cart-menu absolute bg-lightYellow z-index-3 margin-bottom-50px ${
+            items && items.length ? 'cart-menu-items' : 'cart-menu-empty'
+          }`}
+        >
           <div className="padding-top-60px padding-bottom-60px padding-left-30px padding-right-30px">
+            <div
+              onClick={() => setShowMenu(false)}
+              className="close-icon d-block text-right margin-bottom-30px"
+            />
             <h2>Order Summary</h2>
             {items &&
               items.map((product, index) => (
-                <div key={index} className="padding-top-20px">
+                <div key={index} className="padding-top-20px text-26px">
                   <p>{product.name}</p>
-                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-20px">
+                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-20px text-26px">
                     <span>12x {formatPrice(product.price)}</span>
                     <div className="d-flex align-items-center">
                       <button
@@ -85,9 +94,9 @@ const Cart = () => {
                             product: { id: product.sku },
                           })
                         }
-                        className="primary-btn"
+                        className="primary-btn padding-none d-flex align-items-center justify-content-center"
                       >
-                        -
+                        <span>-</span>
                       </button>
                       <span className="padding-left-10px padding-right-10px">
                         {product.quantity}
@@ -99,9 +108,9 @@ const Cart = () => {
                             product: { id: product.sku },
                           })
                         }
-                        className="primary-btn"
+                        className="primary-btn padding-none d-flex align-items-center justify-content-center"
                       >
-                        +
+                        <span>+</span>
                       </button>
                     </div>
                   </div>
@@ -110,7 +119,7 @@ const Cart = () => {
             {items && items.length ? (
               <>
                 {' '}
-                <div className="d-flex justify-content-between padding-top-60px">
+                <div className="d-flex justify-content-between padding-top-60px text-26px">
                   <p>SUBTOTAL</p>
                   <p>{cartTotalPrice(items)}</p>
                 </div>
@@ -122,7 +131,11 @@ const Cart = () => {
                 </button>
               </>
             ) : (
-              <p>Your cart is empty</p>
+              <p className="text-26px padding-right-50px">
+                You have nothing{' '}
+                <span className="d-md-block">in your bouquet yet.</span> Keep
+                picking.
+              </p>
             )}
           </div>
         </div>

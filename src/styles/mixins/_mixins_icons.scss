@@ -1,0 +1,41 @@
+@mixin burger-icon {
+  cursor: pointer;
+  height: 25px;
+  position: relative;
+  user-select: none;
+  width: 50px;
+  z-index: 3;
+  &:before,
+  &:after {
+    background-color: $white;
+    border-radius: 4px;
+    border: 2px solid $black;
+    box-shadow: 2px 1px 0px 0px rgba(0, 0, 0, 1);
+    content: '';
+    display: block;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    transition: all 200ms ease-out;
+    width: 100%;
+  }
+  &:after {
+    top: 18px;
+  }
+}
+
+@mixin close-icon {
+  &:after,
+  &:before {
+    box-shadow: none;
+    top: 50%;
+    transform-origin: top;
+    width: 30px;
+  }
+  &:after {
+    transform: rotate(45deg) translateY(-50%);
+  }
+  &:before {
+    transform: rotate(-45deg) translateY(-50%);
+  }
+}

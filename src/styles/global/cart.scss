@@ -40,8 +40,15 @@
   border: 1px white solid;
   top: 120px;
   right: 0;
-  min-height: 600px;
-  width: 540px;
+  width: 330px;
+  min-height: 500px;
+  @include media_min_break(sm) {
+    min-height: 600px;
+    width: 430px;
+  }
+  @include media_min_break(md) {
+    width: 540px;
+  }
   &:after,
   &:before {
     background-image: url('../images/wave.svg');
@@ -60,8 +67,30 @@
   &:after {
     bottom: -20px;
   }
+  &.cart-menu-empty {
+    background-image: url('../images/flower-no-items.svg');
+    background-position: center right 15%;
+    background-repeat: no-repeat;
+    background-size: 110px;
+    content: '';
+  }
 }
 
 .cart-item-detail {
   border-bottom: 2px $black solid;
+  button {
+    line-height: 1;
+    height: 35px;
+    width: 35px;
+    span {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.close-icon {
+  margin-left: auto;
+  @include burger-icon;
+  @include close-icon;
 }
