@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
   font-size: 0.8rem;
   transition: font-size 200ms ease-in-out;
-  @include media_min_break(md) {
+  @include media_min_break(lg) {
     font-size: 1rem;
   }
 }

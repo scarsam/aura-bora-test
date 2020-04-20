@@ -20,6 +20,7 @@ export const ProductGrid = () => {
                 bgColor={node.product.metadata.ref}
                 price={node.price}
                 image={node.localFiles[0].name}
+                inStock={node.product.metadata.isInStock}
               />
             ))}
         </div>

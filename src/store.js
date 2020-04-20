@@ -19,13 +19,13 @@ export const Context = React.createContext()
 
 export function GetCartItems() {
   const windowGlobal = typeof window !== 'undefined' && window
-  const stored = windowGlobal && localStorage.getItem('cart')
+  const stored = windowGlobal && sessionStorage.getItem('cart')
   return stored !== null ? JSON.parse(stored) : { items: [] }
 }
 
 export function AddCartItem(state, product) {
   const { id, name, price } = product
-  const storedCart = localStorage.getItem('cart')
+  const storedCart = sessionStorage.getItem('cart')
 
   let cart = storedCart !== null ? JSON.parse(storedCart) : {}
 
@@ -47,12 +47,12 @@ export function AddCartItem(state, product) {
     cart = { items: [item] }
   }
 
-  localStorage.setItem('cart', JSON.stringify(cart))
+  sessionStorage.setItem('cart', JSON.stringify(cart))
   return { ...state, items: cart.items }
 }
 
 export function RemoveCartItem(state, product) {
-  const storedCart = localStorage.getItem('cart')
+  const storedCart = sessionStorage.getItem('cart')
   let cart = JSON.parse(storedCart)
 
   const item = cart.items.filter(item => item.sku === product.id)[0]
@@ -71,6 +71,6 @@ export function RemoveCartItem(state, product) {
     }
   }
 
-  localStorage.setItem('cart', JSON.stringify(cart))
+  sessionStorage.setItem('cart', JSON.stringify(cart))
   return { ...state, items: cart.items }
 }

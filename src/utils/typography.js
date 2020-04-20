@@ -19,14 +19,23 @@ const typography = new Typography({
     '.text-20px': {
       ...adjustFontSizeTo('20px'),
     },
+    '.text-22px': {
+      ...adjustFontSizeTo('22px'),
+    },
     '.text-24px': {
       ...adjustFontSizeTo('24px'),
     },
     '.text-26px': {
       ...adjustFontSizeTo('26px'),
     },
+    '.text-28px': {
+      ...adjustFontSizeTo('28px'),
+    },
     '.text-32px': {
       ...adjustFontSizeTo('32px'),
+    },
+    '.text-40px': {
+      ...adjustFontSizeTo('40px'),
     },
   }),
 })
