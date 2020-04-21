@@ -14,6 +14,9 @@ const Cart = () => {
   const { items } = store
 
   useEffect(() => {
+    fetch("/.netlify/functions/hello")
+      .then(response => response.json())
+      .then(console.log)
     document.addEventListener('mousedown', handleClick, false)
     if (showMenu) {
       document.getElementById('menu-btn').checked = false
