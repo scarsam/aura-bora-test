@@ -107,5 +107,5 @@ Product.propTypes = {
   bgColor: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 }

@@ -14,9 +14,6 @@ const Cart = () => {
   const { items } = store
 
   useEffect(() => {
-    fetch("/.netlify/functions/hello")
-      .then(response => response.json())
-      .then(console.log)
     document.addEventListener('mousedown', handleClick, false)
     if (showMenu) {
       document.getElementById('menu-btn').checked = false
@@ -154,19 +151,24 @@ const stripePromise = loadStripe('pk_test_WemDrwL9FdctlL3poeIB3Ilm00b57CDtd8')
 const redirectToCheckout = async (event, cart) => {
   event.preventDefault()
   const stripe = await stripePromise
-
   const items =
     cart &&
     cart.map(item => {
       return { sku: item.sku, quantity: item.quantity }
     })
 
-  const { error } = await stripe.redirectToCheckout({
-    items,
-    successUrl: `http://localhost:8000/page-2/`,
-    cancelUrl: `http://localhost:8000/`,
-  })
-  if (error) {
-    console.log('Error:', error)
+  try {
+    await stripe.redirectToCheckout({
+      // billingAddressCollection: 'required',
+      // shippingAddressCollection: {
+      //   allowedCountries: ['US'],
+      // },
+      items,
+      successUrl: `http://localhost:8000/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+
+      cancelUrl: `http://localhost:8000/`,
+    })
+  } catch (error) {
+    console.error('Error:', error)
   }
 }

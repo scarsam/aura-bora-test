@@ -11,7 +11,10 @@ export function formatPrice(price) {
 export function cartTotalPrice(products) {
   const total =
     products &&
-    products.reduce((prev, cur) => prev + cur.price * cur.quantity, 0)
+    products.reduce(
+      (prev, cur) => prev + (cur.price || cur.amount) * cur.quantity,
+      0
+    )
 
   return formatPrice(total)
 }
