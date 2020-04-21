@@ -11,8 +11,6 @@ const Product = ({ name, price, description, bgColor, image, id, inStock }) => {
 
   const isInStock = inStock && inStock === 'true'
 
-  console.log(isInStock)
-
   return (
     <div className="col-12 col-md-6 padding-bottom-20px">
       <div className="product-wrapper relative font-space-mono">

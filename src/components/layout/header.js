@@ -16,8 +16,8 @@ const Header = () => (
               </Link>
             </li>
             <li className="margin-top-20px margin-bottom-20px">
-              <Link className="primary-link text-20px" to="/">
-                Find us
+              <Link className="primary-link text-20px" to="/resellers">
+                Resellers
               </Link>
             </li>
           </ul>

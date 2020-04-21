@@ -2,10 +2,12 @@
   position: relative;
   opacity: 100%;
   &:before {
-    background-color: $lavender;
+    background-color: rgba(198, 188, 208, 0.7);
     content: '';
     height: 100%;
     left: 0;
+    bottom: 0;
+    right: 0;
     opacity: 70%;
     position: fixed;
     top: 0;

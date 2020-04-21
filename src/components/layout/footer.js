@@ -15,7 +15,7 @@ const Footer = () => {
               >
                 Shop
               </Link>
-              <Link className="primary-link text-26px" to="/">
+              <Link className="primary-link text-26px" to="/resellers">
                 Reseller
               </Link>
             </div>

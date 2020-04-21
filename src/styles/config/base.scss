@@ -17,6 +17,11 @@ main section:first-child {
   padding-top: 90px;
 }
 
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
 footer a:not(:first-child) {
   margin-left: 50px;
 }

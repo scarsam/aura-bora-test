@@ -1,10 +1,11 @@
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   &.cart-open {
+    position: fixed;
     overflow: auto;
     bottom: 0;
   }
@@ -36,10 +37,11 @@ header .navicon {
 
 // Expanded styles
 .menu-btn:checked ~ header {
-  background: $lightYellow;
+  background: $lavender;
   position: fixed;
   width: 100%;
-  &:after {
+  &:after,
+  &:before {
     background-image: url('../images/wave.svg');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -49,6 +51,10 @@ header .navicon {
     position: absolute;
     top: 100%;
     width: 100%;
+  }
+  &:before {
+    background-image: url('../images/wave-black.svg');
+    top: 101%;
   }
   .menu {
     display: block;
