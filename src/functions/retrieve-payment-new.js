@@ -5,11 +5,13 @@ exports.handler = async (event, context) => {
 
   try {
     const payment = await stripe.paymentIntents.retrieve(paymentIntentId)
+    console.log(payment)
     return {
       statusCode: 200,
       body: JSON.stringify(payment),
     }
   } catch (error) {
+    console.log(error)
     return { statusCode: 500, body: error.toString() }
   }
 }
