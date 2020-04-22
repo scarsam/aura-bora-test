@@ -73,7 +73,7 @@ async function RetrieveSession(sessionId) {
     })
     return response.json()
   } catch (error) {
-    console.log(error)
+    console.error(error)
     throw new Error(error)
   }
 }
@@ -89,7 +89,7 @@ async function RetrievePayment(paymentIntentId) {
     })
     return response.json()
   } catch (error) {
-    console.log(error)
+    console.error(error)
     throw new Error(error)
   }
 }
