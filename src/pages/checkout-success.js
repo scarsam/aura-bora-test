@@ -64,7 +64,7 @@ export default CheckoutSuccess
 
 async function RetrieveSession(sessionId) {
   try {
-    const response = await fetch('/.netlify/functions/retrieve-session', {
+    const response = await fetch('/.netlify/functions/retrieve-session-new', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ async function RetrieveSession(sessionId) {
 
 async function RetrievePayment(paymentIntentId) {
   try {
-    const response = await fetch('/.netlify/functions/retrieve-payment', {
+    const response = await fetch('/.netlify/functions/retrieve-payment-new', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
