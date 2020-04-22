@@ -37,8 +37,6 @@ const CheckoutSuccess = () => {
     }
   }
 
-  console.log(cartItems)
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -65,23 +63,33 @@ const CheckoutSuccess = () => {
 export default CheckoutSuccess
 
 async function RetrieveSession(sessionId) {
-  const response = await fetch('/.netlify/functions/retrieve-session', {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      sessionId,
-    },
-  })
-  return response.json()
+  try {
+    const response = await fetch('/.netlify/functions/retrieve-session', {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        sessionId,
+      },
+    })
+    console.log(response)
+    return response.json()
+  } catch (error) {
+    console.log(error)
+    throw new Error(error)
+  }
 }
 
 async function RetrievePayment(paymentIntentId) {
-  const response = await fetch('/.netlify/functions/retrieve-payment', {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      paymentIntentId,
-    },
-  })
-  return response.json()
+  try {
+    const response = await fetch('/.netlify/functions/retrieve-payment', {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        paymentIntentId,
+      },
+    })
+    return response.json()
+  } catch (error) {
+    throw new Error(error)
+  }
 }
