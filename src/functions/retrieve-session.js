@@ -1,17 +1,15 @@
-var stripe = require('stripe')('sk_test_Zy0cOQcIEjbbyQido9m82Gd700p1U9C9Ve')
+const stripe = require('stripe')('sk_test_Zy0cOQcIEjbbyQido9m82Gd700p1U9C9Ve')
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context) => {
   const sessionId = event.headers.sessionid
-  return new Promise(function(resolve, reject) {
-    stripe.checkout.sessions.retrieve(sessionId, function(err, session) {
-      if (err) {
-        return reject(err)
-      } else {
-        resolve({
-          statusCode: 200,
-          body: JSON.stringify(session),
-        })
-      }
-    })
-  })
+
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId)
+    return {
+      statusCode: 200,
+      body: JSON.stringify(session),
+    }
+  } catch (error) {
+    return { statusCode: 500, body: error.toString() }
+  }
 }

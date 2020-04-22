@@ -71,7 +71,6 @@ async function RetrieveSession(sessionId) {
         sessionId,
       },
     })
-    console.log(response)
     return response.json()
   } catch (error) {
     console.log(error)
@@ -90,6 +89,7 @@ async function RetrievePayment(paymentIntentId) {
     })
     return response.json()
   } catch (error) {
+    console.log(error)
     throw new Error(error)
   }
 }
