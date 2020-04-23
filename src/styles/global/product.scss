@@ -30,15 +30,6 @@
     text-shadow: 2px 2px $black;
   }
 }
-
-.shop-bg {
-  background-image: url('../images/shop-bg.svg');
-  background-size: contain;
-  height: 250px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
 .info-close-icon {
   margin-right: 40px;
   top: 0;
@@ -66,9 +57,6 @@
 }
 
 @include media_max_break(lg) {
-  .shop-bg {
-    height: 150px;
-  }
   .product-wrapper {
     max-width: 520px;
     .gatsby-image-wrapper {

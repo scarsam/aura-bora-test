@@ -1,14 +1,18 @@
 import React from 'react'
 import Product from './Product'
 import { graphql, useStaticQuery } from 'gatsby'
+import ShopImage from '../images/shop-bg.svg'
 
 export const ProductGrid = () => {
   const data = useProducts()
 
   return (
     <section>
-      <div className="container">
-        <div className="shop-bg margin-bottom-50px"></div>
+      <div className="container padding-top-30px">
+        <div className="padding-bottom-10px padding-bottom-lg-30px">
+          <img className="margin-none" src={ShopImage} alt="" />
+        </div>
+
         <div className="row">
           {data &&
             data.map(({ node }, index) => (
