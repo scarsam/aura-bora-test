@@ -17,7 +17,6 @@ export const ProductGrid = () => {
                 id={node.id}
                 name={node.product.name}
                 description={node.product.metadata.description}
-                bgColor={node.product.metadata.ref}
                 price={node.price}
                 image={node.localFiles[0].name}
                 inStock={node.product.metadata.isInStock}
@@ -42,7 +41,6 @@ export const useProducts = () => {
               product {
                 name
                 metadata {
-                  ref
                   description
                   isInStock
                 }

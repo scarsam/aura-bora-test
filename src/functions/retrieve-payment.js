@@ -1,15 +1,15 @@
 const stripe = require('stripe')('sk_test_Zy0cOQcIEjbbyQido9m82Gd700p1U9C9Ve')
 
 exports.handler = (event, context, callback) => {
-  const sessionId = event.headers.sessionid
+  const paymentIntentId = event.headers.paymentintentid
 
-  stripe.checkout.sessions.retrieve(sessionId, function(err, session) {
+  stripe.paymentIntents.retrieve(paymentIntentId, function(err, paymentIntent) {
     if (err) {
-      return callback(Error(err))
+      return callback(err)
     }
     return callback(null, {
       statusCode: 200,
-      body: JSON.stringify(session),
+      body: JSON.stringify(paymentIntent),
     })
   })
 }

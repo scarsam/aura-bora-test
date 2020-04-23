@@ -5,9 +5,11 @@ import PropTypes from 'prop-types'
 import { Context } from 'store'
 import NoStock from '../images/products/out_of_stock.svg'
 
-const Product = ({ name, price, description, bgColor, image, id, inStock }) => {
+const Product = ({ name, price, description, image, id, inStock }) => {
   const [showInfoPane, setShowInfoPane] = useState(false)
   const { dispatch } = useContext(Context)
+
+  const colorRef = name.replace(' ', '_').toLowerCase()
 
   const isInStock = inStock && inStock === 'true'
 
@@ -27,8 +29,9 @@ const Product = ({ name, price, description, bgColor, image, id, inStock }) => {
                   </strong>
                 </button>
               )}
-
-              <Image alt="" filename={image} className="product-image" />
+              <div className={`bg-${colorRef}`}>
+                <Image alt="" filename={image} className="product-image" />
+              </div>
             </div>
 
             <div className="text-center bg-white product-text">
@@ -63,7 +66,7 @@ const Product = ({ name, price, description, bgColor, image, id, inStock }) => {
           </div>
         ) : (
           <div
-            className={`product-info font-barlow c-white d-flex align-items-center bg-${bgColor}`}
+            className={`product-info font-barlow c-white d-flex align-items-center bg-${colorRef}-i`}
           >
             <div>
               <div
@@ -104,7 +107,6 @@ export default Product
 Product.propTypes = {
   image: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   description: PropTypes.string,

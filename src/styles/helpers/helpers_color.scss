@@ -12,7 +12,15 @@ $colors: (
   berry: $berry,
   strawberry: $strawberry,
   pink: $pink,
-  basil_berry: $basilBerry,
+  // product info colors
+    basil_berry-i: $basilBerry-info,
+  peppermint_watermelon-i: $peppermintWatermelon-info,
+  lavender_cucumber-i: $lavenderCucumber-info,
+  cactus_rose-i: $cactusRose-info,
+  lemongrass_coconut-i: $lemongrassCoconut-info,
+  variety_pack-i: $varietyPack-info,
+  // product bg colors
+    basil_berry: $basilBerry,
   peppermint_watermelon: $peppermintWatermelon,
   lavender_cucumber: $lavenderCucumber,
   cactus_rose: $cactusRose,

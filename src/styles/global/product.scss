@@ -54,7 +54,21 @@
   }
 }
 
+@include media_max_break(md) {
+  .product-wrapper {
+    .gatsby-image-wrapper {
+      img {
+        object-fit: contain !important;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
 @include media_max_break(lg) {
+  .shop-bg {
+    height: 150px;
+  }
   .product-wrapper {
     max-width: 520px;
     .gatsby-image-wrapper {

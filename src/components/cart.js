@@ -40,7 +40,12 @@ const Cart = () => {
         className="cart-icon-wrapper padding-right-none"
         onClick={() => setShowMenu(!showMenu)}
       >
-        <svg width={48} height={64} xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width={48}
+          height={64}
+          xmlns="http://www.w3.org/2000/svg"
+          className={`cart-icon ${showMenu ? 'cart-icon-transform' : ''}`}
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M4.416 23.852c-2.152-9.458-2.152-15.5 0-18.125 3.228-3.938 14.168 6.561 14.168 7.56 0 1 7.091-13.846 11.626-12.081 4.536 1.765 1.86 14.62 1.86 15.517 0 .897 10.824-13.39 14.59-8.828 2.512 3.04.183 8.078-6.985 15.112l-35.26.845z"
@@ -64,28 +69,34 @@ const Cart = () => {
             />
           </g>
         </svg>
-        <strong className="cart-icon-quantity m-0 p-0 font-barlow">
+        <strong
+          className={`cart-quantity m-0 p-0 font-barlow
+            ${showMenu ? 'cart-quantity-transform' : ''}
+            `}
+        >
           {cartItemsCount(items)}
         </strong>
       </button>
       {showMenu && (
         <div
-          className={`cart-menu absolute bg-lightYellow z-index-3 margin-bottom-50px ${
+          className={`cart-menu absolute bg-lightYellow z-index-3 margin-bottom-50px font-barlow ${
             items && items.length ? 'cart-menu-items' : 'cart-menu-empty'
           }`}
         >
-          <div className="padding-top-60px padding-bottom-60px padding-left-30px padding-right-30px">
+          <div className="padding-top-60px padding-bottom-60px padding-left-60px padding-right-60px font-medium">
             <div
               onClick={() => setShowMenu(false)}
-              className="close-icon d-block text-right margin-bottom-30px"
+              className="close-icon d-block text-right margin-bottom-60px"
             />
-            <h2>Order Summary</h2>
+            <h2 className="text-40px font-barlow">Order Summary</h2>
             {items &&
               items.map((product, index) => (
-                <div key={index} className="padding-top-20px text-26px">
-                  <p>{product.name}</p>
-                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-20px text-26px">
-                    <span>12x {formatPrice(product.price)}</span>
+                <div key={index} className="padding-top-50px text-26px">
+                  <p className="margin-none padding-bottom-15px">
+                    {product.name.toUpperCase()}
+                  </p>
+                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-30px text-26px">
+                    <span>12X {formatPrice(product.price)}</span>
                     <div className="d-flex align-items-center">
                       <button
                         onClick={() =>
@@ -94,11 +105,11 @@ const Cart = () => {
                             product: { id: product.sku },
                           })
                         }
-                        className="primary-btn padding-none d-flex align-items-center justify-content-center"
+                        className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
                         <span>-</span>
                       </button>
-                      <span className="padding-left-10px padding-right-10px">
+                      <span className="padding-left-15px padding-right-15px">
                         {product.quantity}
                       </span>
                       <button
@@ -108,9 +119,20 @@ const Cart = () => {
                             product: { id: product.sku },
                           })
                         }
-                        className="primary-btn padding-none d-flex align-items-center justify-content-center"
+                        className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
                         <span>+</span>
+                      </button>
+                      <button
+                        className="d-flex align-items-center item-remove-btn"
+                        onClick={() =>
+                          dispatch({
+                            type: 'remove',
+                            product: { id: product.sku, removeFromCart: true },
+                          })
+                        }
+                      >
+                        <span>x</span>
                       </button>
                     </div>
                   </div>
@@ -118,21 +140,20 @@ const Cart = () => {
               ))}
             {items && items.length ? (
               <>
-                {' '}
-                <div className="d-flex justify-content-between padding-top-60px text-26px">
-                  <p>SUBTOTAL</p>
-                  <p>{cartTotalPrice(items)}</p>
+                <div className="d-flex justify-content-between padding-top-50px text-26px">
+                  <p className="margin-none">SUBTOTAL</p>
+                  <p className="margin-none">{cartTotalPrice(items)}</p>
                 </div>
                 <button
                   onClick={e => redirectToCheckout(e, items)}
-                  className="primary-btn"
+                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-50px margin-bottom-60px"
                 >
                   Check out
                 </button>
               </>
             ) : (
               <p className="text-26px padding-right-50px">
-                You have nothing{' '}
+                You have nothing
                 <span className="d-md-block">in your bouquet yet.</span> Keep
                 picking.
               </p>

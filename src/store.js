@@ -55,9 +55,11 @@ export function RemoveCartItem(state, product) {
   const storedCart = sessionStorage.getItem('cart')
   let cart = JSON.parse(storedCart)
 
+  const isRemoved = product.removeFromCart
+
   const item = cart.items.filter(item => item.sku === product.id)[0]
 
-  if (item.quantity === 1) {
+  if (item.quantity === 1 || isRemoved) {
     cart = {
       items: cart.items.filter(item => item.sku !== product.id),
     }
