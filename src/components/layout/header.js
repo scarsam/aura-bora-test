@@ -11,12 +11,12 @@ const Header = () => (
           <label className="navicon d-block" htmlFor="menu-btn" />
           <ul className="menu margin-none padding-none">
             <li className="margin-none margin-top-30px margin-bottom-20px">
-              <Link className="primary-link text-20px" to="/">
+              <Link className="primary-link text-40px" to="/">
                 Shop
               </Link>
             </li>
             <li className="margin-top-20px margin-bottom-20px">
-              <Link className="primary-link text-20px" to="/resellers">
+              <Link className="primary-link text-40px" to="/resellers">
                 Resellers
               </Link>
             </li>

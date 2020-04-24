@@ -19,9 +19,11 @@ const Cart = () => {
       document.getElementById('menu-btn').checked = false
       document.querySelector('main').classList.add('cart-overlay')
       document.querySelector('header').classList.add('cart-open')
+      document.querySelector('body').classList.add('fixed-body-mobile')
     } else {
       document.querySelector('main').classList.remove('cart-overlay')
       document.querySelector('header').classList.remove('cart-open')
+      document.querySelector('body').classList.remove('fixed-body-mobile')
     }
     return () => {
       document.removeEventListener('mousedown', handleClick, false)
@@ -37,7 +39,7 @@ const Cart = () => {
   return (
     <div className="cart relative" ref={cartMenu}>
       <button
-        className="cart-icon-wrapper padding-right-none z-index-4"
+        className="cart-icon-wrapper padding-none z-index-4"
         onClick={() => setShowMenu(!showMenu)}
       >
         <svg
