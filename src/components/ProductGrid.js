@@ -6,6 +6,16 @@ import ShopImage from '../images/shop-bg.svg'
 export const ProductGrid = () => {
   const data = useProducts()
 
+  const items =
+    data &&
+    data
+      .map(item => item.node)
+      .sort((prev, cur) =>
+        prev.product.metadata.displayOrder > cur.product.metadata.displayOrder
+          ? 1
+          : -1
+      )
+
   return (
     <section>
       <div className="container padding-top-30px">
@@ -14,16 +24,16 @@ export const ProductGrid = () => {
         </div>
 
         <div className="row">
-          {data &&
-            data.map(({ node }, index) => (
+          {items &&
+            items.map((item, index) => (
               <Product
                 key={index}
-                id={node.id}
-                name={node.product.name}
-                description={node.product.metadata.description}
-                price={node.price}
-                image={node.localFiles[0].name}
-                inStock={node.product.metadata.isInStock}
+                id={item.id}
+                name={item.product.name}
+                description={item.product.metadata.description}
+                price={item.price}
+                image={item.localFiles[0].name}
+                inStock={item.product.metadata.isInStock}
               />
             ))}
         </div>
@@ -47,6 +57,7 @@ export const useProducts = () => {
                 metadata {
                   description
                   isInStock
+                  displayOrder
                 }
               }
               image
