@@ -79,19 +79,21 @@ const Cart = () => {
       </button>
       {showMenu && (
         <div
-          className={`cart-menu absolute bg-lightYellow z-index-3 margin-bottom-50px font-barlow ${
+          className={`cart-menu bg-lightYellow z-index-3 margin-bottom-lg-50px font-barlow ${
             items && items.length ? 'cart-menu-items' : 'cart-menu-empty'
           }`}
         >
-          <div className="padding-top-60px padding-bottom-60px padding-left-60px padding-right-60px font-medium">
+          <div className="cart-item-container font-medium">
             <div
               onClick={() => setShowMenu(false)}
-              className="close-icon d-block text-right margin-bottom-60px"
+              className="close-icon d-block text-right margin-bottom-30px margin-bottom-md-60px"
             />
-            <h2 className="text-40px font-barlow">Order Summary</h2>
+            <h2 className="text-40px font-barlow margin-bottom-none">
+              Order Summary
+            </h2>
             {items &&
               items.map((product, index) => (
-                <div key={index} className="padding-top-50px text-26px">
+                <div key={index} className="padding-top-40px text-26px">
                   <p className="margin-none padding-bottom-15px">
                     {product.name.toUpperCase()}
                   </p>
@@ -146,7 +148,7 @@ const Cart = () => {
                 </div>
                 <button
                   onClick={e => redirectToCheckout(e, items)}
-                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-50px margin-bottom-60px"
+                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-50px"
                 >
                   Check out
                 </button>

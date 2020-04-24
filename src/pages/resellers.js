@@ -15,7 +15,7 @@ const Resellers = () => {
                   src={heroImage}
                 />
               </div>
-              <ul>
+              <ul className="text-center">
                 <li className="text-40px">Buffalo Whole Foods</li>
                 <li className="text-40px">Piedmont Grocery</li>
                 <li className="text-40px">Green Earth Natural</li>
