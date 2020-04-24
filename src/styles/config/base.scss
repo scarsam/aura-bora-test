@@ -1,4 +1,6 @@
 html {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   scroll-behavior: smooth;
   font-size: 0.8rem;
   transition: font-size 200ms ease-in-out;
@@ -8,6 +10,7 @@ html {
 }
 
 body {
+  touch-action: manipulation;
   background-color: $lightYellow;
   color: $textColor;
 }

@@ -140,7 +140,7 @@
 }
 
 @media (max-width: 500px) {
-  .fixed-body-mobile {
-    position: fixed;
+  .overflow-hidden {
+    overflow: hidden;
   }
 }

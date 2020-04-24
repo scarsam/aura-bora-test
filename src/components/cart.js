@@ -19,11 +19,11 @@ const Cart = () => {
       document.getElementById('menu-btn').checked = false
       document.querySelector('main').classList.add('cart-overlay')
       document.querySelector('header').classList.add('cart-open')
-      document.querySelector('body').classList.add('fixed-body-mobile')
+      document.querySelector('html').classList.add('overflow-hidden')
     } else {
       document.querySelector('main').classList.remove('cart-overlay')
       document.querySelector('header').classList.remove('cart-open')
-      document.querySelector('body').classList.remove('fixed-body-mobile')
+      document.querySelector('html').classList.remove('overflow-hidden')
     }
     return () => {
       document.removeEventListener('mousedown', handleClick, false)
