@@ -32,7 +32,7 @@ header .menu {
 }
 
 header .navicon {
-  @include burger-icon;
+  @include burger-icon(35px);
 }
 
 // Expanded styles
@@ -61,6 +61,6 @@ header .navicon {
     max-height: 240px;
   }
   .navicon {
-    @include close-icon;
+    @include close-icon(38px);
   }
 }

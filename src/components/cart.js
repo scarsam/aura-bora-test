@@ -37,7 +37,7 @@ const Cart = () => {
   return (
     <div className="cart relative" ref={cartMenu}>
       <button
-        className="cart-icon-wrapper padding-right-none"
+        className="cart-icon-wrapper padding-right-none z-index-4"
         onClick={() => setShowMenu(!showMenu)}
       >
         <svg
@@ -86,7 +86,7 @@ const Cart = () => {
           <div className="cart-item-container font-medium">
             <div
               onClick={() => setShowMenu(false)}
-              className="close-icon d-block text-right margin-bottom-30px margin-bottom-md-60px"
+              className="close-icon d-block margin-bottom-60px"
             />
             <h2 className="text-40px font-barlow margin-bottom-none">
               Order Summary
@@ -134,7 +134,7 @@ const Cart = () => {
                           })
                         }
                       >
-                        <span>x</span>
+                        <span>+</span>
                       </button>
                     </div>
                   </div>

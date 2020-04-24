@@ -1,6 +1,6 @@
-@mixin burger-icon {
+@mixin burger-icon($size) {
   cursor: pointer;
-  height: 25px;
+  height: $size;
   position: relative;
   user-select: none;
   width: 50px;
@@ -24,13 +24,13 @@
   }
 }
 
-@mixin close-icon {
+@mixin close-icon($size) {
   &:after,
   &:before {
     box-shadow: none;
     top: 50%;
     transform-origin: top;
-    width: 30px;
+    width: $size;
   }
   &:after {
     transform: rotate(45deg) translateY(-50%);

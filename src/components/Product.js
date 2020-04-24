@@ -70,7 +70,7 @@ const Product = ({ name, price, description, image, id, inStock }) => {
           >
             <div>
               <div
-                className="info-close-icon absolute margin-top-35px margin-top-lg-55px"
+                className="info-close-icon absolute margin-top-30px margin-top-lg-45px"
                 onClick={() => setShowInfoPane(false)}
               />
 

@@ -17,6 +17,9 @@
 .text-center {
   text-align: center !important;
 }
+.font-medium {
+  font-weight: 500;
+}
 
 @include media_min_break(sm) {
   .text-left-sm {

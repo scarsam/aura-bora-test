@@ -26,9 +26,8 @@
 }
 
 .cart-quantity {
-  bottom: 0px;
+  bottom: 5px;
   left: 0;
-  height: 38px;
   font-size: 20px;
   position: absolute;
   text-align: center;
@@ -53,7 +52,7 @@
 .cart-menu {
   border: 3px $white solid;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 30px;
   position: fixed;
   right: 0;
@@ -68,6 +67,9 @@
     top: 120px;
     width: 460px;
     margin-bottom: 30px;
+    .close-icon {
+      margin-left: auto;
+    }
   }
   @include media_min_break(sm) {
     width: 540px;
@@ -113,11 +115,14 @@
     }
   }
   .item-remove-btn {
+    font-size: 26px;
     margin-left: 20px;
     cursor: pointer;
-    font-size: 20px;
     border: 0;
     background-color: transparent;
+    span {
+      transform: rotate(45deg);
+    }
   }
 }
 .checkout-btn {
@@ -128,12 +133,9 @@
 }
 
 .close-icon {
-  @include burger-icon;
-  @include close-icon;
-  margin-left: auto;
-  width: 28px;
-}
-
-.font-medium {
-  font-weight: 500;
+  @include burger-icon(38px);
+  @include close-icon(38px);
+  @include media_max_break(md) {
+    @include close-icon(30px);
+  }
 }

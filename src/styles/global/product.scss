@@ -31,11 +31,11 @@
   }
 }
 .info-close-icon {
-  margin-right: 40px;
+  margin-right: 45px;
   top: 0;
   right: 0;
-  @include burger-icon;
-  @include close-icon;
+  @include burger-icon(35px);
+  @include close-icon(35px);
 }
 .out-of-stock {
   height: 730px;
@@ -76,7 +76,7 @@
     padding: 6px 11px;
   }
   .info-close-icon {
-    margin-right: 10px;
+    margin-right: 15px;
   }
   .out-of-stock {
     height: 543px;
