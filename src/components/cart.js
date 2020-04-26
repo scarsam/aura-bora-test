@@ -189,9 +189,17 @@ const redirectToCheckout = async (event, cart) => {
       //   allowedCountries: ['US'],
       // },
       items,
-      successUrl: `http://localhost:8000/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      successUrl: `${
+        process.env.development
+          ? 'localhost:8000'
+          : 'https://gallant-khorana-e2000b.netlify.app'
+      }/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
 
-      cancelUrl: `http://localhost:8000/`,
+      cancelUrl: `${
+        process.env.development
+          ? 'localhost:8000'
+          : 'https://gallant-khorana-e2000b.netlify.app'
+      }`,
     })
   } catch (error) {
     console.error('Error:', error)
