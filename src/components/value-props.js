@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import smileIcon from 'images/smile-icon.svg'
 
-const valuesOne = ['0 Sugar', '0 Calories', 'Vegan']
-const valuesTwo = ['Non GMO', 'Paleo', 'Gluten free', 'Caffeine free']
-const valuesThree = ['No artificial flavors', '1% for the planet']
+// Desktop
+const valuesOneDesktop = ['0 Sugar', '0 Calories', 'Vegan']
+const valuesTwoDesktop = ['Non GMO', 'Paleo', 'Gluten free', 'Caffeine free']
+const valuesThreeDesktop = ['No artificial flavors', '1% for the planet']
+// Mobile
+const valuesOneMobile = ['0 Sugar', '0 Calories', 'Vegan']
+const valuesTwoMobile = ['Non GMO', 'Paleo', 'Gluten free']
+const valuesThreeMobile = ['Caffeine free', 'No artificial flavors']
 
 const ValueProp = ({ valueProp }) => (
   <div className="d-flex">
@@ -19,23 +24,43 @@ const ValueProp = ({ valueProp }) => (
 
 const ValueProps = () => {
   return (
-    <section className="bg-lightYellow">
-      <div className="container padding-bottom-none padding-bottom-md-30px">
-        <div className="row">
+    <section className="bg-lightYellow padding-top-30px padding-bottom-20px padding-top-md-30px padding-bottom-md-40px">
+      <div className="container padding-top-none padding-bottom-10px padding-top-md-30px padding-bottom-md-30px">
+        <div className="row d-none d-sm-flex">
           <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
-            {valuesOne.map((valueProp, index) => (
+            {valuesOneDesktop.map((valueProp, index) => (
               <ValueProp valueProp={valueProp} key={index} />
             ))}
           </div>
           <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
-            {valuesTwo.map((valueProp, index) => (
+            {valuesTwoDesktop.map((valueProp, index) => (
               <ValueProp valueProp={valueProp} key={index} />
             ))}
           </div>
           <div className="col-12 align-items-center  justify-content-center d-flex value-props-row">
-            {valuesThree.map((valueProp, index) => (
+            {valuesThreeDesktop.map((valueProp, index) => (
               <ValueProp valueProp={valueProp} key={index} />
             ))}
+          </div>
+        </div>
+        <div className="row d-sm-none">
+          <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
+            {valuesOneMobile.map((valueProp, index) => (
+              <ValueProp valueProp={valueProp} key={index} />
+            ))}
+          </div>
+          <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
+            {valuesTwoMobile.map((valueProp, index) => (
+              <ValueProp valueProp={valueProp} key={index} />
+            ))}
+          </div>
+          <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
+            {valuesThreeMobile.map((valueProp, index) => (
+              <ValueProp valueProp={valueProp} key={index} />
+            ))}
+          </div>
+          <div className="col-12 align-items-center  justify-content-center d-flex value-props-row">
+            <ValueProp valueProp="1% for the planet" />
           </div>
         </div>
       </div>

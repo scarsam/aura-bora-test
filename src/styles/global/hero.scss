@@ -1,27 +1,32 @@
 .logo {
-  max-width: 280px;
+  max-width: 200px;
+  transition: max-width 200ms ease-in-out;
+  @include media_min_break(md) {
+    max-width: 280px;
+  }
 }
 
 .hero-background {
   background-image: url('../images/hero/hero-background.svg');
-  background-size: 3008px;
+  background-size: 2400px;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 835px;
+  background-position: -970px center;
+  height: 600px;
+  @include media_min_break(sm) {
+    background-position: center center;
+  }
+  @include media_min_break(md) {
+    background-size: 3008px;
+    height: 835px;
+  }
 }
 
 .home-hero p {
-  @include media_min_break(lg) {
-    color: $black;
-    line-height: 56px;
-  }
+  color: $black;
+  line-height: 3.5rem;
 }
 
 // Needed for the cart icon to not push the Logo
 .clear-both {
   clear: both;
-}
-
-.resellers img {
-  max-width: 714px;
 }
