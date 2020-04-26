@@ -12,11 +12,11 @@
     content: '';
     border-radius: 4px;
     background-color: $white;
-    bottom: 4px;
+    bottom: 0.45rem;
     height: 10px;
-    left: -5%;
+    left: -5px;
     position: absolute;
-    width: 110%;
+    width: calc(100% + 10px);
     z-index: -1;
   }
 }

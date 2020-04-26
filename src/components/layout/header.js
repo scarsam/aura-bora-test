@@ -9,13 +9,13 @@ const Header = () => (
       <div className="container padding-top-none padding-bottom-none">
         <nav className="padding-top-50px">
           <label className="navicon d-block" htmlFor="menu-btn" />
-          <ul className="menu margin-none padding-none padding-bottom-50px">
+          <ul className="menu margin-none padding-none padding-bottom-md-50px padding-left-5px">
             <li className="margin-none margin-top-30px margin-bottom-20px">
               <Link className="primary-link text-40px" to="/">
                 Shop
               </Link>
             </li>
-            <li className="margin-top-20px margin-bottom-20px padding-bottom-50px">
+            <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
               <Link className="primary-link text-40px" to="/resellers">
                 Resellers
               </Link>
