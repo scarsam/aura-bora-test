@@ -30,13 +30,13 @@ const Subscribe = () => {
       <div className="input-wrapper">
         <input
           placeholder="Fun text"
-          className="d-block margin-bottom-35px margin-top-15px padding-top-10px padding-bottom-10px padding-left-10px padding-right-10px"
+          className="d-block margin-bottom-30px padding-top-10px padding-bottom-10px padding-left-10px padding-right-10px"
           id="email"
           name="email"
           type="text"
           onChange={handleEmailChange}
         />
-        <button className="primary-btn text-20px" type="submit">
+        <button className="primary-btn text-22px" type="submit">
           Sign up
         </button>
       </div>

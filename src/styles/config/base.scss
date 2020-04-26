@@ -26,18 +26,11 @@ ul {
   margin-left: 0;
 }
 
-footer a:not(:first-child) {
-  margin-left: 65px;
-}
-
 footer {
-  @include media_max_break(md) {
-    background-image: url('../images/bird-steps.svg');
+  @include media_max_break(sm) {
+    background-image: url('../images/bird-footer.svg');
     background-repeat: no-repeat;
-    background-size: 150px;
-    background-position: top 10% right 10%;
-    a:not(:first-child) {
-      margin-left: 0px;
-    }
+    background-size: 125px;
+    background-position: top 5% right 5%;
   }
 }

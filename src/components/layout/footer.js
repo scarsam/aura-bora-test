@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Subscribe from '../subscribe'
+import bird from 'images/bird-footer.svg'
 
 const Footer = () => {
   return (
@@ -8,30 +9,25 @@ const Footer = () => {
       <section>
         <div className="container padding-top-40px padding-bottom-20px">
           <div className="row">
-            <div className="col-12 d-flex flex-column flex-md-row align-items-start padding-top-20px padding-top-md-none padding-bottom-20px">
-              <Link
-                className="primary-link text-26px margin-bottom-25px margin-bottom-md-none"
-                to="/"
-              >
+            <div className="col-sm-3 d-flex flex-column align-items-start text-20px">
+              <Link className="primary-link margin-bottom-25px" to="/">
                 Shop
               </Link>
-              <Link className="primary-link text-26px" to="/resellers">
+              <Link className="primary-link" to="/resellers">
                 Reseller
               </Link>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <strong className="padding-top-20px padding-bottom-5px text-26px d-block">
+            <div className="col-sm-6 col-md-5 offset-md-1 text-center-sm padding-top-30px padding-top-sm-none text-20px">
+              <strong className="padding-bottom-10px d-block">
                 Let's be rosebuds
               </strong>
-              <p className="text-24px">
-                Join our newsletter for work tips, featured interviews and deals
-                on our latest products.
+              <p className="margin-bottom-25px">
+                We’ll either send you discounts or pictures of baby sloths.
               </p>
-            </div>
-            <div className="col-md-6 offset-lg-1 col-lg-5">
               <Subscribe />
+            </div>
+            <div className="col-sm-3 justify-content-center d-none d-sm-flex">
+              <img src={bird} alt="Bird walking" />
             </div>
           </div>
         </div>
