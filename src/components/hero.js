@@ -17,7 +17,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section className="bg-lightYellow">
+      <section className="bg-lightYellow home-hero">
         <div className="container padding-top-none padding-bottom-none">
           <div className="row">
             <div className="col-md-10 offset-md-1">

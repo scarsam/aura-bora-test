@@ -27,17 +27,10 @@ const Subscribe = () => {
       className="d-flex flex-column flex-md-row subscribe"
       onSubmit={handleSubmit}
     >
-      <label
-        className="padding-right-20px padding-top-20px text-24px"
-        htmlFor="email"
-      >
-        <strong>Email</strong>
-      </label>
       <div className="input-wrapper">
         <input
-          className="d-block margin-bottom-30px margin-top-15px padding-top-10px padding-bottom-10px padding-left-10px padding-right-10px"
+          className="d-block margin-bottom-35px margin-top-15px padding-top-10px padding-bottom-10px padding-left-10px padding-right-10px"
           id="email"
-          placeholder="Email address"
           name="email"
           type="text"
           onChange={handleEmailChange}

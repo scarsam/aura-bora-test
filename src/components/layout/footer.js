@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-yellow">
       <section>
-        <div className="container padding-top-50px padding-bottom-20px">
+        <div className="container padding-top-40px padding-bottom-20px">
           <div className="row">
             <div className="col-12 d-flex flex-column flex-md-row align-items-start padding-top-20px padding-top-md-none padding-bottom-20px">
               <Link
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="row">
             <div className="col-md-6">
-              <strong className="padding-top-20px text-26px d-block">
+              <strong className="padding-top-20px padding-bottom-5px text-26px d-block">
                 Let's be rosebuds
               </strong>
               <p className="text-24px">
