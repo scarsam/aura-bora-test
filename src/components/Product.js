@@ -21,11 +21,11 @@ const Product = ({ name, price, description, image, id, inStock }) => {
             <div>
               {description && (
                 <button
-                  className="product-info-icon absolute z-index-2 margin-top-25px margin-top-lg-40px primary-btn bg-white"
+                  className="product-info-icon absolute z-index-2 margin-top-25px margin-top-lg-60px primary-btn bg-white d-flex justify-content-center padding-none"
                   onClick={() => setShowInfoPane(true)}
                 >
                   <strong>
-                    <h2 className="m-0">i</h2>
+                    <h2 className="m-0 text-28px">i</h2>
                   </strong>
                 </button>
               )}
@@ -34,15 +34,15 @@ const Product = ({ name, price, description, image, id, inStock }) => {
               </div>
             </div>
 
-            <div className="text-center bg-white product-text">
-              <h2 className="m-0 padding-top-25px padding-bottom-10px padding-top-lg-35px padding-bottom-lg-25px text-28px">
+            <div className="text-center bg-white product-text c-black">
+              <h2 className="m-0 padding-top-25px padding-bottom-20px padding-top-lg-35px padding-bottom-lg-20px text-28px line-height-1">
                 {name}
               </h2>
-              <p className="m-0 padding-bottom-20px padding-bottom-lg-25px text-22px font-barlow">
+              <p className="m-0 padding-bottom-20px padding-bottom-lg-30px text-24px font-barlow line-height-1">
                 12x for {formatPrice(price)}
               </p>
               <button
-                className="primary-btn bg-white padding-top-15px padding-bottom-15px padding-top-lg-20px padding-bottom-lg-20px padding-left-lg-30px padding-right-lg-30px text-22px add-product-btn"
+                className="primary-btn bg-white padding-top-15px padding-bottom-15px text-22px add-product-btn"
                 onClick={() =>
                   dispatch({
                     type: 'add',
@@ -50,50 +50,50 @@ const Product = ({ name, price, description, image, id, inStock }) => {
                   })
                 }
               >
-                <span className="d-lg-none">Add to bag</span>
-                <span className="d-none d-lg-block"> Add to bouquet</span>
+                <span> Add to bouquet</span>
               </button>
             </div>
           </>
         ) : !isInStock ? (
-          <div className="bg-white text-center out-of-stock">
-            <h2 className="text-40px">Out of Stock</h2>
+          <div
+            className={`bg-${colorRef} text-center out-of-stock padding-top-60px c-white text-28px`}
+          >
+            <p className="padding-top-20px margin-none">{name}</p>
+            <p className="margin-none padding-bottom-50px">is out of stock</p>
             <img alt="" src={NoStock} className="product-image margin-none" />
-            <p className="margin-none padding-top-60px text-28px font-barlow">
+            <p className="margin-none padding-top-35px padding-top-lg-50px text-24px font-barlow">
               We´re working on it.
             </p>
-            <p className="text-28px font-barlow">Check back again soon</p>
+            <p className="text-24px font-barlow">Check back again soon</p>
           </div>
         ) : (
-          <div
-            className={`product-info font-barlow c-white d-flex align-items-center bg-${colorRef}-i`}
-          >
-            <div>
-              <div
-                className="info-close-icon absolute margin-top-30px margin-top-lg-45px"
-                onClick={() => setShowInfoPane(false)}
-              />
+          <div className={`product-info font-barlow c-white bg-${colorRef}-i`}>
+            <div
+              className="info-close-icon absolute"
+              onClick={() => setShowInfoPane(false)}
+            />
 
-              <h2 className="pb-3 font-barlow text-40px">
-                {name &&
-                  name
-                    .split(' ')
-                    .map((word, index) => <div key={index}>{word}</div>)}
-              </h2>
-              <p className="text-32px margin-none">
+            <h2 className="margin-bottom-35px margin-bottom-lg-50px font-barlow text-36px line-height-36px">
+              {name &&
+                name
+                  .split(' ')
+                  .map((word, index) => <div key={index}>{word}</div>)}
+            </h2>
+            <div className="text-24px line-height-32px">
+              <p className="margin-none">
                 <strong>Ingredients</strong>
               </p>
               {description &&
                 description.split(',').map((item, index) => (
-                  <p className="margin-none text-32px" key={index}>
+                  <p className="margin-none" key={index}>
                     {item}
                   </p>
                 ))}
-              <div className="padding-top-30px text-32px">
-                <p className="margin-none">No calories</p>
-                <p className="margin-none">No sugar</p>
-                <p className="margin-none">No sodium</p>
-              </div>
+            </div>
+            <div className="padding-top-30px text-24px line-height-32px">
+              <p className="margin-none">0 calories</p>
+              <p className="margin-none">0 sugar</p>
+              <p className="margin-none">0 sodium</p>
             </div>
           </div>
         )}

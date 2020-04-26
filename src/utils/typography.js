@@ -37,6 +37,9 @@ const typography = new Typography({
     '.text-32px': {
       ...adjustFontSizeTo('32px'),
     },
+    '.text-36px': {
+      ...adjustFontSizeTo('36px'),
+    },
     '.text-38px': {
       ...adjustFontSizeTo('38px'),
     },

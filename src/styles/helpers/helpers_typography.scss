@@ -26,6 +26,15 @@
   font-style: normal;
 }
 
+.line-height-32px {
+  line-height: 2rem !important;
+}
+.line-height-36px {
+  line-height: 2.25rem !important;
+}
+.line-height-1 {
+  line-height: 1;
+}
 @include media_min_break(sm) {
   .text-left-sm {
     text-align: left !important;
