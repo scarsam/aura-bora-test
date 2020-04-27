@@ -56,15 +56,19 @@ const Product = ({ name, price, description, image, id, inStock }) => {
           </>
         ) : !isInStock ? (
           <div
-            className={`bg-${colorRef} text-center out-of-stock padding-top-60px c-white text-28px`}
+            className={`bg-${colorRef}-i text-center out-of-stock padding-top-60px c-white text-28px`}
           >
-            <p className="padding-top-20px margin-none">{name}</p>
-            <p className="margin-none padding-bottom-50px">is out of stock</p>
+            <h2 className="padding-top-20px padding-bottom-none margin-none text-30px">
+              {name}
+            </h2>
+            <h2 className="margin-none padding-none padding-bottom-50px line-height-40px text-30px">
+              is out of stock
+            </h2>
             <img alt="" src={NoStock} className="product-image margin-none" />
-            <p className="margin-none padding-top-35px padding-top-lg-50px text-24px font-barlow">
+            <p className="margin-none padding-top-35px padding-top-lg-50px text-30px font-barlow">
               We´re working on it.
             </p>
-            <p className="text-24px font-barlow">Check back again soon</p>
+            <p className="text-30px font-barlow">Check back again soon</p>
           </div>
         ) : (
           <div className={`product-info font-barlow c-white bg-${colorRef}-i`}>
@@ -73,7 +77,7 @@ const Product = ({ name, price, description, image, id, inStock }) => {
               onClick={() => setShowInfoPane(false)}
             />
 
-            <h2 className="margin-bottom-35px margin-bottom-lg-50px font-barlow text-36px line-height-36px">
+            <h2 className="margin-bottom-35px margin-bottom-lg-50px text-36px line-height-36px">
               {name &&
                 name
                   .split(' ')

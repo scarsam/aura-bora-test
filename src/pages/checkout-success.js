@@ -11,6 +11,7 @@ const CheckoutSuccess = () => {
   const [cartItems, setCartItems] = useState(null)
   const [error, setError] = useState(null)
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
+  const [isLoading, setisLoading] = useState(true)
 
   let sessionId = useQueryParam('session_id', null)
 
@@ -28,7 +29,7 @@ const CheckoutSuccess = () => {
         dispatch({
           type: 'reset',
         })
-        setCheckoutSuccess(false)
+        setCheckoutSuccess(true)
         setCartItems(session.display_items)
       }
     } catch (error) {
@@ -37,6 +38,8 @@ const CheckoutSuccess = () => {
       please contact our customer support`
 
       setError(error)
+    } finally {
+      setisLoading(false)
     }
   }
 
@@ -44,38 +47,40 @@ const CheckoutSuccess = () => {
     <Layout>
       <SEO title="Home" />
       <Hero />
-      <div className="container absolute checkout-success d-flex justify-content-center">
-        <div className="bg-lightYellow padding-right-60px padding-left-60px padding-bottom-60px padding-top-60px">
-          {error ? (
-            <>
-              <h2 className="text-center">Ooooops!</h2>
-              <p>{error.message}</p>
-            </>
-          ) : checkoutSuccess ? (
-            <>
-              <h2 className="text-center">THANK YOU FOR YOUR PURCHASE</h2>
-              {cartItems &&
-                cartItems.map((item, index) => (
-                  <div key={index} className="d-flex justify-content-between">
-                    <span>{item.sku.attributes.name}</span>
-                    <span>x{item.quantity}</span>
-                  </div>
-                ))}
-              <p className="padding-top-20px">
-                Total: {cartItems && cartTotalPrice(cartItems)}
-              </p>{' '}
-            </>
-          ) : (
-            <>
-              <h2 className="text-center">Ooooops!</h2>
-              <p>
-                Something went wrong when confirming your purchase. Please try
-                again
-              </p>
-            </>
-          )}
+      {!isLoading ? (
+        <div className="container absolute checkout-success d-flex justify-content-center">
+          <div className="bg-lightYellow padding-right-60px padding-left-60px padding-bottom-60px padding-top-60px">
+            {error ? (
+              <>
+                <h2 className="text-center">Ooooops!</h2>
+                <p>{error.message}</p>
+              </>
+            ) : checkoutSuccess ? (
+              <>
+                <h2 className="text-center">THANK YOU FOR YOUR PURCHASE</h2>
+                {cartItems &&
+                  cartItems.map((item, index) => (
+                    <div key={index} className="d-flex justify-content-between">
+                      <span>{item.sku.attributes.name}</span>
+                      <span>x{item.quantity}</span>
+                    </div>
+                  ))}
+                <p className="padding-top-20px">
+                  Total: {cartItems && cartTotalPrice(cartItems)}
+                </p>{' '}
+              </>
+            ) : (
+              <>
+                <h2 className="text-center">Ooooops!</h2>
+                <p>
+                  Something went wrong when confirming your purchase. Please try
+                  again
+                </p>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      ) : null}
     </Layout>
   )
 }

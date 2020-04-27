@@ -88,11 +88,9 @@ const Cart = () => {
           <div className="cart-item-container font-medium">
             <div
               onClick={() => setShowMenu(false)}
-              className="close-icon d-block margin-bottom-60px"
+              className="close-icon d-block margin-bottom-60px padding-top-50px"
             />
-            <h2 className="text-40px font-barlow margin-bottom-none">
-              Order Summary
-            </h2>
+            <h2 className="text-40px margin-bottom-20px">Order Summary</h2>
             {items &&
               items.map((product, index) => (
                 <div key={index} className="padding-top-40px text-26px">
@@ -175,6 +173,7 @@ const stripePromise = loadStripe('pk_test_WemDrwL9FdctlL3poeIB3Ilm00b57CDtd8')
 
 const redirectToCheckout = async (event, cart) => {
   event.preventDefault()
+  const env = process.env.NODE_ENV
   const stripe = await stripePromise
   const items =
     cart &&
@@ -190,14 +189,14 @@ const redirectToCheckout = async (event, cart) => {
       // },
       items,
       successUrl: `${
-        process.env.development
-          ? 'localhost:8000'
+        env === 'development'
+          ? 'http://localhost:8000'
           : 'https://gallant-khorana-e2000b.netlify.app'
       }/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
 
       cancelUrl: `${
-        process.env.development
-          ? 'localhost:8000'
+        env === 'development'
+          ? 'http://localhost:8000'
           : 'https://gallant-khorana-e2000b.netlify.app'
       }`,
     })

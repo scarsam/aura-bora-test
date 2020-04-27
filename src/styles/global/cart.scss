@@ -135,12 +135,11 @@
 }
 
 .close-icon {
-  @include burger-icon(38px);
-  @include close-icon(38px);
+  margin-left: -10px;
+  @include burger-icon(45px);
+  @include close-icon(45px);
 }
 
-@media (max-width: 500px) {
-  .overflow-hidden {
-    overflow: hidden;
-  }
+.overflow-hidden {
+  overflow: hidden;
 }
