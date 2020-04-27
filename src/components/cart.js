@@ -87,7 +87,10 @@ const Cart = () => {
         >
           <div className="cart-item-container font-medium">
             <div
+              role="button"
+              tabIndex={0}
               onClick={() => setShowMenu(false)}
+              onKeyDown={() => setShowMenu(false)}
               className="close-icon d-block margin-bottom-60px padding-top-50px"
             />
             <h2 className="text-40px margin-bottom-20px">Order Summary</h2>

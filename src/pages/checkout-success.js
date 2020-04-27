@@ -16,32 +16,31 @@ const CheckoutSuccess = () => {
   let sessionId = useQueryParam('session_id', null)
 
   useEffect(() => {
-    sessionId && RetrieveCheckoutDetails(sessionId)
-  }, [sessionId])
+    const RetrieveCheckoutDetails = async id => {
+      try {
+        const session = await RetrieveSession(id)
+        const payment = await RetrievePayment(session.payment_intent)
 
-  const RetrieveCheckoutDetails = async id => {
-    try {
-      const session = await RetrieveSession(id)
-      const payment = await RetrievePayment(session.payment_intent)
+        if (payment.status === 'succeeded') {
+          sessionStorage.clear()
+          dispatch({
+            type: 'reset',
+          })
+          setCheckoutSuccess(true)
+          setCartItems(session.display_items)
+        }
+      } catch (error) {
+        error.message = `Something went wrong when retrieving your order summary. Please check
+        your mail inbox for a order confirmation. If you have not received an email confirming your purchase,
+        please contact our customer support`
 
-      if (payment.status === 'succeeded') {
-        sessionStorage.clear()
-        dispatch({
-          type: 'reset',
-        })
-        setCheckoutSuccess(true)
-        setCartItems(session.display_items)
+        setError(error)
+      } finally {
+        setisLoading(false)
       }
-    } catch (error) {
-      error.message = `Something went wrong when retrieving your order summary. Please check 
-      your mail inbox for a order confirmation. If you have not received an email confirming your purchase, 
-      please contact our customer support`
-
-      setError(error)
-    } finally {
-      setisLoading(false)
     }
-  }
+    sessionId && RetrieveCheckoutDetails(sessionId)
+  }, [sessionId, dispatch])
 
   return (
     <Layout>

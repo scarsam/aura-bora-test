@@ -15,7 +15,10 @@ const ProductInfo = ({
   >
     <div
       className="info-close-icon absolute"
+      role="button"
+      tabIndex={0}
       onClick={() => setShowInfoPane(false)}
+      onKeyDown={() => setShowInfoPane(false)}
     />
 
     <h2 className="margin-bottom-35px margin-bottom-lg-50px text-36px line-height-36px">
