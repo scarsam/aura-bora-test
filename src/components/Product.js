@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import Image from 'components/image'
-import { formatPrice } from '../helpers/numberHelpers'
 import PropTypes from 'prop-types'
 import { Context } from 'store'
-import NoStock from '../images/products/out_of_stock.svg'
+import { formatPrice } from '../helpers/numberHelpers'
+import ProductOutOfStock from './ProductOutOfStock'
+import ProductInfo from './ProductInfo'
 
 const Product = ({
   name,
@@ -24,7 +25,7 @@ const Product = ({
   return (
     <div className="col-12 col-md-6 padding-bottom-20px">
       <div className="product-wrapper relative font-space-mono">
-        {!showInfoPane && isInStock ? (
+        {isInStock ? (
           <>
             <div>
               {description && (
@@ -61,53 +62,16 @@ const Product = ({
                 <span> Add to bouquet</span>
               </button>
             </div>
-          </>
-        ) : !isInStock ? (
-          <div
-            className={`bg-${colorRef}-i text-center out-of-stock padding-top-60px c-white text-28px`}
-          >
-            <h2 className="padding-top-20px padding-bottom-none margin-none text-30px">
-              {name}
-            </h2>
-            <h2 className="margin-none padding-none padding-bottom-50px line-height-40px text-30px">
-              is out of stock
-            </h2>
-            <img alt="" src={NoStock} className="product-image margin-none" />
-            <p className="margin-none padding-top-35px padding-top-lg-50px text-30px font-barlow">
-              We´re working on it.
-            </p>
-            <p className="text-30px font-barlow">Check back again soon</p>
-          </div>
-        ) : (
-          <div className={`product-info font-barlow c-white bg-${colorRef}-i`}>
-            <div
-              className="info-close-icon absolute"
-              onClick={() => setShowInfoPane(false)}
+            <ProductInfo
+              showInfoPane={showInfoPane}
+              colorRef={colorRef}
+              setShowInfoPane={setShowInfoPane}
+              name={name}
+              description={description}
             />
-
-            <h2 className="margin-bottom-35px margin-bottom-lg-50px text-36px line-height-36px">
-              {name &&
-                name
-                  .split(' ')
-                  .map((word, index) => <div key={index}>{word}</div>)}
-            </h2>
-            <div className="text-24px line-height-32px">
-              <p className="margin-none">
-                <strong>Ingredients</strong>
-              </p>
-              {description &&
-                description.split(',').map((item, index) => (
-                  <p className="margin-none" key={index}>
-                    {item}
-                  </p>
-                ))}
-            </div>
-            <div className="padding-top-30px text-24px line-height-32px">
-              <p className="margin-none">0 calories</p>
-              <p className="margin-none">0 sugar</p>
-              <p className="margin-none">0 sodium</p>
-            </div>
-          </div>
+          </>
+        ) : (
+          <ProductOutOfStock colorRef={colorRef} name={name} />
         )}
       </div>
     </div>
@@ -122,6 +86,6 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   description: PropTypes.string,
-  showInfoPane: PropTypes.func.isRequired,
+  showInfoPane: PropTypes.bool.isRequired,
   setShowInfoPane: PropTypes.func.isRequired,
 }

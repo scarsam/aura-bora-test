@@ -307,6 +307,7 @@ const Resellers = () => {
                 {images.map((image, index) => (
                   <img
                     key={index}
+                    alt={image.alt}
                     src={image.url}
                     className={`absolute z-index-1 image-${index}`}
                   />
