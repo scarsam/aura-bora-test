@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Subscribe from '../subscribe'
-import bird from 'images/bird-footer.svg'
 
 const Footer = () => {
   return (
@@ -17,17 +16,16 @@ const Footer = () => {
                 Reseller
               </Link>
             </div>
-            <div className="col-sm-6 col-md-5 offset-md-1 text-center-sm padding-top-30px padding-top-sm-none text-20px">
-              <strong className="padding-bottom-10px d-block">
+            <div className="col-sm-9 col-md-5 col-lg-4 offset-lg-1 padding-top-30px padding-top-sm-none">
+              <strong className="padding-bottom-10px d-block text-20px">
                 Let's be rosebuds
               </strong>
-              <p className="margin-bottom-25px">
-                We’ll either send you discounts or pictures of baby sloths.
+              <p className="margin-bottom-25px text-18px">
+                We’ll either send you discounts or pictures of baby sloths.
               </p>
-              <Subscribe />
             </div>
-            <div className="col-sm-3 justify-content-center d-none d-sm-flex">
-              <img src={bird} alt="Bird walking" />
+            <div className="col-sm-9 offset-sm-3 col-md-4 offset-md-0">
+              <Subscribe />
             </div>
           </div>
         </div>

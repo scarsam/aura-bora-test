@@ -16,6 +16,9 @@ const typography = new Typography({
   headerFontFamily: ['Space Mono', 'monospace'],
   bodyFontFamily: ['Space Mono', 'monospace'],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    '.text-18px': {
+      ...adjustFontSizeTo('18px'),
+    },
     '.text-20px': {
       ...adjustFontSizeTo('20px'),
     },

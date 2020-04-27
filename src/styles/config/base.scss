@@ -26,12 +26,17 @@ ul {
   margin-left: 0;
 }
 
-footer {
-  @include media_max_break(sm) {
-    background-image: url('../images/bird-footer.svg');
-    background-repeat: no-repeat;
-    background-size: 125px;
-    background-position: top 5% right 5%;
+footer .container {
+  background-image: url('../images/bird-footer-left.svg');
+  background-repeat: no-repeat;
+  background-size: 125px;
+  background-position: bottom 5% right 5%;
+  @include media_min_break(sm) {
+    background-image: url('../images/bird-footer-right.svg');
+    background-position: bottom 5% left;
+  }
+  @include media_min_break(md) {
+    background-position: bottom 5% left 15%;
   }
 }
 
