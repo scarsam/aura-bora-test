@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Product from './Product'
 import { graphql, useStaticQuery } from 'gatsby'
 import ShopImage from '../images/shop-bg.svg'
 
 export const ProductGrid = () => {
+  const [showInfoPane, setShowInfoPane] = useState(null)
   const data = useProducts()
 
   const items =
@@ -34,6 +35,8 @@ export const ProductGrid = () => {
                 price={item.price}
                 image={item.localFiles[0].name}
                 inStock={item.product.metadata.isInStock}
+                showInfoPane={showInfoPane === item.id ? true : false}
+                setShowInfoPane={setShowInfoPane}
               />
             ))}
         </div>

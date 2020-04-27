@@ -1,17 +1,8 @@
 .product-wrapper {
-  max-height: 730px;
-  max-width: 470px;
-
-  .gatsby-image-wrapper {
-    max-height: 470px;
-    max-width: 470px;
-  }
-  .product-text {
-    height: 260px;
-  }
+  height: 100%;
+  width: 100%;
   .add-product-btn {
     height: 80px;
-    width: 256px;
     border-radius: 200px;
   }
 }
@@ -20,24 +11,29 @@
   top: 0;
   right: 0;
   cursor: pointer;
-  margin-right: 62px;
+  margin-right: 12%;
+  margin-top: 12%;
   height: 44px;
   width: 44px;
 }
 .product-info {
-  height: 730px;
-  padding: 160px 140px 0 60px;
+  height: 100%;
+  padding-top: 30%;
+  padding-bottom: 20%;
+  padding-left: 10%;
 }
 .info-close-icon {
-  margin-top: 65px;
-  margin-right: 50px;
+  margin-right: 12%;
+  margin-top: 12%;
   top: 0;
   right: 0;
   @include burger-icon(38px);
   @include close-icon(38px);
+  width: 38px;
 }
 .out-of-stock {
-  height: 730px;
+  min-height: 530px;
+  height: 100%;
   h2 {
     padding-top: 80px;
     padding-bottom: 40px;
@@ -46,6 +42,8 @@
 
 @include media_max_break(md) {
   .product-wrapper {
+    min-height: 547px;
+
     .gatsby-image-wrapper {
       img {
         object-fit: contain !important;
@@ -56,28 +54,18 @@
 }
 
 @include media_max_break(lg) {
+  .product-wrapper .gatsby-image-wrapper {
+    max-height: 350px;
+  }
   .product-wrapper {
-    max-width: 520px;
-    .gatsby-image-wrapper {
-      max-height: 348px;
-      max-width: 520px;
-    }
-    .product-text {
-      height: 185px;
-    }
-    .product-info {
-      padding: 115px 105px 0 38px !important;
-      height: 533px;
-      padding: 120px 20px;
-    }
     .add-product-btn {
       height: 57px;
-      width: 182px;
     }
     .product-info-icon {
-      margin-right: 30px;
       height: 32px;
       width: 32px;
+      margin-right: 5%;
+      margin-top: 5%;
       box-shadow: 3px 2px 0px 0px black;
     }
   }
@@ -85,13 +73,11 @@
   .info-close-icon {
     @include burger-icon(28px);
     @include close-icon(28px);
-    margin-right: 8px;
-    margin-top: 30px;
+    margin-right: 5%;
+    margin-top: 5%;
+    width: 28px;
   }
-  .out-of-stock {
-    height: 533px;
-    img {
-      max-height: 200px;
-    }
+  .out-of-stock img {
+    max-height: 200px;
   }
 }

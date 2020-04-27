@@ -5,7 +5,7 @@ html {
   font-size: 0.7rem;
   transition: font-size 200ms ease-in-out;
 
-  @media (min-width: 993px) {
+  @include media_min_break(lg) {
     font-size: 1rem;
   }
 }

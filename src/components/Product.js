@@ -5,8 +5,16 @@ import PropTypes from 'prop-types'
 import { Context } from 'store'
 import NoStock from '../images/products/out_of_stock.svg'
 
-const Product = ({ name, price, description, image, id, inStock }) => {
-  const [showInfoPane, setShowInfoPane] = useState(false)
+const Product = ({
+  name,
+  price,
+  description,
+  image,
+  id,
+  inStock,
+  showInfoPane,
+  setShowInfoPane,
+}) => {
   const { dispatch } = useContext(Context)
 
   const colorRef = name.replace(' ', '_').toLowerCase()
@@ -21,8 +29,8 @@ const Product = ({ name, price, description, image, id, inStock }) => {
             <div>
               {description && (
                 <button
-                  className="product-info-icon absolute z-index-2 margin-top-25px margin-top-lg-60px primary-btn bg-white d-flex justify-content-center padding-none"
-                  onClick={() => setShowInfoPane(true)}
+                  className="product-info-icon absolute z-index-2 primary-btn bg-white d-flex justify-content-center padding-none"
+                  onClick={() => setShowInfoPane(id)}
                 >
                   <strong>
                     <h2 className="m-0 text-28px">i</h2>
@@ -42,7 +50,7 @@ const Product = ({ name, price, description, image, id, inStock }) => {
                 12x for {formatPrice(price)}
               </p>
               <button
-                className="primary-btn bg-white padding-top-15px padding-bottom-15px text-22px add-product-btn"
+                className="primary-btn bg-white padding-top-15px padding-bottom-15px padding-left-lg-30px padding-right-lg-30px margin-bottom-40px text-22px add-product-btn"
                 onClick={() =>
                   dispatch({
                     type: 'add',
@@ -114,4 +122,6 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   description: PropTypes.string,
+  showInfoPane: PropTypes.func.isRequired,
+  setShowInfoPane: PropTypes.func.isRequired,
 }
