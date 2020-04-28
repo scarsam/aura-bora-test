@@ -73,19 +73,21 @@
       height: 57px;
     }
     .product-info-icon {
+      padding: 3px 4px;
       height: 32px;
       width: 32px;
-      margin-right: 5%;
-      margin-top: 5%;
-      box-shadow: 3px 2px 0px 0px black;
+      margin-right: 10%;
+      margin-top: 10%;
+      box-shadow: 2px 2px 1px 0px black;
     }
   }
 
   .info-close-icon {
+    font-size: 1.3rem;
     @include burger-icon(28px);
     @include close-icon(28px);
-    margin-right: 5%;
-    margin-top: 5%;
+    margin-right: 10%;
+    margin-top: 10%;
     width: 28px;
   }
   .out-of-stock img {

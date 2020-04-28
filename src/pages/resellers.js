@@ -10,6 +10,59 @@ import strawberry from 'images/resellers/strawberry.svg'
 import watermelonKale from 'images/resellers/watermelon-kale.svg'
 import watermelon from 'images/resellers/watermelon.svg'
 
+const Resellers = () => {
+  return (
+    <Layout>
+      <section className="resellers">
+        <ul className="container padding-top-50px">
+          <ul className="row">
+            <ul className="col-12">
+              <div className="text-center padding-bottom-lg-50px hero">
+                <img
+                  alt="Rabbit jumping at the text Resellers"
+                  src={heroImage}
+                />
+              </div>
+              <ul className="text-center relative">
+                {resellers.map((reseller, index) => (
+                  <div
+                    key={reseller.state}
+                    className={`${
+                      resellers.length - 1 === index
+                        ? 'padding-bottom-none'
+                        : 'padding-bottom-55px'
+                    } relative z-index-2`}
+                  >
+                    <h2 className="text-30px">{reseller.state}</h2>
+                    {reseller.stores.map(store => (
+                      <address key={store.name} className="font-style-normal">
+                        <p className="text-20px">
+                          <strong className="d-block">{store.name}</strong>
+                          {store.address}
+                        </p>
+                      </address>
+                    ))}
+                  </div>
+                ))}
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    alt={image.alt}
+                    src={image.url}
+                    className={`absolute z-index-1 image-${index}`}
+                  />
+                ))}
+              </ul>
+            </ul>
+          </ul>
+        </ul>
+      </section>
+    </Layout>
+  )
+}
+
+export default Resellers
+
 const images = [
   {
     url: animal,
@@ -269,56 +322,3 @@ const resellers = [
     ],
   },
 ]
-
-const Resellers = () => {
-  return (
-    <Layout>
-      <section className="resellers">
-        <ul className="container">
-          <ul className="row">
-            <ul className="col-12">
-              <div className="text-center padding-bottom-lg-50px hero">
-                <img
-                  alt="Rabbit jumping at the text Resellers"
-                  src={heroImage}
-                />
-              </div>
-              <ul className="text-center relative">
-                {resellers.map((reseller, index) => (
-                  <div
-                    key={reseller.state}
-                    className={`${
-                      resellers.length - 1 === index
-                        ? 'padding-bottom-none'
-                        : 'padding-bottom-55px'
-                    } relative z-index-2`}
-                  >
-                    <h2 className="text-30px">{reseller.state}</h2>
-                    {reseller.stores.map(store => (
-                      <address key={store.name} className="font-style-normal">
-                        <p className="text-20px">
-                          <strong className="d-block">{store.name}</strong>
-                          {store.address}
-                        </p>
-                      </address>
-                    ))}
-                  </div>
-                ))}
-                {images.map((image, index) => (
-                  <img
-                    key={index}
-                    alt={image.alt}
-                    src={image.url}
-                    className={`absolute z-index-1 image-${index}`}
-                  />
-                ))}
-              </ul>
-            </ul>
-          </ul>
-        </ul>
-      </section>
-    </Layout>
-  )
-}
-
-export default Resellers

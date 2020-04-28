@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 const Social = () => {
   return (
     <div className="container padding-top-10px">
-      <div className="social ">
+      <div className="social" id="social">
         <div className="social-header ">
           <img className="margin-none" src={SocialImage} alt="" />
         </div>

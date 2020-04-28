@@ -1,10 +1,16 @@
 import React from 'react'
 import auraBoraLogo from 'images/hero/aura-bora.svg'
+import eye from 'images/eye-open.svg'
 
 const Hero = () => {
   return (
     <>
       <section className="bg-lavender top-section hero-background">
+        {/* <div className="eye relative">
+          <div className="shut">
+            <span></span>
+          </div>
+        </div> */}
         <div className="container padding-top-15px">
           <div className="row padding-bottom-50px clear-both">
             <div className="col-12 padding-bottom-50px text-center">

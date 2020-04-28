@@ -33,8 +33,8 @@ const Product = ({
                   className="product-info-icon absolute z-index-2 primary-btn bg-white d-flex justify-content-center padding-none"
                   onClick={() => setShowInfoPane(id)}
                 >
-                  <strong>
-                    <h2 className="m-0 text-28px">i</h2>
+                  <strong className="d-flex align-items-center">
+                    <p className="margin-none text-24px line-height-1">i</p>
                   </strong>
                 </button>
               )}

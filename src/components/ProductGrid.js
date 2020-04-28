@@ -19,7 +19,7 @@ export const ProductGrid = () => {
 
   return (
     <section>
-      <div className="container padding-top-30px">
+      <div className="container padding-top-30px" id="shop">
         <div className="padding-bottom-50px padding-bottom-lg-45px text-center">
           <img className="margin-none" src={ShopImage} alt="" />
         </div>

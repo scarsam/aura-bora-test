@@ -6,11 +6,14 @@ const Footer = () => {
   return (
     <footer className="bg-yellow">
       <section>
-        <div className="container padding-top-40px padding-bottom-20px">
+        <div className="container padding-top-40px padding-bottom-60px">
           <div className="row">
             <div className="col-sm-3 d-flex flex-column align-items-start text-24px">
-              <Link className="primary-link margin-bottom-15px" to="/">
+              <Link className="primary-link margin-bottom-15px" to="/#shop">
                 Shop
+              </Link>
+              <Link className="primary-link margin-bottom-15px" to="/#social">
+                Social
               </Link>
               <Link className="primary-link" to="/resellers">
                 Reseller
@@ -21,7 +24,8 @@ const Footer = () => {
                 Let's be rosebuds
               </strong>
               <p className="margin-bottom-25px text-20px font-barlow">
-                We’ll either send you discounts or pictures of baby sloths.
+                We’ll either send you discounts{' '}
+                <span className="d-block">or pictures of baby sloths.</span>
               </p>
             </div>
             <div className="col-sm-9 offset-sm-3 col-md-4 offset-md-0">
