@@ -10,6 +10,7 @@ import '@stripe/stripe-js'
 const IndexPage = () => {
   useEffect(() => {
     window.addEventListener('keydown', handleFirstTab)
+    document.body.setAttribute('ontouchstart', '')
     return () => {
       window.removeEventListener('keydown', handleFirstTab)
     }
