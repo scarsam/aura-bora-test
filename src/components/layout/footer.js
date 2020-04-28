@@ -20,7 +20,7 @@ const Footer = () => {
               <strong className="padding-bottom-10px d-block text-20px">
                 Let's be rosebuds
               </strong>
-              <p className="margin-bottom-25px text-18px">
+              <p className="margin-bottom-25px text-18px font-barlow">
                 We’ll either send you discounts or pictures of baby sloths.
               </p>
             </div>

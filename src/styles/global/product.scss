@@ -49,10 +49,6 @@
 .out-of-stock {
   min-height: 532px;
   height: 100%;
-  h2 {
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
 }
 
 @include media_max_break(md) {

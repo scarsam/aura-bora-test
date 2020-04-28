@@ -50,8 +50,8 @@
 }
 
 .cart-menu {
-  border: 3px $white solid;
   height: 100%;
+  border: 3px $white solid;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 30px;
@@ -61,12 +61,11 @@
   width: 100%;
   @media (min-width: 500px) {
     height: unset;
-    min-height: 675px;
     overflow: unset;
-    padding: 60px;
+    padding: 50px 40px;
     position: absolute;
     top: 120px;
-    width: 460px;
+    width: 440px;
     margin-bottom: 30px;
     .close-icon {
       margin-left: auto;
@@ -84,9 +83,6 @@
       max-width: 546px;
     }
   }
-  @include media_min_break(sm) {
-    width: 540px;
-  }
 
   &:before {
     top: -24px;
@@ -98,10 +94,13 @@
   }
   &.cart-menu-empty {
     background-image: url('../images/flower-no-items.svg');
-    background-position: center right 15%;
+    background-position: bottom 10% right 15%;
     background-repeat: no-repeat;
     background-size: 110px;
     content: '';
+    .cart-item-container {
+      padding-bottom: 100px;
+    }
   }
 }
 
@@ -111,12 +110,14 @@
     line-height: 1;
     height: 34px;
     width: 34px;
+    font-size: 1.9rem;
     span {
       position: relative;
-      top: -1px;
+      top: -2px;
     }
   }
   .item-remove-btn {
+    color: $removeColor;
     font-size: 26px;
     margin-left: 20px;
     cursor: pointer;

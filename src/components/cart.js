@@ -85,23 +85,25 @@ const Cart = () => {
             items && items.length ? 'cart-menu-items' : 'cart-menu-empty'
           }`}
         >
-          <div className="cart-item-container font-medium">
+          <div className="cart-item-container">
             <div
               role="button"
               tabIndex={0}
               onClick={() => setShowMenu(false)}
               onKeyDown={() => setShowMenu(false)}
-              className="close-icon d-block margin-bottom-60px padding-top-50px"
+              className="close-icon d-block margin-bottom-45px padding-top-50px"
             />
-            <h2 className="text-40px margin-bottom-20px">Order Summary</h2>
+            <h2 className="text-28px margin-bottom-20px">Order Summary</h2>
             {items &&
               items.map((product, index) => (
-                <div key={index} className="padding-top-40px text-26px">
-                  <p className="margin-none padding-bottom-15px">
-                    {product.name.toUpperCase()}
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-30px text-26px">
-                    <span>12X {formatPrice(product.price)}</span>
+                <div key={index} className="padding-top-40px text-20px">
+                  <strong className="margin-none d-block padding-bottom-15px font-space-mono">
+                    {product.name}
+                  </strong>
+                  <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-30px">
+                    <span className="text-18px">
+                      12X for {formatPrice(product.price)}
+                    </span>
                     <div className="d-flex align-items-center">
                       <button
                         onClick={() =>
@@ -114,7 +116,7 @@ const Cart = () => {
                       >
                         <span>-</span>
                       </button>
-                      <span className="padding-left-15px padding-right-15px">
+                      <span className="padding-left-15px padding-right-15px font-medium">
                         {product.quantity}
                       </span>
                       <button
@@ -145,22 +147,23 @@ const Cart = () => {
               ))}
             {items && items.length ? (
               <>
-                <div className="d-flex justify-content-between padding-top-50px text-26px">
-                  <p className="margin-none">SUBTOTAL</p>
-                  <p className="margin-none">{cartTotalPrice(items)}</p>
+                <div className="d-flex justify-content-between padding-top-45px text-20px">
+                  <p className="margin-none">Subtotal</p>
+                  <p className="margin-none font-medium">
+                    {cartTotalPrice(items)}
+                  </p>
                 </div>
                 <button
                   onClick={e => redirectToCheckout(e, items)}
-                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-50px"
+                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-45px margin-bottom-10px"
                 >
                   Check out
                 </button>
               </>
             ) : (
-              <p className="text-26px padding-right-50px">
-                You have nothing
-                <span className="d-md-block">in your bouquet yet.</span> Keep
-                picking.
+              <p className="text-20px padding-top-25px">
+                You have nothing in your{' '}
+                <span className="d-md-block">bouquet yet. Keep picking!</span>
               </p>
             )}
           </div>
