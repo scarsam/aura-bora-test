@@ -21,7 +21,7 @@ const Social = () => {
             </div>
 
             <div className="social-link padding-top-lg-30px">
-              <Link className="primary-link text-38px" to="/">
+              <Link className="primary-link text-30px" to="/">
                 <strong>Instagram</strong>
               </Link>
             </div>

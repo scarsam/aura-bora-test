@@ -44,10 +44,10 @@ const Product = ({
             </div>
 
             <div className="text-center bg-white product-text c-black">
-              <h2 className="m-0 padding-top-25px padding-bottom-20px padding-top-lg-35px padding-bottom-lg-20px text-28px line-height-1">
+              <h2 className="m-0 padding-top-25px padding-bottom-20px padding-top-lg-35px padding-bottom-lg-20px text-26px line-height-1">
                 {name}
               </h2>
-              <p className="m-0 padding-bottom-20px padding-bottom-lg-30px text-24px font-barlow line-height-1">
+              <p className="m-0 padding-bottom-20px padding-bottom-lg-30px text-22px font-barlow line-height-1">
                 12x for {formatPrice(price)}
               </p>
               <button

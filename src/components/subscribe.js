@@ -29,7 +29,7 @@ const Subscribe = () => {
     >
       <div className="input-wrapper">
         <input
-          placeholder="Fun text"
+          placeholder="Your email"
           className="d-block margin-bottom-30px padding-top-10px padding-bottom-10px padding-left-10px padding-right-10px"
           id="email"
           name="email"

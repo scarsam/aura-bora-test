@@ -21,11 +21,11 @@ const ProductInfo = ({
       onKeyDown={() => setShowInfoPane(false)}
     />
 
-    <h2 className="margin-bottom-35px margin-bottom-lg-50px text-36px line-height-36px">
+    <h2 className="margin-bottom-30px margin-bottom-lg-50px text-30px line-height-32px">
       {name &&
         name.split(' ').map((word, index) => <div key={index}>{word}</div>)}
     </h2>
-    <div className="text-24px line-height-32px">
+    <div className="text-22px line-height-32px">
       <p className="margin-none">
         <strong>Ingredients</strong>
       </p>

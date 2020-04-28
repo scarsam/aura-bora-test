@@ -30,7 +30,6 @@
   bottom: 0;
   height: 100%;
   left: 0;
-  padding-bottom: 20%;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 30%;
@@ -52,6 +51,9 @@
 }
 
 @include media_max_break(md) {
+  .product-info {
+    padding-top: 20%;
+  }
   .product-wrapper {
     .gatsby-image-wrapper {
       img {

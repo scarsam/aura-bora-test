@@ -293,10 +293,10 @@ const Resellers = () => {
                         : 'padding-bottom-55px'
                     } relative z-index-2`}
                   >
-                    <h2 className="text-40px">{reseller.state}</h2>
+                    <h2 className="text-30px">{reseller.state}</h2>
                     {reseller.stores.map(store => (
                       <address key={store.name} className="font-style-normal">
-                        <p className="text-24px">
+                        <p className="text-20px">
                           <strong className="d-block">{store.name}</strong>
                           {store.address}
                         </p>

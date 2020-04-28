@@ -2,11 +2,8 @@ html {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   scroll-behavior: smooth;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   transition: font-size 200ms ease-in-out;
-  @include media_min_break(md) {
-    font-size: 0.8rem;
-  }
   @include media_min_break(lg) {
     font-size: 1rem;
   }
@@ -38,7 +35,7 @@ footer .container {
     background-position: bottom 5% left;
   }
   @include media_min_break(md) {
-    background-position: bottom 5% left 15%;
+    background-position: bottom 5% left 18%;
   }
 }
 
