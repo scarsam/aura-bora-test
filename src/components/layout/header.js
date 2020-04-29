@@ -47,18 +47,18 @@ const Header = () => {
                   title="Shop"
                 />
               </li>
-              <li className="margin-none margin-top-30px margin-bottom-20px">
+              <li className="margin-none margin-top-20px margin-bottom-20px">
                 <AnchorLink
-                  className="primary-link text-40px shop-link"
-                  to="/#social"
-                  title="Social"
+                  className="primary-link text-40px"
+                  to="/where-to-find"
+                  title="Where to find"
                 />
               </li>
               <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
                 <AnchorLink
-                  className="primary-link text-40px"
-                  to="/where-to-find"
-                  title="Where to Find"
+                  className="primary-link text-40px shop-link"
+                  to="/#social"
+                  title="Social"
                 />
               </li>
             </ul>

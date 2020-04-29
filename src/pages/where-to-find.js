@@ -30,7 +30,7 @@ const WhereToFind = () => {
                     className={`${
                       whereToFind.length - 1 === index
                         ? 'padding-bottom-none'
-                        : 'padding-bottom-55px'
+                        : 'padding-bottom-20px'
                     } relative z-index-2`}
                   >
                     <h2 className="text-30px">{state.name}</h2>

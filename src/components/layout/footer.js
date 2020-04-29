@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import Subscribe from '../subscribe'
 
 const Footer = () => {
@@ -9,15 +9,24 @@ const Footer = () => {
         <div className="container padding-top-40px padding-bottom-60px">
           <div className="row">
             <div className="col-sm-3 d-flex flex-column align-items-start text-24px">
-              <Link className="primary-link margin-bottom-15px" to="/#shop">
+              <AnchorLink
+                className="primary-link margin-bottom-15px"
+                to="/#shop"
+              >
                 Shop
-              </Link>
-              <Link className="primary-link margin-bottom-15px" to="/#social">
+              </AnchorLink>
+              <AnchorLink
+                className="primary-link margin-bottom-15px"
+                to="/where-to-find"
+              >
+                Where to find
+              </AnchorLink>
+              <AnchorLink
+                className="primary-link margin-bottom-15px"
+                to="/#social"
+              >
                 Social
-              </Link>
-              <Link className="primary-link" to="/where-to-find">
-                Where to Find
-              </Link>
+              </AnchorLink>
             </div>
             <div className="col-sm-9 col-md-5 col-lg-4 offset-lg-1 padding-top-30px padding-top-sm-none">
               <strong className="padding-bottom-10px d-block text-24px">

@@ -4,7 +4,7 @@
   z-index: 1;
   text-decoration: none;
   transition: font-weight 200ms ease-in-out;
-  &:hover {
+  @include hover-supported() {
     font-weight: bold;
     font-style: italic;
   }

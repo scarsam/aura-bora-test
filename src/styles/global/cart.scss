@@ -42,15 +42,16 @@
 }
 
 .cart-quantity-transform {
-  transform: translateX(-120%) scale(1.2);
+  transform: translateX(-150%);
 }
 
 .cart-icon {
   transition: transform 200ms;
+  transform-origin: bottom left;
 }
 
 .cart-icon-transform {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateY(40px);
 }
 
 .cart-menu {
@@ -122,7 +123,7 @@
       position: relative;
       top: -2px;
     }
-    &:hover {
+    @include hover-supported() {
       font-style: normal;
       font-weight: bold;
     }

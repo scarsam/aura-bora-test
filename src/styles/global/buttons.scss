@@ -11,7 +11,7 @@
     transform: translate(4px, 3px);
     box-shadow: none;
   }
-  &:hover {
+  @include hover-supported() {
     cursor: pointer;
     font-style: italic;
     font-weight: bold;

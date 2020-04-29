@@ -91,7 +91,7 @@ const Cart = () => {
               tabIndex={0}
               onClick={() => setShowMenu(false)}
               onKeyDown={() => setShowMenu(false)}
-              className="close-icon d-block margin-bottom-45px padding-top-50px"
+              className="close-icon d-block margin-bottom-40px padding-top-60px"
             />
             <h2 className="text-28px margin-bottom-20px">Order Summary</h2>
             {items &&
