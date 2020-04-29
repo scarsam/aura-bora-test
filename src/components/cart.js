@@ -116,7 +116,7 @@ const Cart = () => {
                       >
                         <span>-</span>
                       </button>
-                      <span className="padding-left-15px padding-right-15px font-medium">
+                      <span className="product-quantity font-medium">
                         {product.quantity}
                       </span>
                       <button

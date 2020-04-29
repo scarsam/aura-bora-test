@@ -25,6 +25,11 @@
   }
 }
 
+.product-quantity {
+  min-width: 30px;
+  text-align: center;
+}
+
 .cart-quantity {
   bottom: 5px;
   left: 0;
@@ -33,16 +38,15 @@
   text-align: center;
   width: 40px;
   fill: $textColor;
-  transition-duration: 0.2s;
-  transition-property: transform;
+  transition: transform 200ms;
 }
+
 .cart-quantity-transform {
   transform: translateX(-120%) scale(1.2);
 }
 
 .cart-icon {
-  transition-duration: 0.2s;
-  transition-property: transform;
+  transition: transform 200ms;
 }
 
 .cart-icon-transform {
@@ -111,6 +115,9 @@
     height: 34px;
     width: 34px;
     font-size: 1.75rem;
+    &:first-child {
+      margin-right: 3px;
+    }
     span {
       position: relative;
       top: -2px;

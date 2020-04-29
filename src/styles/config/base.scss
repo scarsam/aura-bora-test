@@ -1,7 +1,7 @@
 html {
   -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
-  scroll-behavior: smooth;
   font-size: 0.85rem;
   transition: font-size 200ms ease-in-out;
   @include media_min_break(lg) {

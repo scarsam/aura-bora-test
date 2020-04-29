@@ -21,9 +21,15 @@ const Social = () => {
             </div>
 
             <div className="social-link padding-top-lg-30px">
-              <Link className="primary-link text-30px" to="/">
+              <a
+                href="https://www.instagram.com/drinkaurabora/"
+                className="primary-link text-30px"
+                target="_blank"
+                rel="noreferrer"
+                rel="noopener"
+              >
                 <strong>Instagram</strong>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

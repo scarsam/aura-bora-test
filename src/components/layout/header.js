@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React, { useRef, useEffect } from 'react'
 import Cart from '../cart'
 
@@ -41,22 +41,25 @@ const Header = () => {
             />
             <ul className="menu margin-none padding-none padding-bottom-md-50px padding-left-5px">
               <li className="margin-none margin-top-30px margin-bottom-20px">
-                <Link className="primary-link text-40px shop-link" to="/#shop">
-                  Shop
-                </Link>
+                <AnchorLink
+                  className="primary-link text-40px shop-link"
+                  to="/#shop"
+                  title="Shop"
+                />
               </li>
               <li className="margin-none margin-top-30px margin-bottom-20px">
-                <Link
+                <AnchorLink
                   className="primary-link text-40px shop-link"
                   to="/#social"
-                >
-                  Social
-                </Link>
+                  title="Social"
+                />
               </li>
               <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
-                <Link className="primary-link text-40px" to="/resellers">
-                  Resellers
-                </Link>
+                <AnchorLink
+                  className="primary-link text-40px"
+                  to="/where-to-find"
+                  title="Where to Find"
+                />
               </li>
             </ul>
           </nav>

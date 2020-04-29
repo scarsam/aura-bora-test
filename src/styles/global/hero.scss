@@ -31,37 +31,48 @@
   clear: both;
 }
 
-.eye {
-  top: 50%;
-  height: 150px;
-  width: 150px;
-  background: url('../images/eye-open.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 75% 0;
-  overflow: hidden;
+.animations {
+  height: 835px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
-.shut {
-  width: 170px;
-  height: 110px;
-  top: 28%;
-  left: 52%;
+.eye {
+  width: 150px;
+  height: 80px;
+  top: 62%;
+  left: 56%;
   position: absolute;
   transform: translate(-50%, -50%) rotate(-13deg);
   z-index: 999;
   overflow: hidden;
 }
 
-.shut span {
+.eye span {
   display: block;
   width: 100%;
-  height: 15%;
+  height: 100%;
   background: #f5acb9;
   border-radius: 0 0 60% 60%;
-  transition: 0.4s all;
+  transform-origin: top;
+
+  animation: changeHeight 5s infinite alternate ease-in-out;
 }
 
-.eye:hover > .shut span {
-  height: 100%;
+// Animation
+@keyframes changeHeight {
+  20%,
+  100% {
+    transform: scaleY(0);
+  }
+  0% {
+    transform: scaleY(0);
+  }
+
+  10% {
+    transform: scaleY(1);
+  }
 }

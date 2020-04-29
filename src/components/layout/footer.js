@@ -15,8 +15,8 @@ const Footer = () => {
               <Link className="primary-link margin-bottom-15px" to="/#social">
                 Social
               </Link>
-              <Link className="primary-link" to="/resellers">
-                Reseller
+              <Link className="primary-link" to="/where-to-find">
+                Where to Find
               </Link>
             </div>
             <div className="col-sm-9 col-md-5 col-lg-4 offset-lg-1 padding-top-30px padding-top-sm-none">

@@ -1,40 +1,40 @@
 import React from 'react'
 import Layout from 'components/layout'
-import heroImage from 'images/resellers.svg'
-import animal from 'images/resellers/animal.svg'
-import coco from 'images/resellers/coco.svg'
-import cucumber from 'images/resellers/cucumber.svg'
-import grass from 'images/resellers/grass.svg'
-import kale from 'images/resellers/kale.svg'
-import strawberry from 'images/resellers/strawberry.svg'
-import watermelonKale from 'images/resellers/watermelon-kale.svg'
-import watermelon from 'images/resellers/watermelon.svg'
+import heroImage from 'images/where-to-find.svg'
+import animal from 'images/where-to-find/animal.svg'
+import coco from 'images/where-to-find/coco.svg'
+import cucumber from 'images/where-to-find/cucumber.svg'
+import grass from 'images/where-to-find/grass.svg'
+import kale from 'images/where-to-find/kale.svg'
+import strawberry from 'images/where-to-find/strawberry.svg'
+import watermelonKale from 'images/where-to-find/watermelon-kale.svg'
+import watermelon from 'images/where-to-find/watermelon.svg'
 
-const Resellers = () => {
+const WhereToFind = () => {
   return (
     <Layout>
-      <section className="resellers">
+      <section className="where-to-find">
         <ul className="container padding-top-50px">
           <ul className="row">
             <ul className="col-12">
               <div className="text-center padding-bottom-lg-50px hero">
                 <img
-                  alt="Rabbit jumping at the text Resellers"
+                  alt="Rabbit jumping at the text where-to-find"
                   src={heroImage}
                 />
               </div>
               <ul className="text-center relative">
-                {resellers.map((reseller, index) => (
+                {whereToFind.map((state, index) => (
                   <div
-                    key={reseller.state}
+                    key={state.name}
                     className={`${
-                      resellers.length - 1 === index
+                      whereToFind.length - 1 === index
                         ? 'padding-bottom-none'
                         : 'padding-bottom-55px'
                     } relative z-index-2`}
                   >
-                    <h2 className="text-30px">{reseller.state}</h2>
-                    {reseller.stores.map(store => (
+                    <h2 className="text-30px">{state.name}</h2>
+                    {state.stores.map(store => (
                       <address key={store.name} className="font-style-normal">
                         <p className="text-20px">
                           <strong className="d-block">{store.name}</strong>
@@ -61,7 +61,7 @@ const Resellers = () => {
   )
 }
 
-export default Resellers
+export default WhereToFind
 
 const images = [
   {
@@ -98,9 +98,9 @@ const images = [
   },
 ]
 
-const resellers = [
+const whereToFind = [
   {
-    state: 'San Francisco, CA',
+    name: 'San Francisco, CA',
     stores: [
       {
         name: 'Buffalo Whole Foods',
@@ -136,7 +136,7 @@ const resellers = [
       },
       {
         name: 'Casa Guadalupe',
-        adress: '2909 Mission St.',
+        address: '2999 Mission St.',
       },
       {
         name: 'Harvest Hills Market',
@@ -149,7 +149,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Oakland, CA',
+    name: 'Oakland, CA',
     stores: [
       {
         name: 'Piedmont Grocery',
@@ -158,7 +158,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Alameda, CA',
+    name: 'Alameda, CA',
     stores: [
       {
         name: 'A-1 Market',
@@ -167,7 +167,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Arcata,	CA',
+    name: 'Arcata,	CA',
     stores: [
       {
         name: "Murphy's Market",
@@ -180,7 +180,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Crescent City, CA',
+    name: 'Crescent City, CA',
     stores: [
       {
         name: 'Wild Rivers Market',
@@ -189,7 +189,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Davis, CA',
+    name: 'Davis, CA',
     stores: [
       {
         name: 'Davis Food Coop',
@@ -198,7 +198,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Eureka, CA',
+    name: 'Eureka, CA',
     stores: [
       {
         name: 'Eureka Natural Foods',
@@ -207,7 +207,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Lafayette, CA',
+    name: 'Lafayette, CA',
     stores: [
       {
         name: 'Diablo Foods Lafayette',
@@ -216,7 +216,7 @@ const resellers = [
     ],
   },
   {
-    state: 'McKinleyville, CA',
+    name: 'McKinleyville, CA',
     stores: [
       {
         name: 'Eureka Natural #2',
@@ -225,7 +225,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Palo Alto, CA',
+    name: 'Palo Alto, CA',
     stores: [
       {
         name: "Sigona's Farmers Market",
@@ -238,7 +238,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Placerville, CA',
+    name: 'Placerville, CA',
     stores: [
       {
         name: 'Placerville Food Coop',
@@ -247,7 +247,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Redwood City, CA',
+    name: 'Redwood City, CA',
     stores: [
       {
         name: "Sigona's Farmers Market",
@@ -256,7 +256,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Sebastopol, CA',
+    name: 'Sebastopol, CA',
     stores: [
       {
         name: "Andy's Produce Market",
@@ -265,7 +265,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Tahoe, CA',
+    name: 'Tahoe, CA',
     stores: [
       {
         name: 'New Moon Natural Foods',
@@ -274,7 +274,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Trinidad, CA',
+    name: 'Trinidad, CA',
     stores: [
       {
         name: "Murphy's Market Trinidad",
@@ -283,7 +283,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Ukiah, CA',
+    name: 'Ukiah, CA',
     stores: [
       {
         name: 'Ukiah Natural Foods Coop',
@@ -292,7 +292,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Denver, CO',
+    name: 'Denver, CO',
     stores: [
       {
         name: 'Leevers Locavore',
@@ -313,7 +313,7 @@ const resellers = [
     ],
   },
   {
-    state: 'Casper, WY',
+    name: 'Casper, WY',
     stores: [
       {
         name: 'Grant Street Market',
