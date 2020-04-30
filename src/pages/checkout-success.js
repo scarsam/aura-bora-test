@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Layout from 'components/layout'
 import Hero from 'components/hero'
 import SEO from 'components/seo'
 import { useQueryParam } from 'gatsby-query-params'
 import { Context } from 'store'
-import { cartTotalPrice } from '../helpers/numberHelpers'
 import Header from 'components/layout/header'
 
 const CheckoutSuccess = () => {

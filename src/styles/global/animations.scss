@@ -38,10 +38,9 @@
     top: 63%;
     width: 150px;
   }
-}
-
-.eye span {
-  @include animation-overlap(#f5acb9);
+  span {
+    @include animation-overlap(#f5acb9);
+  }
 }
 
 .eye-left {
@@ -52,10 +51,9 @@
     top: 35%;
     width: 180px;
   }
-}
-
-.eye-left span {
-  @include animation-overlap(#f5acb9, eyeTwo);
+  span {
+    @include animation-overlap(#f5acb9, eyeTwo);
+  }
 }
 
 .eye-cactus-right {
@@ -73,10 +71,9 @@
     top: 39%;
     width: 70px;
   }
-}
-
-.eye-cactus-right span {
-  @include animation-overlap(#c4d6a4, eyeThree);
+  span {
+    @include animation-overlap(#c4d6a4, eyeThree);
+  }
 }
 
 .eye-cactus-left {
@@ -94,8 +91,7 @@
     left: 42%;
     width: 60px;
   }
-}
-
-.eye-cactus-left span {
-  @include animation-overlap(#c4d6a4, eyeFour);
+  span {
+    @include animation-overlap(#c4d6a4, eyeFour);
+  }
 }
