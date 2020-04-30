@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialImage from '../images/social-header.svg'
+import SocialImage from '../images/header-mood.svg'
 import ArrowImage from '../images/social-arrow.svg'
 
 const Social = () => {

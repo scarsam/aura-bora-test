@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from 'components/layout'
-import heroImage from 'images/where-to-find.svg'
+import heroImage from 'images/header-where-to-find.svg'
 import animal from 'images/where-to-find/animal.svg'
 import coco from 'images/where-to-find/coco.svg'
 import cucumber from 'images/where-to-find/cucumber.svg'
@@ -14,9 +14,9 @@ const WhereToFind = () => {
   return (
     <Layout>
       <section className="where-to-find">
-        <ul className="container padding-top-50px">
-          <ul className="row">
-            <ul className="col-12">
+        <div className="container padding-top-50px">
+          <div className="row">
+            <div className="col-12">
               <div className="text-center padding-bottom-lg-50px hero">
                 <img
                   alt="Rabbit jumping at the text where-to-find"
@@ -53,9 +53,9 @@ const WhereToFind = () => {
                   />
                 ))}
               </ul>
-            </ul>
-          </ul>
-        </ul>
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   )

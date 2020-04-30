@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Product from './Product'
 import { graphql, useStaticQuery } from 'gatsby'
-import ShopImage from '../images/shop-bg.svg'
+import ShopImage from '../images/header-shop.svg'
 
 export const ProductGrid = () => {
   const [showInfoPane, setShowInfoPane] = useState(null)

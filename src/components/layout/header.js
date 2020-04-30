@@ -39,8 +39,8 @@ const Header = () => {
               htmlFor="menu-btn"
               ref={navMenu}
             />
-            <ul className="menu margin-none padding-none padding-bottom-md-50px padding-left-5px">
-              <li className="margin-none margin-top-30px margin-bottom-20px">
+            <ul className="menu margin-none padding-none padding-left-5px">
+              <li className="margin-top-30px margin-bottom-20px">
                 <AnchorLink
                   className="primary-link text-40px shop-link"
                   to="/#shop"
@@ -48,7 +48,7 @@ const Header = () => {
                   stripHash
                 />
               </li>
-              <li className="margin-none margin-top-20px margin-bottom-20px">
+              <li className="margin-top-20px margin-bottom-20px">
                 <AnchorLink
                   className="primary-link text-40px"
                   to="/where-to-find"
@@ -56,12 +56,19 @@ const Header = () => {
                   stripHash
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
+              <li className="margin-top-20px margin-bottom-20px">
                 <AnchorLink
                   className="primary-link text-40px shop-link"
                   to="/#social"
                   title="Social"
                   stripHash
+                />
+              </li>
+              <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
+                <AnchorLink
+                  className="primary-link text-40px shop-link"
+                  to="/contact"
+                  title="Contact"
                 />
               </li>
             </ul>

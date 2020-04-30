@@ -30,6 +30,12 @@ const Footer = () => {
               >
                 Social
               </AnchorLink>
+              <AnchorLink
+                className="primary-link margin-bottom-15px"
+                to="/contact"
+              >
+                Contact
+              </AnchorLink>
             </div>
             <div className="col-md-8 offset-md-1 padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">
               <div className="content flex-fill">
@@ -43,7 +49,6 @@ const Footer = () => {
               </div>
               <Subscribe />
             </div>
-            {/* <div className="col-sm-8 offset-sm-4 col-md-4 offset-md-0"></div> */}
           </div>
         </div>
       </section>

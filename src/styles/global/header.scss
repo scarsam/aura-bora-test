@@ -60,7 +60,7 @@ header .navicon {
   }
   .menu {
     display: block;
-    max-height: 240px;
+    max-height: 300px;
   }
   .navicon {
     @include close-icon(45px);

@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Toast = () => {
+const Toast = ({ show, text }) => {
   return (
-    <div className="toast bg-black c-white text-center fixed z-index-1">
-      Some text some message..
+    <div
+      className={`toast bg-black c-white text-center fixed z-index-1 ${
+        show ? 'show' : ''
+      }`}
+    >
+      {text}
     </div>
   )
 }

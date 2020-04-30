@@ -13,3 +13,19 @@
     padding: 24px 35px;
   }
 }
+
+.contact {
+  label {
+    color: $black;
+  }
+  input,
+  textarea {
+    border: 2px solid $black;
+    padding: 5px;
+    width: 100%;
+  }
+  button {
+    border-radius: 80px;
+    padding: 25px 40px;
+  }
+}
