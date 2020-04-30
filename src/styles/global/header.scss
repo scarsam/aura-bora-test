@@ -29,12 +29,13 @@ header ul {
 header .menu {
   display: none;
   max-height: 0;
-  width: calc(100% + 5px);
+  width: calc(100% + 15px);
 }
 
 header .navicon {
   @include burger-icon(35px);
   top: 5px;
+  left: -5px;
 }
 
 // Expanded styles
@@ -51,16 +52,16 @@ header .navicon {
     height: 10.5vw;
     left: 0;
     position: absolute;
-    top: 100%;
+    top: 90%;
     width: 100%;
   }
   &:before {
     background-image: url('../images/wave-black.svg');
-    top: 101%;
+    top: 91%;
   }
   .menu {
     display: block;
-    max-height: 300px;
+    max-height: 100%;
   }
   .navicon {
     @include close-icon(45px);

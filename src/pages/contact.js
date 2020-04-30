@@ -6,10 +6,9 @@ import { useQueryParam } from 'gatsby-query-params'
 const Contact = () => {
   const success = useQueryParam('success', false)
 
-  console.log(success)
   return (
     <Layout>
-      {success === true && <Toast show={true} text={'Message sent'} />}
+      {success === 'true' && <Toast show={true} text={'Message sent'} />}
       <section className="where-to-find">
         <div className="container">
           <div className="row">

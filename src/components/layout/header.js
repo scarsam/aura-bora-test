@@ -39,34 +39,34 @@ const Header = () => {
               htmlFor="menu-btn"
               ref={navMenu}
             />
-            <ul className="menu margin-none padding-none padding-left-5px">
-              <li className="margin-top-30px margin-bottom-20px">
+            <ul className="menu margin-none padding-none padding-left-15px">
+              <li className="margin-top-30px margin-bottom-30px">
                 <AnchorLink
-                  className="primary-link text-40px shop-link"
+                  className="primary-link text-36px shop-link"
                   to="/#shop"
                   title="Shop"
                   stripHash
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-20px">
+              <li className="margin-top-20px margin-bottom-30px">
                 <AnchorLink
-                  className="primary-link text-40px"
+                  className="primary-link text-36px"
                   to="/where-to-find"
                   title="Where to find"
                   stripHash
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-20px">
+              <li className="margin-top-20px margin-bottom-30px">
                 <AnchorLink
-                  className="primary-link text-40px shop-link"
+                  className="primary-link text-36px shop-link"
                   to="/#social"
                   title="Social"
                   stripHash
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
+              <li className="margin-top-20px padding-bottom-60px padding-bottom-md-30px">
                 <AnchorLink
-                  className="primary-link text-40px shop-link"
+                  className="primary-link text-36px shop-link"
                   to="/contact"
                   title="Contact"
                 />

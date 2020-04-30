@@ -10,28 +10,28 @@ const Footer = () => {
           <div className="row">
             <div className="col-sm-4 col-md-3 d-flex flex-column align-items-start text-24px">
               <AnchorLink
-                className="primary-link margin-bottom-15px"
+                className="primary-link margin-bottom-10px"
                 to="/#shop"
                 stripHash
               >
                 Shop
               </AnchorLink>
               <AnchorLink
-                className="primary-link margin-bottom-15px"
+                className="primary-link margin-bottom-10px"
                 to="/where-to-find"
                 stripHash
               >
                 Where to find
               </AnchorLink>
               <AnchorLink
-                className="primary-link margin-bottom-15px"
+                className="primary-link margin-bottom-10px"
                 to="/#social"
                 stripHash
               >
                 Social
               </AnchorLink>
               <AnchorLink
-                className="primary-link margin-bottom-15px"
+                className="primary-link margin-bottom-10px"
                 to="/contact"
               >
                 Contact
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             <div className="col-md-8 offset-md-1 padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">
               <div className="content flex-fill">
-                <strong className="padding-bottom-10px d-block text-24px">
+                <strong className="padding-bottom-15px d-block text-24px">
                   Let's be rosebuds
                 </strong>
                 <p className="margin-bottom-25px text-20px font-barlow">
