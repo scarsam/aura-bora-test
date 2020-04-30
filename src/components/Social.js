@@ -1,7 +1,6 @@
 import React from 'react'
 import SocialImage from '../images/social-header.svg'
 import ArrowImage from '../images/social-arrow.svg'
-import { Link } from 'gatsby'
 
 const Social = () => {
   return (
@@ -25,8 +24,7 @@ const Social = () => {
                 href="https://www.instagram.com/drinkaurabora/"
                 className="primary-link text-30px"
                 target="_blank"
-                rel="noreferrer"
-                rel="noopener"
+                rel="noreferrer noopener"
               >
                 <strong>Instagram</strong>
               </a>
