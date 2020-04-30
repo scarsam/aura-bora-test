@@ -1,0 +1,101 @@
+.animations-container {
+  height: 600px;
+  left: 0;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  @include media_min_break(md) {
+    height: 835px;
+  }
+}
+
+.animations {
+  height: 100%;
+  left: 0%;
+  top: 0;
+  width: 2400px;
+  @include media_min_break(sm) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include media_min_break(md) {
+    width: 3008px;
+  }
+}
+
+.eye {
+  @include shared-animation-styles;
+  width: 150px;
+  height: 65px;
+  top: 64%;
+  left: 13%;
+  @include media_min_break(sm) {
+    left: 54%;
+  }
+  @include media_min_break(md) {
+    height: 80px;
+    left: 53.5%;
+    top: 63%;
+    width: 150px;
+  }
+}
+
+.eye span {
+  @include animation-overlap(#f5acb9);
+}
+
+.eye-left {
+  @include shared-animation-styles;
+  @include media_min_break(md) {
+    height: 115px;
+    left: 31.1%;
+    top: 35%;
+    width: 180px;
+  }
+}
+
+.eye-left span {
+  @include animation-overlap(#f5acb9, eyeTwo);
+}
+
+.eye-cactus-right {
+  @include shared-animation-styles;
+  left: 21.5%;
+  width: 55px;
+  height: 38px;
+  @include media_min_break(sm) {
+    top: 51.2%;
+    left: 62%;
+  }
+  @include media_min_break(md) {
+    height: 50px;
+    left: 62%;
+    top: 39%;
+    width: 70px;
+  }
+}
+
+.eye-cactus-right span {
+  @include animation-overlap(#c4d6a4, eyeThree);
+}
+
+.eye-cactus-left {
+  @include shared-animation-styles;
+  width: 55px;
+  height: 38px;
+  top: 54%;
+  left: 1.5%;
+  @include media_min_break(sm) {
+    top: 54.7%;
+    left: 42%;
+  }
+  @include media_min_break(md) {
+    top: 40.7%;
+    left: 42%;
+    width: 60px;
+  }
+}
+
+.eye-cactus-left span {
+  @include animation-overlap(#c4d6a4, eyeFour);
+}

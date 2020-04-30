@@ -34,6 +34,7 @@ header .menu {
 
 header .navicon {
   @include burger-icon(35px);
+  top: 5px;
 }
 
 // Expanded styles

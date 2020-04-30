@@ -6,6 +6,7 @@ import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
 import Social from 'components/Social'
 import '@stripe/stripe-js'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -25,7 +26,27 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero />
+      <Hero>
+        <div className="text-center margin-bottom-60px">
+          <h2 className="font-barlow text-34px margin-none padding-bottom-10px c-black">
+            From the land to your hand.
+          </h2>
+          <p className="text-23px margin-none">
+            Aura Bora is a delightful sparkling water{' '}
+            <span className="d-md-block">
+              made from herbs, fruits, and flowers.
+            </span>
+          </p>
+          <div className="collection-btn">
+            <AnchorLink
+              className=" primary-btn bg-white text-22px c-black"
+              to="/#shop"
+              title="The Collection"
+              stripHash
+            ></AnchorLink>
+          </div>
+        </div>
+      </Hero>
       <ValueProps />
       <ProductGrid />
       <Social />

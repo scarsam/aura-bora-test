@@ -8,38 +8,42 @@ const Footer = () => {
       <section>
         <div className="container padding-top-40px padding-bottom-60px">
           <div className="row">
-            <div className="col-sm-3 d-flex flex-column align-items-start text-24px">
+            <div className="col-sm-4 col-md-3 d-flex flex-column align-items-start text-24px">
               <AnchorLink
                 className="primary-link margin-bottom-15px"
                 to="/#shop"
+                stripHash
               >
                 Shop
               </AnchorLink>
               <AnchorLink
                 className="primary-link margin-bottom-15px"
                 to="/where-to-find"
+                stripHash
               >
                 Where to find
               </AnchorLink>
               <AnchorLink
                 className="primary-link margin-bottom-15px"
                 to="/#social"
+                stripHash
               >
                 Social
               </AnchorLink>
             </div>
-            <div className="col-sm-9 col-md-5 col-lg-4 offset-lg-1 padding-top-30px padding-top-sm-none">
-              <strong className="padding-bottom-10px d-block text-24px">
-                Let's be rosebuds
-              </strong>
-              <p className="margin-bottom-25px text-20px font-barlow">
-                We’ll either send you discounts{' '}
-                <span className="d-block">or pictures of baby sloths.</span>
-              </p>
-            </div>
-            <div className="col-sm-9 offset-sm-3 col-md-4 offset-md-0">
+            <div className="col-md-8 offset-md-1 padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">
+              <div className="content flex-fill">
+                <strong className="padding-bottom-10px d-block text-24px">
+                  Let's be rosebuds
+                </strong>
+                <p className="margin-bottom-25px text-20px font-barlow">
+                  We’ll either send you discounts{' '}
+                  <span className="d-block">or pictures of baby sloths.</span>
+                </p>
+              </div>
               <Subscribe />
             </div>
+            {/* <div className="col-sm-8 offset-sm-4 col-md-4 offset-md-0"></div> */}
           </div>
         </div>
       </section>

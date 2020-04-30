@@ -1,13 +1,24 @@
 import React from 'react'
 import auraBoraLogo from 'images/hero/aura-bora.svg'
 
-const Hero = () => {
+const Hero = ({ children }) => {
   return (
     <>
       <section className="bg-lavender top-section hero-background">
-        <div className="animations">
-          <div className="eye relative">
-            <span></span>
+        <div className="animations-container absolute">
+          <div className="animations absolute">
+            <div className="eye relative">
+              <span></span>
+            </div>
+            <div className="eye-left relative">
+              <span></span>
+            </div>
+            <div className="eye-cactus-left relative">
+              <span></span>
+            </div>
+            <div className="eye-cactus-right relative">
+              <span></span>
+            </div>
           </div>
         </div>
         <div className="container padding-top-15px">
@@ -25,12 +36,7 @@ const Hero = () => {
       <section className="bg-lightYellow home-hero">
         <div className="container padding-top-none padding-bottom-none">
           <div className="row">
-            <div className="col-md-10 offset-md-1">
-              <p className="text-30px text-center">
-                Our herbal sparkling waters are made from real herbs, fruits,
-                and flowers for earthly tastes and heavenly feelings.
-              </p>
-            </div>
+            <div className="col-md-10 offset-md-1">{children}</div>
           </div>
         </div>
       </section>

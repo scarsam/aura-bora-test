@@ -45,6 +45,7 @@ const Header = () => {
                   className="primary-link text-40px shop-link"
                   to="/#shop"
                   title="Shop"
+                  stripHash
                 />
               </li>
               <li className="margin-none margin-top-20px margin-bottom-20px">
@@ -52,6 +53,7 @@ const Header = () => {
                   className="primary-link text-40px"
                   to="/where-to-find"
                   title="Where to find"
+                  stripHash
                 />
               </li>
               <li className="margin-top-20px margin-bottom-20px padding-bottom-md-50px">
@@ -59,6 +61,7 @@ const Header = () => {
                   className="primary-link text-40px shop-link"
                   to="/#social"
                   title="Social"
+                  stripHash
                 />
               </li>
             </ul>

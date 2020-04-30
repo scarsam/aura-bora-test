@@ -39,3 +39,80 @@
     transform: rotate(-45deg) translateY(-50%);
   }
 }
+
+@mixin shared-animation-styles {
+  transform: translate(-50%, -50%) rotate(-13deg);
+  z-index: 999;
+  overflow: hidden;
+}
+
+@mixin animation-overlap($color, $animation: eyeOne) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $color;
+  border-radius: 0 0 60% 60%;
+  transform-origin: top;
+  animation: $animation 10s infinite alternate ease-in-out;
+}
+
+// Animation
+@keyframes eyeOne {
+  0%,
+  50%,
+  100% {
+    transform: scaleY(0);
+  }
+  40% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes eyeTwo {
+  0%,
+  35%,
+  100% {
+    transform: scaleY(0);
+  }
+  25% {
+    transform: scaleY(0);
+  }
+  35% {
+    transform: scaleY(1);
+  }
+  45% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes eyeThree {
+  0%,
+  100% {
+    transform: scaleY(0);
+  }
+  90% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes eyeFour {
+  0%,
+  100% {
+    transform: scaleY(0);
+  }
+  70% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
