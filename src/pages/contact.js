@@ -28,7 +28,7 @@ const Contact = () => {
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                   <label className="text-20px">
-                    Your Name
+                    Your name
                     <input
                       className="d-block margin-top-10px"
                       type="text"
@@ -38,7 +38,7 @@ const Contact = () => {
                 </p>
                 <p>
                   <label className="text-20px">
-                    Your Email
+                    Your email
                     <input
                       className="d-block margin-top-10px"
                       type="email"

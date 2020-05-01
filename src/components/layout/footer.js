@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-yellow">
       <section>
-        <div className="container padding-top-40px padding-bottom-60px">
+        <div className="container padding-top-40px padding-bottom-40px">
           <div className="row">
             <div className="col-sm-4 col-md-3 d-flex flex-column align-items-start text-24px">
               <AnchorLink

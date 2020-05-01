@@ -28,10 +28,10 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Hero>
         <div className="text-center margin-bottom-60px">
-          <h2 className="font-barlow text-34px margin-none padding-bottom-10px c-black">
+          <h2 className="font-barlow text-33px margin-none padding-bottom-10px c-black">
             From the land to your hand.
           </h2>
-          <p className="text-23px margin-none">
+          <p className="text-22px margin-none">
             Aura Bora is a delightful sparkling water{' '}
             <span className="d-md-block">
               made from herbs, fruits, and flowers.
