@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <Layout>
       <SEO title="Contact" />
-      {success === 'true' && <Toast show={true} text={'Message sent'} />}
+      {success === 'true' && <Toast text={'Message sent'} />}
       <section className="where-to-find">
         <div className="container">
           <div className="row">

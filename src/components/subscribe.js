@@ -25,7 +25,7 @@ const Subscribe = () => {
 
   return (
     <>
-      {sent && <Toast show={true} text={'Subscribed'} />}
+      {sent && <Toast text={'Subscribed'} />}
       <form
         className="d-flex flex-column flex-md-row subscribe flex-fill padding-top-10px"
         onSubmit={handleSubmit}
@@ -37,6 +37,7 @@ const Subscribe = () => {
             id="email"
             name="email"
             type="text"
+            value={email}
             onChange={handleEmailChange}
           />
           <button className="primary-btn text-22px" type="submit">
