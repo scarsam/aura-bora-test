@@ -24,7 +24,7 @@ const Subscribe = () => {
 
   return (
     <form
-      className="d-flex flex-column flex-md-row subscribe flex-fill"
+      className="d-flex flex-column flex-md-row subscribe flex-fill padding-top-10px"
       onSubmit={handleSubmit}
     >
       <div className="input-wrapper">

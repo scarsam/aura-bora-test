@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Toast = ({ show, text }) => {
   return (
@@ -13,3 +14,8 @@ const Toast = ({ show, text }) => {
 }
 
 export default Toast
+
+Toast.propTypes = {
+  show: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+}

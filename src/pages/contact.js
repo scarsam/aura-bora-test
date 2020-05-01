@@ -26,7 +26,7 @@ const Contact = () => {
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                   <label className="text-20px">
-                    Your Name:{' '}
+                    Your Name
                     <input
                       className="d-block margin-top-10px"
                       type="text"
@@ -36,7 +36,7 @@ const Contact = () => {
                 </p>
                 <p>
                   <label className="text-20px">
-                    Your Email:{' '}
+                    Your Email
                     <input
                       className="d-block margin-top-10px"
                       type="email"
@@ -46,7 +46,7 @@ const Contact = () => {
                 </p>
                 <p>
                   <label className="text-20px">
-                    Message:{' '}
+                    Message
                     <textarea
                       className="d-block margin-top-10px"
                       name="message"
