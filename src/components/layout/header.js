@@ -64,7 +64,7 @@ const Header = () => {
                   stripHash
                 />
               </li>
-              <li className="margin-top-20px padding-bottom-60px padding-bottom-md-30px">
+              <li className="margin-top-20px padding-bottom-60px padding-bottom-md-none">
                 <AnchorLink
                   className="primary-link text-36px shop-link"
                   to="/contact"
