@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from 'components/layout'
+import SEO from 'components/seo'
 import heroImage from 'images/header-where-to-find.svg'
 import animal from 'images/where-to-find/animal.svg'
 import coco from 'images/where-to-find/coco.svg'
@@ -13,6 +14,7 @@ import watermelon from 'images/where-to-find/watermelon.svg'
 const WhereToFind = () => {
   return (
     <Layout>
+      <SEO title="Where to find" />
       <section className="where-to-find">
         <div className="container padding-top-50px">
           <div className="row">

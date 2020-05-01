@@ -4,6 +4,7 @@ import SEO from 'components/seo'
 import { useQueryParam } from 'gatsby-query-params'
 import { Context } from 'store'
 import Header from 'components/layout/header'
+import 'styles/aura-bora.scss'
 
 const CheckoutSuccess = () => {
   const { dispatch } = useContext(Context)

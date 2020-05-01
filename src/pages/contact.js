@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Toast from 'components/Toast'
 import { useQueryParam } from 'gatsby-query-params'
@@ -8,6 +9,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO title="Contact" />
       {success === 'true' && <Toast show={true} text={'Message sent'} />}
       <section className="where-to-find">
         <div className="container">
