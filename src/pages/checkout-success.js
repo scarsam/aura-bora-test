@@ -96,7 +96,6 @@ async function RetrieveSession(sessionId) {
   const response = await fetch('/.netlify/functions/retrieve-session', {
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
       sessionId,
     },
   })
@@ -112,7 +111,6 @@ async function RetrievePayment(paymentIntentId) {
   const response = await fetch('/.netlify/functions/retrieve-payment', {
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
       paymentIntentId,
     },
   })
