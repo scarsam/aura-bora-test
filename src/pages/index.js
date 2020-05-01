@@ -29,9 +29,10 @@ const IndexPage = () => {
       <Hero>
         <div className="text-center margin-bottom-60px">
           <h2 className="font-barlow text-33px margin-none padding-bottom-10px c-black">
-            From the land to your hand.
+            From the land
+            <span className="d-block d-md-inline"> to your hand.</span>
           </h2>
-          <p className="text-22px margin-none">
+          <p className="margin-none intro-text">
             Aura Bora is a delightful sparkling water{' '}
             <span className="d-md-block">
               made from herbs, fruits, and flowers.
