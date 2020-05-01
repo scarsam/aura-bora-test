@@ -10,9 +10,10 @@ const Subscribe = () => {
   const handleSubmit = event => {
     event.preventDefault()
     addToMailchimp(email)
-      .then(({ result }) =>
+      .then(({ result }) => {
         result === 'success' ? sentEmail(true) : sentEmail(false)
-      )
+        setEmail('')
+      })
       // Errors in here are client side
       // Mailchimp always returns a 200
       .catch(error => console.error(error))
@@ -24,7 +25,7 @@ const Subscribe = () => {
 
   return (
     <>
-      {sent && <Toast show={true} text={'Message sent'} />}
+      {sent && <Toast show={true} text={'Subscribed'} />}
       <form
         className="d-flex flex-column flex-md-row subscribe flex-fill padding-top-10px"
         onSubmit={handleSubmit}
