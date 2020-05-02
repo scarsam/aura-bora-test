@@ -1,4 +1,6 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+
+const stripe = require('stripe')('sk_test_Zy0cOQcIEjbbyQido9m82Gd700p1U9C9Ve')
 
 exports.handler = (event, context, callback) => {
   const sessionId = event.headers.sessionid
