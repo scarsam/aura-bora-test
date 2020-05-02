@@ -59,8 +59,8 @@ const Header = () => {
               <li className="margin-top-20px margin-bottom-30px">
                 <AnchorLink
                   className="primary-link text-36px shop-link"
-                  to="/#social"
-                  title="Social"
+                  to="/#mood"
+                  title="Mood"
                   stripHash
                 />
               </li>
@@ -68,7 +68,7 @@ const Header = () => {
                 <AnchorLink
                   className="primary-link text-36px shop-link"
                   to="/contact"
-                  title="Contact"
+                  title="Let’s be rosebuds"
                 />
               </li>
             </ul>

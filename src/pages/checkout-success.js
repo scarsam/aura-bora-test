@@ -4,11 +4,11 @@ import SEO from 'components/seo'
 import { useQueryParam } from 'gatsby-query-params'
 import { Context } from 'store'
 import Header from 'components/layout/header'
+import SuccessImg from '../images/success-fruit.svg'
 import 'styles/aura-bora.scss'
 
 const CheckoutSuccess = () => {
   const { dispatch } = useContext(Context)
-  const [cartItems, setCartItems] = useState(null)
   const [error, setError] = useState(null)
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
   const [isLoading, setisLoading] = useState(true)
@@ -27,7 +27,6 @@ const CheckoutSuccess = () => {
             type: 'reset',
           })
           setCheckoutSuccess(true)
-          setCartItems(session.display_items)
         }
       } catch (error) {
         error.message = `Something went wrong when confirming your purchase. Please check
@@ -46,36 +45,49 @@ const CheckoutSuccess = () => {
     <>
       <SEO title="Checkout" />
       <Header />
-      <Hero>
-        <main className="cart-overlay">
-          <div className="text-center padding-left-lg-60px padding-right-lg-60px">
+      <main className="cart-overlay">
+        <Hero>
+          <div className="text-center padding-left-lg-60px padding-right-lg-60px c-black">
             {!isLoading ? (
               <div>
                 {error ? (
                   <>
-                    <h2 className="text-34px">Whoops!</h2>
-                    <p className="text-26px padding-left-lg-10px padding-right-lg-10px">
+                    <h2 className="text-36px font-barlow">Whoops!</h2>
+                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
                       {error.message}
                     </p>
                   </>
                 ) : checkoutSuccess ? (
                   <>
-                    <h2 className="text-34px">Success!</h2>
-                    <p className="text-26px padding-left-lg-10px padding-right-lg-10px">
-                      You’ll get a confirmation in your email very soon. Enjoy
-                      your Aura Bora, and enjoy this haiku.
+                    <h2 className="text-36px font-barlow">Success!</h2>
+                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
+                      You’ll get a confirmation in your
+                      <span className="d-block">
+                        email very soon. Enjoy your Aura Bora,
+                        <span className="d-block">and enjoy this haiku.</span>
+                      </span>
                     </p>
-                    <p className="text-34px padding-top-60px haiku">
-                      <strong>
-                        What is this round fruit? It has a hard outer shell. I’m
-                        told I do too.
-                      </strong>
-                    </p>
+                    <div className="haiku d-flex justify-content-center font-barlow">
+                      <p className="text-22px padding-top-40px">
+                        What is this round fruit?
+                        <span className="d-block">
+                          It has a hard outer shell.
+                        </span>
+                        <p className="text-right margin-none">
+                          I’m told I do too.
+                        </p>
+                      </p>
+                      <img
+                        src={SuccessImg}
+                        alt=""
+                        className="padding-left-20px"
+                      />
+                    </div>
                   </>
                 ) : (
                   <>
-                    <h2 className="text-34px">Whoops!</h2>
-                    <p className="text-26px padding-left-lg-10px padding-right-lg-10px">
+                    <h2 className="text-36px font-barlow">Whoops!</h2>
+                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
                       Some unexplainable happened when trying to confirm your
                       purchase. Try again and we will make it right.
                     </p>
@@ -84,8 +96,8 @@ const CheckoutSuccess = () => {
               </div>
             ) : null}
           </div>
-        </main>
-      </Hero>
+        </Hero>
+      </main>
     </>
   )
 }

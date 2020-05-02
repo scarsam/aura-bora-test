@@ -36,11 +36,13 @@ const ProductInfo = ({
           </p>
         ))}
     </div>
-    <div className="padding-top-30px text-22px line-height-32px">
-      <p className="margin-none">0 calories</p>
-      <p className="margin-none">0 sugar</p>
-      <p className="margin-none">0 sodium</p>
-    </div>
+    {name && name !== 'Variety pack' ? (
+      <div className="padding-top-30px text-22px line-height-32px">
+        <p className="margin-none">0 calories</p>
+        <p className="margin-none">0 sugar</p>
+        <p className="margin-none">0 sodium</p>
+      </div>
+    ) : null}
   </div>
 )
 

@@ -4,18 +4,18 @@ import NoStock from '../images/products/out_of_stock.svg'
 
 const ProductOutOfStock = ({ colorRef, name }) => (
   <div
-    className={`bg-${colorRef}-i text-center justify-content-center d-flex flex-column out-of-stock c-white text-28px`}
+    className={`bg-${colorRef}-i text-center d-flex flex-column justify-content-between out-of-stock c-black`}
   >
-    <h2 className="padding-bottom-none margin-none text-26px padding-bottom-50px">
+    <h2 className="padding-bottom-none margin-none text-30px padding-bottom-50px font-barlow">
       {name} <span className="d-block">is out of stock</span>
     </h2>
-    <img alt="" src={NoStock} className="product-image margin-none" />
-    <p className="margin-none padding-top-35px padding-top-lg-50px text-24px font-barlow">
-      We´re working on it.
-    </p>
-    <p className="text-24px font-barlow margin-bottom-none">
-      Check back again soon
-    </p>
+    {/* <img alt="" src={NoStock} className="product-image margin-none" /> */}
+    <div className="text-22px">
+      <p className="margin-none">
+        We´re harvesting more.
+        <span className="d-block">Check back again soon.</span>
+      </p>
+    </div>
   </div>
 )
 

@@ -1,4 +1,5 @@
 .product-wrapper {
+  border: 4px $white solid;
   height: 100%;
   width: 100%;
   .add-product-btn {
@@ -49,6 +50,12 @@
 .out-of-stock {
   min-height: 532px;
   height: 100%;
+  h2 {
+    padding-top: 90px;
+  }
+  div {
+    padding-bottom: 90px;
+  }
 }
 
 @include media_max_break(md) {
