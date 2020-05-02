@@ -10,7 +10,7 @@ const ProductOutOfStock = ({ colorRef, name }) => (
       {name} <span className="d-block">is out of stock</span>
     </h2>
     {/* <img alt="" src={NoStock} className="product-image margin-none" /> */}
-    <div className="text-22px">
+    <div className="text-24px">
       <p className="margin-none">
         We´re harvesting more.
         <span className="d-block">Check back again soon.</span>
