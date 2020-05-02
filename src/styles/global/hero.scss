@@ -21,9 +21,14 @@
   }
 }
 
-.home-hero p {
-  color: $black;
-  line-height: 2.5rem;
+.home-hero {
+  p {
+    color: $black;
+    line-height: 2.5rem;
+  }
+  @include media_min_break(md) {
+    margin-top: -30px !important;
+  }
 }
 
 // Needed for the cart icon to not push the Logo
@@ -47,10 +52,4 @@
   }
   font-size: 22px;
   line-height: 40px;
-}
-
-.home-hero {
-  @include media_min_break(md) {
-    margin-top: -30px !important;
-  }
 }
