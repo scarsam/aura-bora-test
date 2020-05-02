@@ -33,6 +33,7 @@ const Contact = () => {
                       className="d-block margin-top-10px"
                       type="text"
                       name="name"
+                      required
                     />
                   </label>
                 </p>
@@ -43,6 +44,7 @@ const Contact = () => {
                       className="d-block margin-top-10px"
                       type="email"
                       name="email"
+                      required
                     />
                   </label>
                 </p>
@@ -53,6 +55,7 @@ const Contact = () => {
                       className="d-block margin-top-10px"
                       name="message"
                       rows="10"
+                      required
                     ></textarea>
                   </label>
                 </p>

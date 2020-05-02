@@ -6,18 +6,34 @@
 .image-2,
 .image-4,
 .image-6 {
-  left: 2%;
+  left: 0;
+  margin-bottom: 0;
+  max-width: 20%;
+  @include media_min_break(sm) {
+    left: 2%;
+    max-width: 100%;
+  }
 }
 
 .image-1,
 .image-3,
 .image-5,
 .image-7 {
-  right: 2%;
+  right: 0;
+  margin-bottom: 0;
+  max-width: 20%;
+  @include media_min_break(sm) {
+    right: 2%;
+    max-width: 100%;
+  }
 }
 
 .image-0 {
   top: 5%;
+  max-width: 25%;
+  @include media_min_break(md) {
+    max-width: 100%;
+  }
 }
 
 .image-1 {
@@ -25,7 +41,7 @@
 }
 
 .image-2 {
-  top: 30%;
+  top: 29%;
 }
 
 .image-3 {
@@ -33,11 +49,11 @@
 }
 
 .image-4 {
-  top: 60%;
+  top: 62%;
 }
 
 .image-5 {
-  top: 75%;
+  top: 74%;
 }
 
 .image-6 {

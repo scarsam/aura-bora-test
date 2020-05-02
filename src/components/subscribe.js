@@ -39,6 +39,7 @@ const Subscribe = () => {
             type="text"
             value={email}
             onChange={handleEmailChange}
+            required
           />
           <button className="primary-btn text-22px" type="submit">
             Sign up
