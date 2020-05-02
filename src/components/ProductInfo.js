@@ -11,7 +11,7 @@ const ProductInfo = ({
   <div
     className={`${
       showInfoPane ? 'product-info-show' : 'product-info-hide'
-    } product-info font-barlow c-white bg-${colorRef}-i absolute z-index-3`}
+    } product-info font-barlow c-black bg-${colorRef}-i absolute z-index-3`}
   >
     <div
       className="info-close-icon absolute"
