@@ -37,15 +37,15 @@ const Footer = () => {
                 Let’s be rosebuds
               </AnchorLink>
             </div>
-            <div className="col-md-7 offset-md-1 padding-right-30px padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">
-              <div className="content flex-fill">
+            <div className="col-md-8 col-lg-7 offset-lg-1 padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">
+              <div className="content">
                 <p className="margin-bottom-none padding-bottom-25px d-block text-22px font-barlow padding-top-5px">
                   <strong>Let's be </strong>rose<strong>buds</strong>
                 </p>
                 <p className="margin-bottom-25px text-18px">
                   We’ll send you
                   <span className="d-block">discounts or pictures</span>
-                  <span className="d-block"></span>
+                  of three-toed sloths.
                 </p>
               </div>
               <Subscribe />

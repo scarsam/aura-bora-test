@@ -32,10 +32,10 @@ const WhereToFind = () => {
                     className={`${
                       whereToFind.length - 1 === index
                         ? 'padding-bottom-none'
-                        : 'padding-bottom-20px'
+                        : 'padding-bottom-45px'
                     } relative z-index-2`}
                   >
-                    <h2 className="text-30px">{state.name}</h2>
+                    <h2 className="text-36px font-barlow">{state.name}</h2>
                     {state.stores.map(store => (
                       <address key={store.name} className="font-style-normal">
                         <p className="text-20px">

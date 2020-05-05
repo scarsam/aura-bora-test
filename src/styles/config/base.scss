@@ -34,9 +34,16 @@ footer {
     background-repeat: no-repeat;
     background-position: 100%;
     width: 125px;
-    left: 30vw;
+    left: 12vw;
     height: 75px;
     top: -68px;
+    transition: left 250ms ease-in-out;
+    @include media_min_break(md) {
+      left: 30vw;
+    }
+  }
+  .content {
+    width: 100%;
   }
 }
 
