@@ -35,7 +35,6 @@ const Cart = () => {
       setShowMenu(false)
     }
   }
-
   return (
     <div className="cart relative" ref={cartMenu}>
       <button
@@ -76,7 +75,7 @@ const Cart = () => {
             ${showMenu ? 'cart-quantity-transform' : ''}
             `}
         >
-          {cartItemsCount(items)}
+          {items && items.length ? cartItemsCount(items) : 0}
         </strong>
       </button>
       {showMenu && (
@@ -93,7 +92,9 @@ const Cart = () => {
               onKeyDown={() => setShowMenu(false)}
               className="close-icon d-block margin-bottom-40px padding-top-60px"
             />
-            <h2 className="text-28px margin-bottom-20px">Order Summary</h2>
+            <h2 className="text-28px line-height-1 margin-bottom-20px font-barlow">
+              {items && items.length ? 'Order Summary' : 'Nothing here!'}
+            </h2>
             {items &&
               items.map((product, index) => (
                 <div key={index} className="padding-top-40px text-20px">
@@ -161,7 +162,7 @@ const Cart = () => {
                 </button>
               </>
             ) : (
-              <p className="text-20px padding-top-25px">
+              <p className="text-18px line-height-28 padding-top-25px font-space-mono">
                 You have nothing in your{' '}
                 <span className="d-md-block">bouquet yet. Keep picking!</span>
               </p>

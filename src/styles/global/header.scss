@@ -38,6 +38,10 @@ header .navicon {
   left: -5px;
 }
 
+header li {
+  width: fit-content;
+}
+
 // Expanded styles
 .menu-btn:checked ~ header {
   background: $lavender;

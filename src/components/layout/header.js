@@ -6,25 +6,26 @@ const Header = () => {
   const navMenu = useRef()
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClick, false)
+    document.addEventListener('mousedown', handleOutsideClick, false)
 
     return () => {
-      document.removeEventListener('mousedown', handleClick, false)
+      document.removeEventListener('mousedown', handleOutsideClick, false)
     }
   }, [])
 
-  const handleClick = e => {
-    const isShopLink = e.target.classList.contains('shop-link')
-
-    if (navMenu.current) {
-      if (!navMenu.current.contains(e.target)) {
-        document.getElementById('menu-btn').checked = false
-      }
+  const handleOutsideClick = e => {
+    if (navMenu.current && !navMenu.current.contains(e.target)) {
+      document.getElementById('menu-btn').checked = false
     }
-    if (isShopLink) {
-      setTimeout(() => {
-        document.getElementById('menu-btn').checked = false
-      }, 100)
+  }
+
+  const handleLinkClick = () => {
+    document.getElementById('menu-btn').checked = false
+  }
+
+  const handleKeyDown = e => {
+    if (e.keyCode === 37) {
+      document.getElementById('menu-btn').checked = false
     }
   }
 
@@ -46,14 +47,18 @@ const Header = () => {
                   to="/#shop"
                   title="Shop"
                   stripHash
+                  onClick={handleLinkClick}
+                  onKeyDown={handleKeyDown}
                 />
               </li>
               <li className="margin-top-20px margin-bottom-30px">
                 <AnchorLink
                   className="primary-link text-36px"
-                  to="/where-to-find"
+                  to="/where-to-find#menu-btn"
                   title="Where to find"
                   stripHash
+                  onClick={handleLinkClick}
+                  onKeyDown={handleKeyDown}
                 />
               </li>
               <li className="margin-top-20px margin-bottom-30px">
@@ -62,6 +67,8 @@ const Header = () => {
                   to="/#mood"
                   title="Mood"
                   stripHash
+                  onClick={handleLinkClick}
+                  onKeyDown={handleKeyDown}
                 />
               </li>
               <li className="margin-top-20px padding-bottom-60px padding-bottom-md-none">
@@ -69,6 +76,8 @@ const Header = () => {
                   className="primary-link text-36px shop-link"
                   to="/contact"
                   title="Let’s be rosebuds"
+                  onClick={handleLinkClick}
+                  onKeyDown={handleKeyDown}
                 />
               </li>
             </ul>
