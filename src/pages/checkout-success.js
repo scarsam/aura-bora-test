@@ -29,10 +29,7 @@ const CheckoutSuccess = () => {
           setCheckoutSuccess(true)
         }
       } catch (error) {
-        error.message = `Something went wrong when confirming your purchase. Please check
-        your mail inbox for a order confirmation. If you have not received an email confirming your purchase,
-        please contact our customer support`
-
+        error.message = `Some unexplainable happened when trying to confirm your purchase. Try again and we’ll make it right.`
         setError(error)
       } finally {
         setisLoading(false)
@@ -64,18 +61,18 @@ const CheckoutSuccess = () => {
                       You’ll get a confirmation in your
                       <span className="d-block">
                         email very soon. Enjoy your Aura Bora,
-                        <span className="d-block">and enjoy this haiku.</span>
+                        <span className="d-md-block">
+                          and enjoy this haiku.
+                        </span>
                       </span>
                     </p>
                     <div className="haiku d-flex justify-content-center font-barlow">
-                      <p className="text-22px padding-top-40px">
+                      <p className="text-22px padding-top-40px text-right">
                         What is this round fruit?
                         <span className="d-block">
                           It has a hard outer shell.
                         </span>
-                        <p className="text-right margin-none">
-                          I’m told I do too.
-                        </p>
+                        <span className="d-block">I’m told I do too.</span>
                       </p>
                       <img
                         src={SuccessImg}

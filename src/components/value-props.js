@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import smileIcon from 'images/smile-icon.svg'
 
 // Desktop
-const valuesOneDesktop = ['0 Sugar', '0 Calories', 'Vegan']
-const valuesTwoDesktop = ['Non GMO', 'Paleo', 'Gluten free', 'Caffeine free']
+const valuesOneDesktop = ['0 Sugar', '0 Calories', '0 Sodium']
+const valuesTwoDesktop = ['Gluten free', 'Non GMO', 'Vegan', 'Plant based']
 const valuesThreeDesktop = ['No artificial flavors', '1% for the planet']
 // Mobile
-const valuesOneMobile = ['0 Sugar', '0 Calories', 'Vegan']
-const valuesTwoMobile = ['Non GMO', 'Paleo', 'Gluten free']
-const valuesThreeMobile = ['Caffeine free', 'No artificial flavors']
+const valuesOneMobile = ['0 Sugar', '0 Calories', '0 Sodium']
+const valuesTwoMobile = ['Gluten free', 'Non GMO', 'Vegan']
+const valuesThreeMobile = ['Plant based', 'No artificial flavors']
 
 const ValueProp = ({ valueProp }) => (
   <div className="d-flex">

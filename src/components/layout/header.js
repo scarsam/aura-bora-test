@@ -41,43 +41,55 @@ const Header = () => {
               ref={navMenu}
             />
             <ul className="menu margin-none padding-none padding-left-15px">
-              <li className="margin-top-30px margin-bottom-30px">
+              <li
+                className="margin-top-30px margin-bottom-30px"
+                onClick={handleLinkClick}
+                onKeyDown={handleKeyDown}
+                role="presentation"
+              >
                 <AnchorLink
                   className="primary-link text-36px shop-link"
                   to="/#shop"
                   title="Shop"
                   stripHash
-                  onClick={handleLinkClick}
-                  onKeyDown={handleKeyDown}
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-30px">
+              <li
+                className="margin-top-20px margin-bottom-30px"
+                onClick={handleLinkClick}
+                onKeyDown={handleKeyDown}
+                role="presentation"
+              >
                 <AnchorLink
                   className="primary-link text-36px"
                   to="/where-to-find#menu-btn"
                   title="Where to find"
                   stripHash
-                  onClick={handleLinkClick}
-                  onKeyDown={handleKeyDown}
                 />
               </li>
-              <li className="margin-top-20px margin-bottom-30px">
+              <li
+                className="margin-top-20px margin-bottom-30px"
+                onClick={handleLinkClick}
+                onKeyDown={handleKeyDown}
+                role="presentation"
+              >
                 <AnchorLink
                   className="primary-link text-36px shop-link"
                   to="/#mood"
                   title="Mood"
                   stripHash
-                  onClick={handleLinkClick}
-                  onKeyDown={handleKeyDown}
                 />
               </li>
-              <li className="margin-top-20px padding-bottom-60px padding-bottom-md-none">
+              <li
+                className="margin-top-20px padding-bottom-60px padding-bottom-md-none"
+                onClick={handleLinkClick}
+                onKeyDown={handleKeyDown}
+                role="presentation"
+              >
                 <AnchorLink
                   className="primary-link text-36px shop-link"
                   to="/contact"
-                  title="Let’s be rosebuds"
-                  onClick={handleLinkClick}
-                  onKeyDown={handleKeyDown}
+                  title="Say hey"
                 />
               </li>
             </ul>

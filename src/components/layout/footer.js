@@ -34,7 +34,7 @@ const Footer = () => {
                 className="primary-link margin-bottom-10px"
                 to="/contact"
               >
-                Let’s be rosebuds
+                Say hey
               </AnchorLink>
             </div>
             <div className="col-md-8 col-lg-7 offset-lg-1 padding-top-30px padding-top-md-none d-flex flex-column flex-sm-row">

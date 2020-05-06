@@ -17,8 +17,8 @@ const WhereToFind = () => {
       <SEO title="Where to find" />
       <section className="where-to-find">
         <div className="container padding-top-50px">
-          <div className="row">
-            <div className="col-12">
+          <div className="row padding-bottom-30px">
+            <div className="col-12 padding-bottom-60px">
               <div className="text-center padding-bottom-lg-50px hero">
                 <img
                   alt="Rabbit jumping at the text where-to-find"
@@ -106,15 +106,15 @@ const whereToFind = [
     stores: [
       {
         name: 'Buffalo Whole Foods',
-        address: '598 Castro St',
+        address: '598 Castro St.',
       },
       {
         name: 'Green Earth Natural',
-        address: '860 Divisadero St',
+        address: '860 Divisadero St.',
       },
       {
         name: 'Bayside Market',
-        address: '120 Brannan St',
+        address: '120 Brannan St.',
       },
       {
         name: 'Other Avenues',
@@ -122,7 +122,7 @@ const whereToFind = [
       },
       {
         name: "Bryan's Grocery",
-        address: '3445 California St',
+        address: '3445 California St.',
       },
       {
         name: 'Cal-Mart Calif Street',
@@ -142,7 +142,7 @@ const whereToFind = [
       },
       {
         name: 'Harvest Hills Market',
-        address: '3216 Folsom St',
+        address: '3216 Folsom St.',
       },
       {
         name: 'Rincon Market',
@@ -164,7 +164,7 @@ const whereToFind = [
     stores: [
       {
         name: 'A-1 Market',
-        address: '1420 Encinal',
+        address: '1420 Encinal Ave.',
       },
     ],
   },
@@ -177,7 +177,7 @@ const whereToFind = [
       },
       {
         name: 'Wildberries Marketplace',
-        address: '747 13th Street',
+        address: '747 13th St.',
       },
     ],
   },
@@ -186,7 +186,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Wild Rivers Market',
-        address: '450 M St',
+        address: '450 M St.',
       },
     ],
   },
@@ -194,8 +194,8 @@ const whereToFind = [
     name: 'Davis, CA',
     stores: [
       {
-        name: 'Davis Food Coop',
-        address: '620 G St',
+        name: 'Davis Food Co-op',
+        address: '620 G St.',
       },
     ],
   },
@@ -204,7 +204,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Eureka Natural Foods',
-        address: '1450 Broadway',
+        address: '1450 Broadway St.',
       },
     ],
   },
@@ -213,7 +213,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Diablo Foods Lafayette',
-        address: '3615 Mt Diablo Blvd',
+        address: '3615 Mt Diablo Blvd.',
       },
     ],
   },
@@ -222,7 +222,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Eureka Natural #2',
-        address: '2165 Central Ave',
+        address: '2165 Central Ave.',
       },
     ],
   },
@@ -231,7 +231,7 @@ const whereToFind = [
     stores: [
       {
         name: "Sigona's Farmers Market",
-        address: '2345 Middlefield Rd',
+        address: '2345 Middlefield Rd.',
       },
       {
         name: "Piazza's Fine Foods Palo Alto",
@@ -244,7 +244,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Placerville Food Coop',
-        address: '535 Placerville Dr',
+        address: '535 Placerville Dr.',
       },
     ],
   },
@@ -253,7 +253,7 @@ const whereToFind = [
     stores: [
       {
         name: "Sigona's Farmers Market",
-        address: '2345 Middlefield Rd',
+        address: '2345 Middlefield Rd.',
       },
     ],
   },
@@ -280,7 +280,7 @@ const whereToFind = [
     stores: [
       {
         name: "Murphy's Market Trinidad",
-        address: '1 Main Street',
+        address: '1 Main St.',
       },
     ],
   },
@@ -289,7 +289,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Ukiah Natural Foods Coop',
-        address: '721 S State St',
+        address: '721 S State St.',
       },
     ],
   },
@@ -298,19 +298,19 @@ const whereToFind = [
     stores: [
       {
         name: 'Leevers Locavore',
-        address: '2630 W 38th Ave',
+        address: '2630 W 38th Ave.',
       },
       {
         name: 'Truffle Cheese Shop',
-        address: '2906 E 6th Ave',
+        address: '2906 E 6th Ave.',
       },
       {
         name: 'Nooch Vegan Market',
-        address: '10 E Ellsworth Ave',
+        address: '10 E Ellsworth Ave.',
       },
       {
         name: "Spinelli's Market",
-        address: '4621 E 23rd Ave',
+        address: '4621 E 23rd Ave.',
       },
     ],
   },
@@ -319,7 +319,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Grant Street Market',
-        address: '815 S Grant Ave',
+        address: '815 S Grant Ave.',
       },
     ],
   },
