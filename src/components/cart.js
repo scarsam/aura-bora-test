@@ -176,7 +176,7 @@ const Cart = () => {
 
 export default Cart
 
-const stripePromise = loadStripe(process.env.STRIPE_SECRET_KEY)
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_SECRET_KEY)
 
 const redirectToCheckout = async (event, cart) => {
   event.preventDefault()
@@ -194,9 +194,9 @@ const redirectToCheckout = async (event, cart) => {
         allowedCountries: ['US'],
       },
       items,
-      successUrl: `${GATSBY_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      successUrl: `${process.env.GATSBY_BASE_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
 
-      cancelUrl: GATSBY_URL,
+      cancelUrl: process.env.GATSBY_BASE_URL,
     })
   } catch (error) {
     console.error('Error:', error)
