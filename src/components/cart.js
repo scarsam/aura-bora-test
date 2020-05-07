@@ -176,7 +176,7 @@ const Cart = () => {
 
 export default Cart
 
-const stripePromise = loadStripe('pk_test_WemDrwL9FdctlL3poeIB3Ilm00b57CDtd8')
+const stripePromise = loadStripe(process.env.STRIPE_SECRET_KEY)
 
 const redirectToCheckout = async (event, cart) => {
   event.preventDefault()
@@ -190,21 +190,21 @@ const redirectToCheckout = async (event, cart) => {
 
   try {
     await stripe.redirectToCheckout({
-      // billingAddressCollection: 'required',
-      // shippingAddressCollection: {
-      //   allowedCountries: ['US'],
-      // },
+      billingAddressCollection: 'required',
+      shippingAddressCollection: {
+        allowedCountries: ['US'],
+      },
       items,
       successUrl: `${
         env === 'development'
           ? 'http://localhost:8000'
-          : 'https://gallant-khorana-e2000b.netlify.app'
+          : 'https://aura-bora.netlify.app'
       }/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
 
       cancelUrl: `${
         env === 'development'
           ? 'http://localhost:8000'
-          : 'https://gallant-khorana-e2000b.netlify.app'
+          : 'https://aura-bora.netlify.app'
       }`,
     })
   } catch (error) {
