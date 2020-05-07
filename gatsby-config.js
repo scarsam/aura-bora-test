@@ -57,11 +57,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Aura Bora — Herbal Sparkling Water`,
+        short_name: `Aura Bora`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#a6a3b6`,
+        theme_color: false,
         display: `minimal-ui`,
       },
     },
