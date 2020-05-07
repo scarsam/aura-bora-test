@@ -180,7 +180,6 @@ const stripePromise = loadStripe(process.env.STRIPE_SECRET_KEY)
 
 const redirectToCheckout = async (event, cart) => {
   event.preventDefault()
-  const env = process.env.NODE_ENV
   const stripe = await stripePromise
   const items =
     cart &&
@@ -195,17 +194,9 @@ const redirectToCheckout = async (event, cart) => {
         allowedCountries: ['US'],
       },
       items,
-      successUrl: `${
-        env === 'development'
-          ? 'http://localhost:8000'
-          : 'https://aura-bora.netlify.app'
-      }/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      successUrl: `${GATSBY_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
 
-      cancelUrl: `${
-        env === 'development'
-          ? 'http://localhost:8000'
-          : 'https://aura-bora.netlify.app'
-      }`,
+      cancelUrl: GATSBY_URL,
     })
   } catch (error) {
     console.error('Error:', error)
