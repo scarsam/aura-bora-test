@@ -41,7 +41,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
         endpoint:
-          'https://gmail.us19.list-manage.com/subscribe/post?u=c16583a0d003cfb8daa716099&amp;id=253318e9e4',
+          'https://aurabora.us18.list-manage.com/subscribe/post?u=e7beea9e00caf30b70ad5aca6&amp;id=007c905f06',
       },
     },
     {
