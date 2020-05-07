@@ -193,8 +193,8 @@ const redirectToCheckout = async (event, cart) => {
         allowedCountries: ['US'],
       },
       items,
-      successUrl: `${process.env.GATSBY_BASE_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: process.env.GATSBY_BASE_URL,
+      successUrl: `${process.env.GATSBY_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancelUrl: process.env.GATSBY_URL,
     })
   } catch (error) {
     console.error('Error:', error)
