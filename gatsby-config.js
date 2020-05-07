@@ -63,6 +63,7 @@ module.exports = {
         background_color: `#a6a3b6`,
         theme_color: false,
         display: `minimal-ui`,
+        icon: `src/images/aurabora-favicon.svg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
