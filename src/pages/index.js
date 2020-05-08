@@ -33,7 +33,7 @@ const IndexPage = () => {
             <span className="d-lg-block">
               made from herbs, fruits, and flowers for{' '}
             </span>
-            earthly tastes and heavenly feelings
+            earthly tastes and heavenly feelings.
           </p>
           <div className="collection-btn">
             <AnchorLink
