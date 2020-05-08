@@ -151,7 +151,7 @@ async function CreateStripeOrder(order) {
   return response.json()
 }
 
-async function UpdateStripeOrder(order) {
+export async function UpdateStripeOrder(order) {
   const response = await fetch('/.netlify/functions/update-order', {
     headers: {
       Accept: 'application/json',
