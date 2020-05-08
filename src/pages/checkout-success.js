@@ -27,17 +27,23 @@ const CheckoutSuccess = () => {
             type: 'reset',
           })
           setCheckoutSuccess(true)
-          await CreateStripeOrder(CreateOrder(session, payment))
+          setisLoading(false)
+          if (checkoutSuccess) {
+            const order = await CreateStripeOrder(CreateOrder(session, payment))
+            if (order.status === 'created') {
+              const updatedOrder = await UpdateStripeOrder(order)
+              console.log(updatedOrder)
+            }
+          }
         }
       } catch (error) {
         error.message = `Some unexplainable happened when trying to confirm your purchase. Try again and we’ll make it right.`
         setError(error)
-      } finally {
         setisLoading(false)
       }
     }
     sessionId && RetrieveCheckoutDetails(sessionId)
-  }, [sessionId, dispatch])
+  }, [sessionId, dispatch, checkoutSuccess])
 
   return (
     <>
@@ -133,6 +139,20 @@ async function RetrievePayment(paymentIntentId) {
 
 async function CreateStripeOrder(order) {
   const response = await fetch('/.netlify/functions/create-order', {
+    headers: {
+      Accept: 'application/json',
+      order: JSON.stringify(order),
+    },
+  })
+  if (!response.ok) {
+    const error = response
+    throw error
+  }
+  return response.json()
+}
+
+async function UpdateStripeOrder(order) {
+  const response = await fetch('/.netlify/functions/update-order', {
     headers: {
       Accept: 'application/json',
       order: JSON.stringify(order),
