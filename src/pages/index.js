@@ -7,7 +7,6 @@ import ValueProps from 'components/value-props'
 import Social from 'components/Social'
 import '@stripe/stripe-js'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
-import { UpdateStripeOrder } from './checkout-success'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -18,10 +17,7 @@ const IndexPage = () => {
     }
   })
 
-  async function handleFirstTab(e) {
-    const test = await UpdateStripeOrder()
-    console.log(test)
-
+  function handleFirstTab(e) {
     if (e.keyCode === 9) {
       document.body.classList.add('user-is-tabbing')
       window.removeEventListener('keydown', handleFirstTab)

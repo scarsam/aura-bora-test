@@ -31,8 +31,7 @@ const CheckoutSuccess = () => {
           if (checkoutSuccess) {
             const order = await CreateStripeOrder(CreateOrder(session, payment))
             if (order.status === 'created') {
-              const updatedOrder = await UpdateStripeOrder(order)
-              console.log(updatedOrder)
+              await UpdateStripeOrder(order)
             }
           }
         }
@@ -151,7 +150,7 @@ async function CreateStripeOrder(order) {
   return response.json()
 }
 
-export async function UpdateStripeOrder(order) {
+async function UpdateStripeOrder(order) {
   const response = await fetch('/.netlify/functions/update-order', {
     headers: {
       Accept: 'application/json',

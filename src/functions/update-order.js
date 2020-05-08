@@ -1,9 +1,9 @@
 const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
 
 exports.handler = (event, context, callback) => {
-  // const order = JSON.parse(event.headers.order)
+  const order = JSON.parse(event.headers.order)
 
-  stripe.orders.update('or_1GgK3xCv9pCFw7gsPjpkwx42', function(err, order) {
+  stripe.orders.update(order.id, function(err, order) {
     const updatedOrder = { ...order, status: 'paid' }
     if (err) {
       return callback(err)
