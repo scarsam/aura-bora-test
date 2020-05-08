@@ -31,7 +31,7 @@ const IndexPage = () => {
           <p className="margin-none intro-text">
             Aura Bora is a sparkling water{' '}
             <span className="d-lg-block">
-              made from herbs, fruits, and flowers for
+              made from herbs, fruits, and flowers for{' '}
             </span>
             earthly tastes and heavenly feelings
           </p>

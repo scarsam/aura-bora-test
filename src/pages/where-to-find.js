@@ -106,47 +106,47 @@ const whereToFind = [
     stores: [
       {
         name: 'Buffalo Whole Foods',
-        address: '598 Castro Street.',
+        address: '598 Castro Street',
       },
       {
         name: 'Green Earth Natural',
-        address: '860 Divisadero Street.',
+        address: '860 Divisadero Street',
       },
       {
         name: 'Bayside Market',
-        address: '120 Brannan Street.',
+        address: '120 Brannan Street',
       },
       {
         name: 'Other Avenues',
-        address: '3930 Judah Street.',
+        address: '3930 Judah Street',
       },
       {
         name: "Bryan's Grocery",
-        address: '3445 California Street.',
+        address: '3445 California Street',
       },
       {
         name: 'Cal-Mart Calif Street',
-        address: '3585 California Street.',
+        address: '3585 California Street',
       },
       {
         name: 'Valencia Whole Foods',
-        address: '999 Valencia Street.',
+        address: '999 Valencia Street',
       },
       {
         name: "RJ's Market",
-        address: '1425 Sansome Street.',
+        address: '1425 Sansome Street',
       },
       {
         name: 'Casa Guadalupe',
-        address: '2999 Mission Street.',
+        address: '2999 Mission Street',
       },
       {
         name: 'Harvest Hills Market',
-        address: '3216 Folsom Street.',
+        address: '3216 Folsom Street',
       },
       {
         name: 'Rincon Market',
-        address: '98 Howard Street.',
+        address: '98 Howard Street',
       },
     ],
   },
@@ -155,7 +155,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Piedmont Grocery',
-        address: '4038 Piedmont Avenue.',
+        address: '4038 Piedmont Avenue',
       },
     ],
   },
@@ -164,7 +164,7 @@ const whereToFind = [
     stores: [
       {
         name: 'A-1 Market',
-        address: '1420 Encinal Avenue.',
+        address: '1420 Encinal Avenue',
       },
     ],
   },
@@ -173,11 +173,11 @@ const whereToFind = [
     stores: [
       {
         name: "Murphy's Market",
-        address: 'Sunnybrae 785 Bayside Road.',
+        address: 'Sunnybrae 785 Bayside Road',
       },
       {
         name: 'Wildberries Marketplace',
-        address: '747 13th Street.',
+        address: '747 13th Street',
       },
     ],
   },
@@ -186,7 +186,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Wild Rivers Market',
-        address: '450 M Street.',
+        address: '450 M Street',
       },
     ],
   },
@@ -195,7 +195,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Davis Food Co-op',
-        address: '620 G Street.',
+        address: '620 G Street',
       },
     ],
   },
@@ -204,7 +204,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Eureka Natural Foods',
-        address: '1450 Broadway Street.',
+        address: '1450 Broadway Street',
       },
     ],
   },
@@ -213,7 +213,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Diablo Foods Lafayette',
-        address: '3615 Mt Diablo Boulevard.',
+        address: '3615 Mt Diablo Boulevard',
       },
     ],
   },
@@ -222,7 +222,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Eureka Natural #2',
-        address: '2165 Central Avenue.',
+        address: '2165 Central Avenue',
       },
     ],
   },
@@ -231,11 +231,11 @@ const whereToFind = [
     stores: [
       {
         name: "Sigona's Farmers Market",
-        address: '2345 Middlefield Road.',
+        address: '2345 Middlefield Road',
       },
       {
         name: "Piazza's Fine Foods Palo Alto",
-        address: '3922 Middlefield Road.',
+        address: '3922 Middlefield Road',
       },
     ],
   },
@@ -244,7 +244,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Placerville Food Co-op',
-        address: '535 Placerville Drive.',
+        address: '535 Placerville Drive',
       },
     ],
   },
@@ -253,7 +253,7 @@ const whereToFind = [
     stores: [
       {
         name: "Sigona's Farmers Market",
-        address: '2345 Middlefield Road.',
+        address: '2345 Middlefield Road',
       },
     ],
   },
@@ -262,7 +262,7 @@ const whereToFind = [
     stores: [
       {
         name: "Andy's Produce Market",
-        address: '1691 Gravenstein Hwy N.',
+        address: '1691 Gravenstein Hwy N',
       },
     ],
   },
@@ -271,7 +271,7 @@ const whereToFind = [
     stores: [
       {
         name: 'New Moon Natural Foods',
-        address: '505 West Lake Boulevard.',
+        address: '505 West Lake Boulevard',
       },
     ],
   },
@@ -280,7 +280,7 @@ const whereToFind = [
     stores: [
       {
         name: "Murphy's Market Trinidad",
-        address: '1 Main Street.',
+        address: '1 Main Street',
       },
     ],
   },
@@ -289,7 +289,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Ukiah Natural Foods Co-op',
-        address: '721 S State Street.',
+        address: '721 S State Street',
       },
     ],
   },
@@ -298,19 +298,19 @@ const whereToFind = [
     stores: [
       {
         name: 'Leevers Locavore',
-        address: '2630 W 38th Avenue.',
+        address: '2630 W 38th Avenue',
       },
       {
         name: 'Truffle Cheese Shop',
-        address: '2906 E 6th Avenue.',
+        address: '2906 E 6th Avenue',
       },
       {
         name: 'Nooch Vegan Market',
-        address: '10 E Ellsworth Avenue.',
+        address: '10 E Ellsworth Avenue',
       },
       {
         name: "Spinelli's Market",
-        address: '4621 E 23rd Avenue.',
+        address: '4621 E 23rd Avenue',
       },
     ],
   },
@@ -319,7 +319,7 @@ const whereToFind = [
     stores: [
       {
         name: 'Grant Street Market',
-        address: '815 S Grant Avenue.',
+        address: '815 S Grant Avenue',
       },
     ],
   },
