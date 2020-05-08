@@ -93,7 +93,7 @@ const Cart = () => {
               className="close-icon d-block margin-bottom-40px padding-top-60px"
             />
             <h2 className="text-28px line-height-1 margin-bottom-20px font-barlow">
-              {items && items.length ? 'Your order' : 'Nothing here!'}
+              {items && items.length ? 'Your order' : '¯\\_(ツ)_/¯'}
             </h2>
             {items &&
               items.map((product, index) => (

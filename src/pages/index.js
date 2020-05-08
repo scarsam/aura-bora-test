@@ -28,16 +28,12 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Hero>
         <div className="text-center margin-bottom-60px">
-          <h2 className="font-barlow text-33px margin-none padding-bottom-10px c-black">
-            From the land
-            <span className="d-block d-md-inline"> to your hand.</span>
-          </h2>
           <p className="margin-none intro-text">
-            Aura Bora is a delightful sparkling water{' '}
+            Aura Bora is a sparkling water{' '}
             <span className="d-lg-block">
-              made from herbs, fruits, and flowers for earthly
+              made from herbs, fruits, and flowers for
             </span>
-            tastes and heavenly feelings.
+            earthly tastes and heavenly feelings
           </p>
           <div className="collection-btn">
             <AnchorLink

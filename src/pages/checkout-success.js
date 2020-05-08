@@ -86,8 +86,8 @@ const CheckoutSuccess = () => {
                   <>
                     <h2 className="text-36px font-barlow">Whoops!</h2>
                     <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
-                      Some unexplainable happened when trying to confirm your
-                      purchase. Try again and we will make it right.
+                      Something unexplainable happened when confirming your
+                      purchase. Try again and we'll make it right.
                     </p>
                   </>
                 )}

@@ -243,8 +243,8 @@ const whereToFind = [
     name: 'Placerville, CA',
     stores: [
       {
-        name: 'Placerville Food Coop',
-        address: '535 Placerville Dr.',
+        name: 'Placerville Food Co-op',
+        address: '535 Placerville Drive.',
       },
     ],
   },
@@ -288,7 +288,7 @@ const whereToFind = [
     name: 'Ukiah, CA',
     stores: [
       {
-        name: 'Ukiah Natural Foods Coop',
+        name: 'Ukiah Natural Foods Co-op',
         address: '721 S State Street.',
       },
     ],

@@ -90,12 +90,12 @@
   }
 
   &:before {
-    top: -24px;
+    top: -23px;
     transform: rotate(180deg);
   }
   &:after {
     left: -3px;
-    bottom: -24px;
+    bottom: -23px;
   }
   &.cart-menu-empty {
     background-image: url('../images/flower-no-items.svg');

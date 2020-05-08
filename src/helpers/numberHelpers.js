@@ -3,6 +3,7 @@ export function formatPrice(price) {
   const formattedPrice = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'usd',
+    minimumFractionDigits: 0,
   }).format(priceFloat)
 
   return formattedPrice
