@@ -170,6 +170,7 @@ const CreateOrder = (session, payment) => {
     session.display_items.map(item => ({
       type: item.type,
       parent: item.sku.id,
+      quantity: item.quantity,
     }))
 
   const order = {
