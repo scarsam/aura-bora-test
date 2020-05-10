@@ -28,12 +28,6 @@ const CheckoutSuccess = () => {
           })
           setCheckoutSuccess(true)
           setisLoading(false)
-          if (checkoutSuccess) {
-            const order = await CreateStripeOrder(CreateOrder(session, payment))
-            if (order.status === 'created') {
-              await UpdateStripeOrder(order)
-            }
-          }
         }
       } catch (error) {
         error.message = `Some unexplainable happened when trying to confirm your purchase. Try again and we’ll make it right.`
@@ -134,59 +128,4 @@ async function RetrievePayment(paymentIntentId) {
     throw error
   }
   return response.json()
-}
-
-async function CreateStripeOrder(order) {
-  const response = await fetch('/.netlify/functions/create-order', {
-    headers: {
-      Accept: 'application/json',
-      order: JSON.stringify(order),
-    },
-  })
-  if (!response.ok) {
-    const error = response
-    throw error
-  }
-  return response.json()
-}
-
-async function UpdateStripeOrder(order) {
-  const response = await fetch('/.netlify/functions/update-order', {
-    headers: {
-      Accept: 'application/json',
-      order: JSON.stringify(order),
-    },
-  })
-  if (!response.ok) {
-    const error = response
-    throw error
-  }
-  return response.json()
-}
-
-const CreateOrder = (session, payment) => {
-  const items =
-    session &&
-    session.display_items.map(item => ({
-      type: item.type,
-      parent: item.sku.id,
-      quantity: item.quantity,
-    }))
-
-  const order = {
-    currency: 'usd',
-    email: payment.receipt_email,
-    items,
-    shipping: {
-      name: payment.shipping.name,
-      address: {
-        line1: payment.shipping.address.line1,
-        city: payment.shipping.address.city,
-        state: payment.shipping.address.state,
-        country: payment.shipping.address.country,
-        postal_code: payment.shipping.address.postal_code,
-      },
-    },
-  }
-  return order
 }
