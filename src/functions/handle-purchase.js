@@ -37,6 +37,14 @@ exports.handler = async ({ body, headers }) => {
           state: shippingDetails.address.state,
           country: shippingDetails.address.country,
         },
+        billTo: {
+          name: shippingDetails.name,
+          street1: shippingDetails.address.line1,
+          street2: shippingDetails.address.line2,
+          postalCode: shippingDetails.address.postal_code,
+          state: shippingDetails.address.state,
+          country: shippingDetails.address.country,
+        },
       }
       postShipStationRequest({
         endpoint: 'orders/createorder',
