@@ -30,7 +30,7 @@ const CheckoutSuccess = () => {
           setisLoading(false)
         }
       } catch (error) {
-        error.message = `Some unexplainable happened when trying to confirm your purchase. Try again and we’ll make it right.`
+        error.message = `We were unable to confirm your purchase. If you didn’t get a confirmation email, your purchase  probably didn’t go through. To be sure, try checking your bank statement. Still having trouble? Reach out and we’ll make it right`
         setError(error)
         setisLoading(false)
       }
