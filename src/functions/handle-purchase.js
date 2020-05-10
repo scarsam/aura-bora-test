@@ -3,7 +3,7 @@ const { postShipStationRequest } = require('../helpers/shipStation')
 
 exports.handler = async ({ body, headers }) => {
   try {
-    const stripeEvent = stripe.webhooks.constructEvent(
+    const stripeEvent = await stripe.webhooks.constructEvent(
       body,
       headers['stripe-signature'],
       process.env.GATSBY_STRIPE_WEBHOOK_CHECKOUT_SECRET
@@ -19,7 +19,7 @@ exports.handler = async ({ body, headers }) => {
       const todaysDate = new Date(Date.now())
       const order = {
         orderNumber: eventObject.payment_intent,
-        orderStatus: 'awaiting_payment',
+        orderStatus: 'awaiting_shipment',
         customerEmail: stripeCustomer.email,
         orderDate: todaysDate.toISOString(),
         items: items.map(item => ({

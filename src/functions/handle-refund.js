@@ -5,9 +5,9 @@ const {
   postShipStationRequest,
 } = require('../helpers/shipStation')
 
-exports.handler = ({ body, headers }) => {
+exports.handler = async ({ body, headers }) => {
   try {
-    const stripeEvent = stripe.webhooks.constructEvent(
+    const stripeEvent = await stripe.webhooks.constructEvent(
       body,
       headers['stripe-signature'],
       process.env.GATSBY_STRIPE_WEBHOOK_REFUND_SECRET
@@ -16,7 +16,6 @@ exports.handler = ({ body, headers }) => {
     if (stripeEvent.type === 'charge.refunded') {
       const eventObject = stripeEvent.data.object
       const orderNumber = eventObject.payment_intent
-
       getShipStationRequest({
         endpoint: `orders?orderNumber=${orderNumber}`,
         cb: existingOrders => {
