@@ -1,9 +1,42 @@
 const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
+const request = require('request')
 
-const {
-  getShipStationRequest,
-  postShipStationRequest,
-} = require('../helpers/shipStation')
+const options = {
+  auth: {
+    username: process.env.GATSBY_SHIPSTATION_USERNAME,
+    password: process.env.GATSBY_SHIPSTATION_PASSWORD,
+  },
+  headers: { 'Content-Type': 'application/json' },
+}
+
+function postShipStationRequest({ endpoint, body }) {
+  return request(
+    {
+      method: 'POST',
+      url: `https://ssapi.shipstation.com/${endpoint}`,
+      ...options,
+      body: JSON.stringify(body),
+    },
+    function(error, response) {
+      if (error) throw new Error(error)
+      console.log(response.body)
+    }
+  )
+}
+
+function getShipStationRequest({ endpoint, cb }) {
+  return request(
+    {
+      method: 'GET',
+      url: `https://ssapi.shipstation.com/${endpoint}`,
+      ...options,
+    },
+    function(error, response) {
+      if (error) throw new Error(error)
+      cb(response.body)
+    }
+  )
+}
 
 exports.handler = async ({ body, headers }) => {
   try {
