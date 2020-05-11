@@ -57,9 +57,12 @@ exports.handler = async ({ body, headers, callback }) => {
           const order = orders[0]
           if (order) {
             const updatedOrder = { ...order, orderStatus: 'cancelled' }
-            postShipStationRequest({
-              endpoint: 'orders/createorder',
-              body: updatedOrder,
+            callback(null, {
+              statusCode: 200,
+              body: postShipStationRequest({
+                endpoint: 'orders/createorder',
+                body: updatedOrder,
+              }),
             })
           }
         },

@@ -1,7 +1,7 @@
 const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
 const request = require('request')
 
-exports.handler = async ({ body, headers }) => {
+exports.handler = async ({ body, headers, callback }) => {
   function postShipStationRequest({ endpoint, body }) {
     return request(
       {
@@ -65,9 +65,12 @@ exports.handler = async ({ body, headers }) => {
           country: shippingDetails.address.country,
         },
       }
-      postShipStationRequest({
-        endpoint: 'orders/createorder',
-        body: order,
+      callback(null, {
+        statusCode: 200,
+        body: postShipStationRequest({
+          endpoint: 'orders/createorder',
+          body: order,
+        }),
       })
     }
 
