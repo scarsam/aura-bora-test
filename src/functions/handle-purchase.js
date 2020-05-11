@@ -17,6 +17,7 @@ exports.handler = async ({ body, headers, callback }) => {
       function(error, response) {
         if (error) throw new Error(error)
         console.log(response.body)
+        return response.body
       }
     )
   }
@@ -72,11 +73,6 @@ exports.handler = async ({ body, headers, callback }) => {
           body: order,
         }),
       })
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ received: true }),
     }
   } catch (err) {
     console.log(`Stripe webhook failed with ${err}`)

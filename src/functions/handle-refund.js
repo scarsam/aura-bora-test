@@ -17,6 +17,7 @@ exports.handler = async ({ body, headers, callback }) => {
       function(error, response) {
         if (error) throw new Error(error)
         console.log(response.body)
+        return response.body
       }
     )
   }
@@ -35,7 +36,7 @@ exports.handler = async ({ body, headers, callback }) => {
       function(error, response) {
         if (error) throw new Error(error)
         console.log(response.body)
-        cb(response.body)
+        return cb(response.body)
       }
     )
   }
@@ -50,28 +51,23 @@ exports.handler = async ({ body, headers, callback }) => {
     if (stripeEvent.type === 'charge.refunded') {
       const eventObject = stripeEvent.data.object
       const orderNumber = eventObject.payment_intent
-      getShipStationRequest({
-        endpoint: `orders?orderNumber=${orderNumber}`,
-        cb: existingOrders => {
-          const { orders } = JSON.parse(existingOrders)
-          const order = orders[0]
-          if (order) {
-            const updatedOrder = { ...order, orderStatus: 'cancelled' }
-            callback(null, {
-              statusCode: 200,
-              body: postShipStationRequest({
+      callback(null, {
+        statusCode: 200,
+        body: getShipStationRequest({
+          endpoint: `orders?orderNumber=${orderNumber}`,
+          cb: existingOrders => {
+            const { orders } = JSON.parse(existingOrders)
+            const order = orders[0]
+            if (order) {
+              const updatedOrder = { ...order, orderStatus: 'cancelled' }
+              postShipStationRequest({
                 endpoint: 'orders/createorder',
                 body: updatedOrder,
-              }),
-            })
-          }
-        },
+              })
+            }
+          },
+        }),
       })
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ received: true }),
     }
   } catch (err) {
     console.log(`Stripe webhook failed with ${err}`)
