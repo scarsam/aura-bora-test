@@ -1,32 +1,27 @@
 const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
-const request = require('request')
+const { promisify } = require('util')
+const request = promisify(require('request'))
 
-exports.handler = async ({ body, headers, callback }) => {
-  function postShipStationRequest({ endpoint, body }) {
-    return request(
-      {
-        method: 'POST',
-        url: `https://ssapi.shipstation.com/${endpoint}`,
-        auth: {
-          username: process.env.GATSBY_SHIPSTATION_USERNAME,
-          password: process.env.GATSBY_SHIPSTATION_PASSWORD,
-        },
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+export async function handler({ event, body, headers }) {
+  function postShipStationRequest({ endpoint, order }) {
+    return request({
+      method: 'POST',
+      url: `https://ssapi.shipstation.com/${endpoint}`,
+      auth: {
+        username: process.env.GATSBY_SHIPSTATION_USERNAME,
+        password: process.env.GATSBY_SHIPSTATION_PASSWORD,
       },
-      function(error, response) {
-        if (error) throw new Error(error)
-        console.log(response.body)
-        return response.body
-      }
-    )
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order),
+    })
   }
 
   try {
+    const rawBodyAsBuffer = new Buffer(event.raw, 'base64')
     const stripeEvent = await stripe.webhooks.constructEvent(
-      body,
+      rawBodyAsBuffer,
       headers['stripe-signature'],
-      process.env.GATSBY_STRIPE_WEBHOOK_CHECKOUT_SECRET
+      process.env.GATSBY_STRIPE_WEBHOOK_REFUND_SECRET
     )
 
     if (stripeEvent.type === 'checkout.session.completed') {
@@ -66,13 +61,19 @@ exports.handler = async ({ body, headers, callback }) => {
           country: shippingDetails.address.country,
         },
       }
-      callback(null, {
-        statusCode: 200,
-        body: postShipStationRequest({
-          endpoint: 'orders/createorder',
-          body: order,
-        }),
+      const { body } = await postShipStationRequest({
+        endpoint: 'orders/createorder',
+        order,
       })
+      return {
+        statusCode: 200,
+        body: JSON.stringify(body),
+      }
+    }
+    // Otherwise you get unhandled Promise error
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ received: true }),
     }
   } catch (err) {
     console.log(`Stripe webhook failed with ${err}`)
