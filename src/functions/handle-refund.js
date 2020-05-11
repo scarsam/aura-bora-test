@@ -52,10 +52,7 @@ export async function handler({ body, headers }) {
       }
     }
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ received: true }),
-    }
+    return { statusCode: 200 }
   } catch (err) {
     console.log(`Stripe webhook failed with ${err}`)
 

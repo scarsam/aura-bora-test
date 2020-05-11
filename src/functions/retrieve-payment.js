@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
+const stripe = require('stripe')('rk_test_TWBwujzOefLlYC2dQa1WIWgP00IvBdOsdv')
 
 exports.handler = (event, context, callback) => {
   const paymentIntentId = event.headers.paymentintentid
