@@ -2,7 +2,7 @@ const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
 const { promisify } = require('util')
 const request = promisify(require('request'))
 
-export async function handler({ event, body, headers }) {
+export async function handler({ body, headers }) {
   function postShipStationRequest({ endpoint, order }) {
     return request({
       method: 'POST',
@@ -17,9 +17,8 @@ export async function handler({ event, body, headers }) {
   }
 
   try {
-    const rawBodyAsBuffer = new Buffer(event.raw, 'base64')
     const stripeEvent = await stripe.webhooks.constructEvent(
-      rawBodyAsBuffer,
+      body,
       headers['stripe-signature'],
       process.env.GATSBY_STRIPE_WEBHOOK_REFUND_SECRET
     )
@@ -61,16 +60,12 @@ export async function handler({ event, body, headers }) {
           country: shippingDetails.address.country,
         },
       }
-      const { body } = await postShipStationRequest({
+      await postShipStationRequest({
         endpoint: 'orders/createorder',
         order,
       })
-      return {
-        statusCode: 200,
-        body: JSON.stringify(body),
-      }
     }
-    // Otherwise you get unhandled Promise error
+
     return {
       statusCode: 200,
       body: JSON.stringify({ received: true }),
