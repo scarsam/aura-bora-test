@@ -6,9 +6,12 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Aura Bora — Herbal Sparkling Water`,
+    title: `Aura Bora`,
+    titleTemplate: '%s — Herbal Sparkling Water',
     description:
       'Aura Bora is a sparkling water made from real herbs, fruits, and flowers for earthly tastes and heavenly feelings. 0 Calories, 0 Sugar, 0 Sodium. Order today :)',
+    url: 'https://www.aurabora.com',
+    image: '/images/aura-bora-social.png',
   },
   developMiddleware: app => {
     app.use(
