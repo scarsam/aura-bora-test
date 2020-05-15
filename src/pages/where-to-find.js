@@ -16,14 +16,11 @@ const WhereToFind = () => {
     <Layout>
       <SEO title="Where to find" />
       <section className="where-to-find">
-        <div className="container padding-top-50px">
+        <div className="container padding-top-20px">
           <div className="row padding-bottom-30px">
             <div className="col-12 padding-bottom-60px">
-              <div className="text-center padding-bottom-lg-50px hero">
-                <img
-                  alt="Rabbit jumping at the text where-to-find"
-                  src={heroImage}
-                />
+              <div className="text-center padding-bottom-lg-10px hero">
+                <img alt="Where to find us" src={heroImage} />
               </div>
               <ul className="text-center relative">
                 {whereToFind.map((state, index) => (

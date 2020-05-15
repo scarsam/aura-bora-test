@@ -3,6 +3,7 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Toast from 'components/Toast'
 import { useQueryParam } from 'gatsby-query-params'
+import heroImage from 'images/header-say-hey.svg'
 
 const Contact = () => {
   const success = useQueryParam('success', false)
@@ -12,10 +13,12 @@ const Contact = () => {
       <SEO title="Say hey" />
       {success === 'true' && <Toast text={'Message sent'} />}
       <section className="where-to-find">
-        <div className="container">
+        <div className="container padding-top-20px">
           <div className="row">
             <div className="col-12 col-md-6 offset-md-3">
-              <h1 className="text-36px font-barlow">Say hey</h1>
+              <div className="text-center padding-bottom-lg-10px hero">
+                <img alt="How to contact us" src={heroImage} />
+              </div>
               <form
                 className="contact"
                 action="/contact?success=true"
