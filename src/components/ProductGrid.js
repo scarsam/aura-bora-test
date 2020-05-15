@@ -10,6 +10,7 @@ export const ProductGrid = () => {
   const items =
     data &&
     data
+      .filter(item => item.node.active)
       .map(item => item.node)
       .sort((prev, cur) =>
         prev.product.metadata.displayOrder > cur.product.metadata.displayOrder
@@ -63,6 +64,7 @@ export const useProducts = () => {
                   displayOrder
                 }
               }
+              active
               image
               id
               currency
