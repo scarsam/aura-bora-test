@@ -29,6 +29,7 @@ export async function handler({ body }) {
       const todaysDate = new Date(Date.now())
       const order = {
         orderNumber: eventObject.payment_intent,
+        orderKey: eventObject.payment_intent,
         orderStatus: 'awaiting_shipment',
         customerEmail: stripeCustomer.email,
         orderDate: todaysDate.toISOString(),
