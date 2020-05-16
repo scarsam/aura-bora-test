@@ -2,9 +2,7 @@ const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
 const { promisify } = require('util')
 const request = promisify(require('request'))
 
-export async function handler({ body }) {
-  const { type, data } = JSON.parse(body)
-
+export async function handler({ body, headers }) {
   function postShipStationRequest({ endpoint, body }) {
     return request({
       method: 'POST',
@@ -31,8 +29,13 @@ export async function handler({ body }) {
   }
 
   try {
-    if (type === 'charge.refunded') {
-      const eventObject = data.object
+    const stripeEvent = stripe.webhooks.constructEvent(
+      body,
+      headers['stripe-signature'],
+      process.env.GATSBY_STRIPE_WEBHOOK_REFUND_SECRET
+    )
+    if (stripeEvent.type === 'charge.refunded') {
+      const eventObject = stripeEvent.data.object
       const orderNumber = eventObject.payment_intent
       const { body } = await getShipStationRequest({
         endpoint: `orders?orderNumber=${orderNumber}`,

@@ -1,5 +1,4 @@
 const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
-
 exports.handler = (event, context, callback) => {
   const sessionId = event.headers.sessionid
 

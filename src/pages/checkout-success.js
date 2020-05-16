@@ -36,7 +36,7 @@ const CheckoutSuccess = () => {
       }
     }
     sessionId && RetrieveCheckoutDetails(sessionId)
-  }, [sessionId, dispatch, checkoutSuccess])
+  }, [sessionId])
 
   return (
     <>
