@@ -1,17 +1,15 @@
-const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const { promisify } = require('util')
 const request = promisify(require('request'))
 
-export async function handler({ body }) {
-  const { type, data } = JSON.parse(body)
-
+export async function handler({ body, headers }) {
   function postShipStationRequest({ endpoint, order }) {
     return request({
       method: 'POST',
       url: `https://ssapi.shipstation.com/${endpoint}`,
       auth: {
-        username: process.env.GATSBY_SHIPSTATION_USERNAME,
-        password: process.env.GATSBY_SHIPSTATION_PASSWORD,
+        username: process.env.SHIPSTATION_USERNAME,
+        password: process.env.SHIPSTATION_PASSWORD,
       },
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(order),
@@ -19,8 +17,14 @@ export async function handler({ body }) {
   }
 
   try {
-    if (type === 'checkout.session.completed') {
-      const eventObject = data.object
+    const stripeEvent = stripe.webhooks.constructEvent(
+      body,
+      headers['stripe-signature'],
+      process.env.STRIPE_WEBHOOK_CHECKOUT_SECRET
+    )
+
+    if (stripeEvent.type === 'checkout.session.completed') {
+      const eventObject = stripeEvent.data.object
       const customerId = eventObject.customer
       const items = eventObject.display_items
       const shippingDetails = eventObject.shipping
@@ -28,8 +32,8 @@ export async function handler({ body }) {
 
       const todaysDate = new Date(Date.now())
       const order = {
-        orderNumber: eventObject.payment_intent,
         orderKey: eventObject.payment_intent,
+        orderNumber: eventObject.payment_intent,
         orderStatus: 'awaiting_shipment',
         customerEmail: stripeCustomer.email,
         orderDate: todaysDate.toISOString(),
@@ -57,10 +61,13 @@ export async function handler({ body }) {
           country: shippingDetails.address.country,
         },
       }
-      await postShipStationRequest({
+      const { body } = await postShipStationRequest({
         endpoint: 'orders/createorder',
         order,
       })
+
+      const response = JSON.parse(body)
+      console.log(response)
     }
 
     return {
