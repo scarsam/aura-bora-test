@@ -2,8 +2,8 @@ const request = require('request')
 
 const options = {
   auth: {
-    username: process.env.SHIPSTATION_USERNAME,
-    password: process.env.SHIPSTATION_PASSWORD,
+    username: process.env.GATSBY_SHIPSTATION_USERNAME,
+    password: process.env.GATSBY_SHIPSTATION_PASSWORD,
   },
   headers: { 'Content-Type': 'application/json' },
 }

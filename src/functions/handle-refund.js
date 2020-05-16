@@ -1,15 +1,17 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.GATSBY_STRIPE_SECRET_KEY)
 const { promisify } = require('util')
 const request = promisify(require('request'))
 
-export async function handler({ body, headers }) {
+export async function handler({ body }) {
+  const { type, data } = JSON.parse(body)
+
   function postShipStationRequest({ endpoint, body }) {
     return request({
       method: 'POST',
       url: `https://ssapi.shipstation.com/${endpoint}`,
       auth: {
-        username: process.env.SHIPSTATION_USERNAME,
-        password: process.env.SHIPSTATION_PASSWORD,
+        username: process.env.GATSBY_SHIPSTATION_USERNAME,
+        password: process.env.GATSBY_SHIPSTATION_PASSWORD,
       },
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -21,21 +23,16 @@ export async function handler({ body, headers }) {
       method: 'GET',
       url: `https://ssapi.shipstation.com/${endpoint}`,
       auth: {
-        username: process.env.SHIPSTATION_USERNAME,
-        password: process.env.SHIPSTATION_PASSWORD,
+        username: process.env.GATSBY_SHIPSTATION_USERNAME,
+        password: process.env.GATSBY_SHIPSTATION_PASSWORD,
       },
       headers: { 'Content-Type': 'application/json' },
     })
   }
 
   try {
-    const stripeEvent = stripe.webhooks.constructEvent(
-      body,
-      headers['stripe-signature'],
-      process.env.STRIPE_WEBHOOK_REFUND_SECRET
-    )
-    if (stripeEvent.type === 'charge.refunded') {
-      const eventObject = stripeEvent.data.object
+    if (type === 'charge.refunded') {
+      const eventObject = data.object
       const orderNumber = eventObject.payment_intent
       const { body } = await getShipStationRequest({
         endpoint: `orders?orderNumber=${orderNumber}`,
