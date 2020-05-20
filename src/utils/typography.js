@@ -4,7 +4,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'Space Mono',
-      styles: ['400', '700', '700i'],
+      styles: ['400', '700', '400i', '700i'],
     },
     {
       name: 'Barlow',

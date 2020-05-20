@@ -1,12 +1,24 @@
-.checkout-success {
-  top: 320px;
-  left: 0;
-  right: 0;
-  margin: auto;
+.take-me-home-btn {
+  font-size: 15px;
+  padding: 13px 25px;
+  border-radius: 38px;
+  @include media_min_break(lg) {
+    font-size: 22px;
+    padding: 20px 40px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
-.haiku {
-  img {
-    width: 138px;
-    margin: 0;
+
+.checkout-msg-max-width {
+  max-width: 550px;
+}
+
+.checkout-success .top-section {
+  min-height: 60vh;
+  @include media_max_break(md) {
+    min-height: 30vh;
   }
 }

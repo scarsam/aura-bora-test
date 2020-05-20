@@ -20,6 +20,20 @@
     height: 835px;
   }
 }
+.success-hero-background {
+  background-image: url('../images/hero/success-hero-background.svg');
+  background-size: 2400px;
+  background-repeat: no-repeat;
+  background-position: -795px bottom;
+  height: 600px;
+  @include media_min_break(sm) {
+    background-position: center bottom;
+  }
+  @include media_min_break(md) {
+    background-size: 3008px;
+    height: 735px;
+  }
+}
 
 .home-hero {
   p {

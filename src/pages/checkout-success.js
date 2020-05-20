@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Hero from 'components/hero'
+import Hero from 'components/SuccessHero'
 import SEO from 'components/seo'
 import { useQueryParam } from 'gatsby-query-params'
 import { Context } from 'store'
 import Header from 'components/layout/header'
-import SuccessImg from '../images/success-fruit.svg'
+
+import {
+  SuccessMsg,
+  CouldNotConfirmErrorMsg,
+  CheckOutFailMsg,
+} from '../helpers/ErrorMessages'
 import 'styles/aura-bora.scss'
 
 const CheckoutSuccess = () => {
@@ -30,7 +35,6 @@ const CheckoutSuccess = () => {
           setisLoading(false)
         }
       } catch (error) {
-        error.message = `We were unable to confirm your purchase. If you didn’t get a confirmation email, your purchase  probably didn’t go through. To be sure, try checking your bank statement. Still having trouble? Reach out and we’ll make it right`
         setError(error)
         setisLoading(false)
       }
@@ -38,60 +42,19 @@ const CheckoutSuccess = () => {
     sessionId && RetrieveCheckoutDetails(sessionId)
   }, [sessionId])
 
+  const renderMessage = () => {
+    if (error) return CouldNotConfirmErrorMsg
+    return checkoutSuccess ? SuccessMsg : CheckOutFailMsg
+  }
+
   return (
     <>
       <SEO title="Checkout" />
       <Header />
-      <main className="cart-overlay">
+      <main className="cart-overlay checkout-success">
         <Hero>
-          <div className="text-center padding-left-lg-60px padding-right-lg-60px c-black">
-            {!isLoading ? (
-              <div>
-                {error ? (
-                  <>
-                    <h2 className="text-36px font-barlow">Whoops!</h2>
-                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
-                      {error.message}
-                    </p>
-                  </>
-                ) : checkoutSuccess ? (
-                  <>
-                    <h2 className="text-36px font-barlow">Success!</h2>
-                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
-                      You’ll get a confirmation in your
-                      <span className="d-block">
-                        email very soon. Enjoy your Aura Bora,
-                        <span className="d-md-block">
-                          and enjoy this haiku.
-                        </span>
-                      </span>
-                    </p>
-                    <div className="haiku d-flex justify-content-center font-barlow">
-                      <p className="text-22px padding-top-40px text-right">
-                        What is this round fruit?
-                        <span className="d-block">
-                          It has a hard outer shell.
-                        </span>
-                        <span className="d-block">I’m told I do too.</span>
-                      </p>
-                      <img
-                        src={SuccessImg}
-                        alt=""
-                        className="padding-left-20px"
-                      />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <h2 className="text-36px font-barlow">Whoops!</h2>
-                    <p className="text-24px padding-left-lg-10px padding-right-lg-10px">
-                      Something unexplainable happened when confirming your
-                      purchase. Try again and we'll make it right.
-                    </p>
-                  </>
-                )}
-              </div>
-            ) : null}
+          <div className="padding-left-10px padding-left-md-none offset-md-2 text-left c-black">
+            {!isLoading && renderMessage()}
           </div>
         </Hero>
       </main>
