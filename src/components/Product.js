@@ -30,11 +30,11 @@ const Product = ({
             <div>
               {description && (
                 <button
-                  className="product-info-icon absolute z-index-2 primary-btn bg-white d-flex justify-content-center padding-none"
+                  className="product-info-icon absolute z-index-2 primary-btn bg-white d-flex align-items-center justify-content-center padding-none"
                   onClick={() => setShowInfoPane(id)}
                 >
-                  <strong className="d-flex align-items-center">
-                    <p className="margin-none text-24px line-height-1">i</p>
+                  <strong className="text-24px padding-bottom-3px line-height-1">
+                    i
                   </strong>
                 </button>
               )}
