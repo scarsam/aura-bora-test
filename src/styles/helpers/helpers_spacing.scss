@@ -1,0 +1,74 @@
+@each $type in padding, margin {
+  .#{$type}-none {
+    #{$type}: 0 !important;
+  }
+  .#{$type}-top-none {
+    #{$type}-top: 0 !important;
+  }
+  .#{$type}-bottom-none {
+    #{$type}-bottom: 0 !important;
+  }
+  .#{$type}-left-none {
+    #{$type}-left: 0 !important;
+  }
+  .#{$type}-right-none {
+    #{$type}-right: 0 !important;
+  }
+  @for $i from 1 through 12 {
+    $size-increment: 5;
+    $size: $i * $size-increment;
+    .#{$type}-top-#{$size}px {
+      #{$type}-top: #{$size}px !important;
+    }
+    .#{$type}-bottom-#{$size}px {
+      #{$type}-bottom: #{$size}px !important;
+    }
+    @if $type == padding {
+      .#{$type}-left-#{$size}px {
+        #{$type}-left: #{$size}px !important;
+      }
+      .#{$type}-right-#{$size}px {
+        #{$type}-right: #{$size}px !important;
+      }
+    }
+  }
+  @each $break in sm, md, lg, xl {
+    @include media_min_break($break) {
+      .#{$type}-top-#{$break}-none {
+        #{$type}-top: 0 !important;
+      }
+      .#{$type}-bottom-#{$break}-none {
+        #{$type}-bottom: 0 !important;
+      }
+      @if $type == padding {
+        .#{$type}-left-#{$break}-none {
+          #{$type}-left: 0 !important;
+        }
+        .#{$type}-right-#{$break}-none {
+          #{$type}-right: 0 !important;
+        }
+      }
+    }
+    @for $i from 1 through 12 {
+      $size-increment: 5;
+      $size: $i * $size-increment;
+
+      @include media_min_break($break) {
+        .#{$type}-top-#{$break}-#{$size}px {
+          #{$type}-top: #{$size}px !important;
+        }
+        .#{$type}-bottom-#{$break}-#{$size}px {
+          #{$type}-bottom: #{$size}px !important;
+        }
+        @if $type == padding {
+          .#{$type}-left-#{$break}-#{$size}px {
+            #{$type}-left: #{$size}px !important;
+          }
+          .#{$type}-right-#{$break}-#{$size}px {
+            #{$type}-right: #{$size}px !important;
+          }
+        }
+      }
+    }
+  }
+}

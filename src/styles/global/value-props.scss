@@ -1,0 +1,24 @@
+.value-props-row > div {
+  color: $valuePropsText;
+  padding-left: 10px;
+  padding-right: 10px;
+  &:first-child {
+    padding-left: 0px;
+  }
+  &:last-child {
+    padding-right: 0px;
+  }
+}
+
+.value-props-icon {
+  height: 20px;
+  width: auto;
+  margin: 0 5px 0 0;
+  @include media_min_break(sm) {
+    margin: 0 10px 0 0;
+  }
+  @include media_min_break(md) {
+    margin: 2px 10px 0 0;
+    height: 25px;
+  }
+}

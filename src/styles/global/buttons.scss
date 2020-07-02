@@ -1,0 +1,22 @@
+.primary-btn {
+  background-color: $white;
+  user-select: none;
+  border: 2px solid $black;
+  border-radius: 30px;
+  padding: 5px 20px;
+  transition: all 70ms ease-in-out;
+  -webkit-transition: all 70ms ease-in-out;
+  box-shadow: 4px 3px 0px 0px rgba(0, 0, 0, 1);
+  position: relative;
+  left: -2px;
+  &:active {
+    cursor: pointer;
+    transform: translate(4px, 3px);
+    box-shadow: none;
+  }
+  @include hover-supported() {
+    cursor: pointer;
+    font-style: italic;
+    font-weight: bold;
+  }
+}

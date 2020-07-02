@@ -1,0 +1,38 @@
+$colors: (
+  black: $black,
+  white: $white,
+  textColor: $textColor,
+  lightGrass: $lightGrass,
+  grass: $grass,
+  lime: $lime,
+  pool: $pool,
+  lavender: $lavender,
+  yellow: $yellow,
+  lightYellow: $lightYellow,
+  berry: $berry,
+  strawberry: $strawberry,
+  pink: $pink,
+  // product info colors
+    basil_berry-i: $basilBerry-info,
+  peppermint_watermelon-i: $peppermintWatermelon-info,
+  lavender_cucumber-i: $lavenderCucumber-info,
+  cactus_rose-i: $cactusRose-info,
+  lemongrass_coconut-i: $lemongrassCoconut-info,
+  variety_pack-i: $varietyPack-info,
+  // product bg colors
+    basil_berry: $basilBerry,
+  peppermint_watermelon: $peppermintWatermelon,
+  lavender_cucumber: $lavenderCucumber,
+  cactus_rose: $cactusRose,
+  lemongrass_coconut: $lemongrassCoconut,
+  variety_pack: $varietyPack,
+);
+
+@each $key, $val in $colors {
+  .bg-#{$key} {
+    background-color: $val !important;
+  }
+  .c-#{$key} {
+    color: $val !important;
+  }
+}

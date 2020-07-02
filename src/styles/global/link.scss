@@ -1,0 +1,26 @@
+.primary-link {
+  color: $textColor;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  transition: font-weight 200ms ease-in-out;
+  @include hover-supported() {
+    font-weight: bold;
+    font-style: italic;
+  }
+  &:after {
+    content: '';
+    border-radius: 4px;
+    background-color: $white;
+    top: 70%;
+    height: 10px;
+    left: -15px;
+    position: absolute;
+    width: calc(100% + 30px);
+    z-index: -1;
+  }
+}
+
+footer .primary-link:after {
+  top: 60%;
+}

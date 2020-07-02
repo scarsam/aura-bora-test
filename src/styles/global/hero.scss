@@ -1,0 +1,69 @@
+.logo {
+  max-width: 200px;
+  transition: max-width 200ms ease-in-out;
+  @include media_min_break(md) {
+    max-width: 280px;
+  }
+}
+
+.hero-background {
+  background-image: url('../images/hero/hero-background.svg');
+  background-size: 2400px;
+  background-repeat: no-repeat;
+  background-position: -970px center;
+  height: 600px;
+  @include media_min_break(sm) {
+    background-position: center center;
+  }
+  @include media_min_break(md) {
+    background-size: 3008px;
+    height: 835px;
+  }
+}
+.success-hero-background {
+  background-image: url('../images/hero/success-hero-background.svg');
+  background-size: 2400px;
+  background-repeat: no-repeat;
+  background-position: -795px bottom;
+  height: 600px;
+  @include media_min_break(sm) {
+    background-position: center bottom;
+  }
+  @include media_min_break(md) {
+    background-size: 3008px;
+    height: 735px;
+  }
+}
+
+.home-hero {
+  p {
+    color: $black;
+    line-height: 2.5rem;
+  }
+  @include media_min_break(md) {
+    margin-top: -30px !important;
+  }
+}
+
+// Needed for the cart icon to not push the Logo
+.clear-both {
+  clear: both;
+}
+
+.collection-btn {
+  margin-top: 75px;
+  a {
+    padding: 20px 35px;
+    border-radius: 200px;
+    text-decoration: none;
+  }
+}
+
+.intro-text {
+  @include media_max_break(md) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  font-size: 22px;
+  line-height: 40px;
+}

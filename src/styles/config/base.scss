@@ -1,0 +1,56 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+  font-size: 0.85rem;
+  transition: font-size 200ms ease-in-out;
+  @include media_min_break(lg) {
+    font-size: 1rem;
+  }
+}
+
+body {
+  touch-action: manipulation;
+  background-color: $lightYellow;
+  color: $textColor;
+}
+
+// This should be set as the height of the <Header />
+main section:first-child {
+  padding-top: 90px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+footer {
+  position: relative;
+  .container:before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/bird-footer-right.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    width: 125px;
+    left: 12vw;
+    height: 75px;
+    top: -68px;
+    transition: left 250ms ease-in-out;
+    @include media_min_break(md) {
+      left: 30vw;
+    }
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus,
+body:not(.user-is-tabbing) div:focus {
+  outline: none;
+}

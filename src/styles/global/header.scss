@@ -1,0 +1,73 @@
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  &.cart-open {
+    position: fixed;
+    overflow: auto;
+    bottom: 0;
+  }
+}
+
+nav {
+  float: left;
+  padding-top: 50px;
+}
+
+.cart {
+  float: right;
+  padding-top: 25px;
+}
+
+header ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+header .menu {
+  display: none;
+  max-height: 0;
+  width: calc(100% + 15px);
+}
+
+header .navicon {
+  @include burger-icon(35px);
+  top: 5px;
+  left: -5px;
+}
+
+header li {
+  width: fit-content;
+}
+
+// Expanded styles
+.menu-btn:checked ~ header {
+  background: $lavender;
+  position: fixed;
+  width: 100%;
+  &:after,
+  &:before {
+    background-image: url('../images/wave.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
+    height: 10.5vw;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  &:before {
+    background-image: url('../images/wave-black.svg');
+    top: 100.5%;
+  }
+  .menu {
+    display: block;
+    max-height: 100%;
+  }
+  .navicon {
+    @include close-icon(45px);
+  }
+}

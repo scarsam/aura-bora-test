@@ -1,0 +1,7 @@
+// .z-index 1-5
+
+@for $index from 1 through 5 {
+  .z-index-#{$index} {
+    z-index: #{$index} !important;
+  }
+}
