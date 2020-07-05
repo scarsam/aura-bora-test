@@ -70,6 +70,15 @@ module.exports = {
         icon: `src/images/aurabora-favicon.svg`,
       },
     },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        // The domain name of your Shopify shop.
+        shopName: `aura-bora-dev`,
+        // The storefront access token
+        accessToken: `f30af409afd20a5f5f222039b3999249`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

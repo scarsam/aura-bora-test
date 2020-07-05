@@ -9,14 +9,7 @@ export const ProductGrid = () => {
 
   const items =
     data &&
-    data
-      .filter(item => item.node.active)
-      .map(item => item.node)
-      .sort((prev, cur) =>
-        prev.product.metadata.displayOrder > cur.product.metadata.displayOrder
-          ? 1
-          : -1
-      )
+    data.filter(item => item.node.availableForSale).map(item => item.node)
 
   return (
     <section>
@@ -30,14 +23,17 @@ export const ProductGrid = () => {
             items.map((item, index) => (
               <Product
                 key={index}
-                id={item.id}
-                name={item.product.name}
-                description={item.product.metadata.description}
-                price={item.price}
-                image={item.localFiles[0].name}
-                inStock={item.product.metadata.isInStock}
-                showInfoPane={showInfoPane === item.id ? true : false}
+                id={item.variants[0].shopifyId}
+                title={item.title}
+                description={item.description}
+                price={item.variants[0].price}
+                image={item.variants[0].image.localFile.name}
+                isInStock={item.availableForSale}
+                showInfoPane={
+                  showInfoPane === item.variants[0].shopifyId ? true : false
+                }
                 setShowInfoPane={setShowInfoPane}
+                name={item.handle}
               />
             ))}
         </div>
@@ -47,30 +43,28 @@ export const ProductGrid = () => {
 }
 
 export const useProducts = () => {
-  const { skus } = useStaticQuery(
+  const { data } = useStaticQuery(
     graphql`
-      query SkusForProduct {
-        skus: allStripeSku {
+      {
+        data: allShopifyProduct(sort: { fields: [title] }) {
           edges {
             node {
-              localFiles {
-                name
-              }
-              product {
-                name
-                metadata {
-                  description
-                  isInStock
-                  displayOrder
+              title
+              description
+              availableForSale
+              handle
+              variants {
+                price
+                shopifyId
+                selectedOptions {
+                  name
+                  value
                 }
-              }
-              active
-              image
-              id
-              currency
-              price
-              attributes {
-                name
+                image {
+                  localFile {
+                    name
+                  }
+                }
               }
             }
           }
@@ -78,5 +72,40 @@ export const useProducts = () => {
       }
     `
   )
-  return skus.edges
+  return data.edges
 }
+
+// export const useProducts = () => {
+//   const { skus } = useStaticQuery(
+//     graphql`
+//       query SkusForProduct {
+//         skus: allStripeSku {
+//           edges {
+//             node {
+//               localFiles {
+//                 name
+//               }
+//               product {
+//                 name
+//                 metadata {
+//                   description
+//                   isInStock
+//                   displayOrder
+//                 }
+//               }
+//               active
+//               image
+//               id
+//               currency
+//               price
+//               attributes {
+//                 name
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `
+//   )
+//   return skus.edges
+// }
