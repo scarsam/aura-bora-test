@@ -107,7 +107,9 @@ const Cart = () => {
                     {product.title}
                   </strong>
                   <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-30px">
-                    <span className="text-18px">12X for {formatPrice(30)}</span>
+                    <span className="text-18px">
+                      12X for {formatPrice(product.variant.price)}
+                    </span>
                     <div className="d-flex align-items-center">
                       <button
                         onClick={() =>
@@ -153,19 +155,10 @@ const Cart = () => {
                 </button>
               </>
             ) : (
-              <>
-                <button
-                  onClick={checkout}
-                  // onClick={e => redirectToCheckout(e, items)}
-                  className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-45px margin-bottom-10px"
-                >
-                  Check out
-                </button>
-                <p className="text-18px line-height-28 padding-top-25px font-space-mono">
-                  You have nothing in your{' '}
-                  <span className="d-md-block">bouquet yet. Keep picking!</span>
-                </p>
-              </>
+              <p className="text-18px line-height-28 padding-top-25px font-space-mono">
+                You have nothing in your{' '}
+                <span className="d-md-block">bouquet yet. Keep picking!</span>
+              </p>
             )}
           </div>
         </div>
