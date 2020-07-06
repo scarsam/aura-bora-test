@@ -1,101 +1,151 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
-import heroImage from 'images/header-where-to-find.svg'
-import animal from 'images/where-to-find/animal.svg'
-import coco from 'images/where-to-find/coco.svg'
-import cucumber from 'images/where-to-find/cucumber.svg'
-import grass from 'images/where-to-find/grass.svg'
-import kale from 'images/where-to-find/kale.svg'
-import strawberry from 'images/where-to-find/strawberry.svg'
-import watermelonKale from 'images/where-to-find/watermelon-kale.svg'
-import watermelon from 'images/where-to-find/watermelon.svg'
+import heroImage from 'images/where-to-find/where-to-find-header.svg'
+import USMap from 'images/where-to-find/where-to-find-map.inline.svg'
+
+const clearSelection = state => {
+  const previousSelected = document.getElementById(state)
+  if (previousSelected) {
+    previousSelected.classList.remove('selected-state')
+  }
+  document.querySelector('html').classList.remove('overflow-hidden')
+}
+
+const addSelection = state => {
+  document.getElementById(state).classList.add('selected-state')
+  document.querySelector('html').classList.add('overflow-hidden')
+}
 
 const WhereToFind = () => {
+  const innerModal = useRef()
+  const [showModal, setShowModal] = useState(false)
+  const [state, setState] = useState(null)
+
+  const handleStateSelection = event => {
+    const state = event.target.id || event.target.parentNode.id
+    if (!state) return
+
+    setState(state)
+    addSelection(state)
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    clearSelection(state)
+    setShowModal(false)
+  }
+
+  const handleCloseModal = e => {
+    if (
+      e.keyCode === 27 ||
+      (innerModal.current && !innerModal.current.contains(e.target))
+    ) {
+      closeModal()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleCloseModal, false)
+    document.addEventListener('mousedown', handleCloseModal, false)
+
+    return () => {
+      document.removeEventListener('mousedown', handleCloseModal, false)
+      document.removeEventListener('mousedown', handleCloseModal, false)
+    }
+  }, [showModal])
+
   return (
     <Layout>
       <SEO title="Where to find" />
       <section className="where-to-find">
         <div className="container padding-top-20px">
-          <div className="row padding-bottom-30px">
-            <div className="col-12 padding-bottom-60px">
-              <div className="text-center padding-bottom-lg-10px hero">
+          <div className="row">
+            <div className="col-12">
+              <div className="text-center padding-bottom-lg-55px hero">
                 <img alt="Where to find us" src={heroImage} />
               </div>
-              <ul className="text-center relative">
-                {whereToFind.map((state, index) => (
-                  <div
-                    key={state.name}
-                    className={`${
-                      whereToFind.length - 1 === index
-                        ? 'padding-bottom-none'
-                        : 'padding-bottom-45px'
-                    } relative z-index-2`}
-                  >
-                    <h2 className="text-36px font-barlow">{state.name}</h2>
-                    {state.stores.map(store => (
-                      <address key={store.name} className="font-style-normal">
-                        <p className="text-20px">
-                          <strong className="d-block">{store.name}</strong>
-                          {store.address}
-                        </p>
-                      </address>
-                    ))}
-                  </div>
-                ))}
-                {images.map((image, index) => (
-                  <img
-                    key={index}
-                    alt={image.alt}
-                    src={image.url}
-                    className={`absolute z-index-1 image-${index}`}
-                  />
-                ))}
-              </ul>
+            </div>
+            <div className="col-10 offset-1 col-md-8 offset-md-2">
+              <p className="text-24px">
+                Looking for Aura Bora in the wild?{' '}
+                <span className="d-md-block">Click on your state below.</span>
+              </p>
+            </div>
+          </div>
+          <div className="row padding-bottom-50px">
+            <div className="col-12">
+              <USMap
+                className="width-100 height-auto"
+                onClick={handleStateSelection}
+              />
             </div>
           </div>
         </div>
       </section>
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content height-100 relative">
+            <div className="container padding-top-20px height-100">
+              <div className="row padding-bottom-30px">
+                <div
+                  ref={innerModal}
+                  className="col-12 col-md-10 offset-md-1 padding-bottom-60px"
+                >
+                  <section className="padding-none d-flex justify-content-center align-items-center text-center modal-title z-index-1">
+                    <h2 className="margin-bottom-none text-30px absolute">
+                      {state}
+                    </h2>
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onClick={closeModal}
+                      onKeyDown={closeModal}
+                      className="close-icon d-block"
+                    />
+                  </section>
+                  <section className="bg-white padding-top-40px padding-bottom-40px">
+                    <ul className="text-center relative">
+                      {whereToFind.map((state, index) => (
+                        <div
+                          key={state.name}
+                          className={`${
+                            whereToFind.length - 1 === index
+                              ? 'padding-bottom-none'
+                              : 'padding-bottom-45px'
+                          }`}
+                        >
+                          <h2 className="text-36px font-barlow">
+                            {state.name}
+                          </h2>
+                          {state.stores.map(store => (
+                            <address
+                              key={store.name}
+                              className="font-style-normal"
+                            >
+                              <p className="text-20px">
+                                <strong className="d-block">
+                                  {store.name}
+                                </strong>
+                                {store.address}
+                              </p>
+                            </address>
+                          ))}
+                        </div>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   )
 }
 
 export default WhereToFind
-
-const images = [
-  {
-    url: animal,
-    alt: 'Animal',
-  },
-  {
-    url: coco,
-    alt: 'Floating cocos',
-  },
-  {
-    url: cucumber,
-    alt: 'Cucumber',
-  },
-  {
-    url: grass,
-    alt: 'Grass',
-  },
-  {
-    url: kale,
-    alt: 'Kale',
-  },
-  {
-    url: strawberry,
-    alt: 'Strawberry',
-  },
-  {
-    url: watermelonKale,
-    alt: 'Watermelon and Kale',
-  },
-  {
-    url: watermelon,
-    alt: 'Watermelon',
-  },
-]
 
 const whereToFind = [
   {
