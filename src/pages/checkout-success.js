@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hero from 'components/SuccessHero'
 import SEO from 'components/seo'
 import { useQueryParam } from 'gatsby-query-params'
-import { Context } from 'store'
 import Header from 'components/layout/header'
 
 import {
@@ -13,7 +12,6 @@ import {
 import 'styles/aura-bora.scss'
 
 const CheckoutSuccess = () => {
-  const { dispatch } = useContext(Context)
   const [error, setError] = useState(null)
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
   const [isLoading, setisLoading] = useState(true)
@@ -28,9 +26,7 @@ const CheckoutSuccess = () => {
 
         if (payment.status === 'succeeded') {
           sessionStorage.clear()
-          dispatch({
-            type: 'reset',
-          })
+
           setCheckoutSuccess(true)
           setisLoading(false)
         }

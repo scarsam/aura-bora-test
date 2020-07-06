@@ -1,5 +1,5 @@
 export function formatPrice(price) {
-  const priceFloat = (price / 100).toFixed(2)
+  const priceFloat = (price / 1).toFixed(2)
   const formattedPrice = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'usd',

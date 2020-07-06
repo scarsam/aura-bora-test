@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const ProductInfo = ({
   colorRef,
   description,
-  name,
+  title,
   showInfoPane,
   setShowInfoPane,
 }) => (
@@ -22,10 +22,10 @@ const ProductInfo = ({
     />
 
     <h2 className="margin-bottom-30px margin-bottom-lg-50px text-30px line-height-34px font-barlow">
-      {name &&
-        name.split(' ').map((word, index) => <div key={index}>{word}</div>)}
+      {title &&
+        title.split(' ').map((word, index) => <div key={index}>{word}</div>)}
     </h2>
-    {name && name !== 'Variety pack' ? (
+    {title && title !== 'Variety pack' ? (
       <div className="text-22px line-height-32px padding-right-80px">
         <p className="margin-none">
           <strong>Ingredients</strong>
@@ -57,7 +57,7 @@ const ProductInfo = ({
 )
 
 ProductInfo.propTypes = {
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
   showInfoPane: PropTypes.bool.isRequired,
   setShowInfoPane: PropTypes.func.isRequired,

@@ -1,17 +1,22 @@
-import React, { useContext, useState, useEffect, useRef } from 'react'
-import { Context } from 'store'
+import React, { useState, useEffect, useRef } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
+import { formatPrice, cartItemsCount } from '../helpers/numberHelpers'
 import {
-  formatPrice,
-  cartTotalPrice,
-  cartItemsCount,
-} from '../helpers/numberHelpers'
+  useCartItems,
+  useCartTotals,
+  useAddItemToCart,
+  useRemoveItemFromCart,
+  useCheckout,
+} from 'store'
 
 const Cart = () => {
   const [showMenu, setShowMenu] = useState(false)
   const cartMenu = useRef()
-  const { store, dispatch } = useContext(Context)
-  const { items } = store
+  const items = useCartItems()
+  const checkout = useCheckout()
+  const addItemToCart = useAddItemToCart()
+  const removeFromCart = useRemoveItemFromCart()
+  const { total } = useCartTotals()
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
@@ -99,19 +104,18 @@ const Cart = () => {
               items.map((product, index) => (
                 <div key={index} className="padding-top-40px text-20px">
                   <strong className="margin-none d-block padding-bottom-15px font-space-mono">
-                    {product.name}
+                    {product.title}
                   </strong>
                   <div className="d-flex justify-content-between align-items-center cart-item-detail padding-bottom-30px">
                     <span className="text-18px">
-                      12X for {formatPrice(product.price)}
+                      12X for {formatPrice(product.variant.price)}
                     </span>
                     <div className="d-flex align-items-center">
                       <button
                         onClick={() =>
-                          dispatch({
-                            type: 'remove',
-                            product: { id: product.sku },
-                          })
+                          product.quantity <= 1
+                            ? removeFromCart(product.id)
+                            : addItemToCart(product.variant.id, -1)
                         }
                         className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
@@ -121,24 +125,14 @@ const Cart = () => {
                         {product.quantity}
                       </span>
                       <button
-                        onClick={() =>
-                          dispatch({
-                            type: 'add',
-                            product: { id: product.sku },
-                          })
-                        }
+                        onClick={() => addItemToCart(product.variant.id, 1)}
                         className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
                         <span>+</span>
                       </button>
                       <button
                         className="d-flex align-items-center item-remove-btn"
-                        onClick={() =>
-                          dispatch({
-                            type: 'remove',
-                            product: { id: product.sku, removeFromCart: true },
-                          })
-                        }
+                        onClick={() => removeFromCart(product.id)}
                       >
                         <span>+</span>
                       </button>
@@ -150,12 +144,11 @@ const Cart = () => {
               <>
                 <div className="d-flex justify-content-between padding-top-45px text-20px">
                   <p className="margin-none">Subtotal</p>
-                  <p className="margin-none font-medium">
-                    {cartTotalPrice(items)}
-                  </p>
+                  <p className="margin-none font-medium">{total}</p>
                 </div>
                 <button
-                  onClick={e => redirectToCheckout(e, items)}
+                  onClick={checkout}
+                  // onClick={e => redirectToCheckout(e, items)}
                   className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-45px margin-bottom-10px"
                 >
                   Check out
