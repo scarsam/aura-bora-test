@@ -25,6 +25,7 @@ module.exports = {
     )
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
     {
