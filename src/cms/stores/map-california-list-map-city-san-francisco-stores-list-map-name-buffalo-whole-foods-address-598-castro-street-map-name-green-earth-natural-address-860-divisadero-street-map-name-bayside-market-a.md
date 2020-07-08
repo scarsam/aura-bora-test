@@ -38,4 +38,8 @@ california:
         address: Sunnybrae 785 Bayside Road
       - name: Wildberries Marketplace
         address: 747 13th Street
+  - city: Crescent City
+    stores:
+      - name: Wild Rivers Market
+        address: 450 M Street
 ---
