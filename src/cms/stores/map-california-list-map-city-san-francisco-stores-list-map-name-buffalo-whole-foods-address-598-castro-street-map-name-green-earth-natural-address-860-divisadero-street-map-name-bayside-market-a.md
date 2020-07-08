@@ -28,4 +28,8 @@ california:
     stores:
       - name: Piedmont Grocery
         address: 4038 Piedmont Avenue
+  - city: Alameda
+    stores:
+      - name: A-1 Market
+        address: 1420 Encinal Avenue
 ---
