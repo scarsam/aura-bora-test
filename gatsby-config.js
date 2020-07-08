@@ -28,11 +28,19 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
+    { resolve: `gatsby-transformer-remark` },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `stores`,
+        path: `${__dirname}/src/cms/stores`,
       },
     },
     {

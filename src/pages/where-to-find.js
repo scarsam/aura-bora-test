@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 import heroImage from 'images/where-to-find/where-to-find-header.svg'
@@ -17,7 +18,10 @@ const addSelection = state => {
   document.querySelector('html').classList.add('overflow-hidden')
 }
 
-const WhereToFind = () => {
+const WhereToFind = ({ data }) => {
+  // const { title } = data.allMarkdownRemark.edges[0].node.frontmatter
+  console.log(data)
+
   const innerModal = useRef()
   const [showModal, setShowModal] = useState(false)
   const [state, setState] = useState(null)
@@ -149,6 +153,21 @@ const WhereToFind = () => {
 }
 
 export default WhereToFind
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            state
+          }
+        }
+      }
+    }
+  }
+`
 
 const whereToFind = [
   {
