@@ -24,4 +24,8 @@ california:
         address: 3216 Folsom Street
       - name: Rincon Market
         address: 98 Howard Street
+  - city: Oakland
+    stores:
+      - name: Piedmont Grocery
+        address: 4038 Piedmont Avenue
 ---
