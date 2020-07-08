@@ -9,6 +9,7 @@ collections:
   - name: 'store'
     label: 'Stores'
     folder: 'src/cms/stores'
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}{{second}}-store'
     label_singular: 'Store'
     editor:
       preview: false
