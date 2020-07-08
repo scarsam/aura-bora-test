@@ -36,22 +36,25 @@ const WhereToFind = () => {
     setShowModal(false)
   }
 
-  const handleCloseModal = e => {
-    if (
-      e.keyCode === 27 ||
-      (innerModal.current && !innerModal.current.contains(e.target))
-    ) {
+  const handleCloseModalClick = e => {
+    if (innerModal.current && !innerModal.current.contains(e.target)) {
+      closeModal()
+    }
+  }
+
+  const handleCloseModalKey = e => {
+    if (e.keyCode === 27) {
       closeModal()
     }
   }
 
   useEffect(() => {
-    document.addEventListener('keydown', handleCloseModal, false)
-    document.addEventListener('mousedown', handleCloseModal, false)
+    document.addEventListener('keydown', handleCloseModalKey, false)
+    document.addEventListener('mousedown', handleCloseModalClick, false)
 
     return () => {
-      document.removeEventListener('mousedown', handleCloseModal, false)
-      document.removeEventListener('mousedown', handleCloseModal, false)
+      document.removeEventListener('keydown', handleCloseModalKey, false)
+      document.removeEventListener('mousedown', handleCloseModalClick, false)
     }
   }, [showModal])
 
