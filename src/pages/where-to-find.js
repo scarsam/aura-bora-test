@@ -163,6 +163,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             city
+            state
             stores {
               name
               address
