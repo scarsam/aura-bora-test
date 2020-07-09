@@ -22,11 +22,11 @@ const WhereToFind = ({ data }) => {
   const stores = data?.allMarkdownRemark?.edges.map(
     ({ node: { frontmatter } }) => frontmatter
   )
-  console.log(stores)
 
   const innerModal = useRef()
   const [showModal, setShowModal] = useState(false)
-  const [state, setState] = useState(null)
+  const [filteredState, setFilteredState] = useState([])
+  const [state, setState] = useState('')
 
   const handleStateSelection = event => {
     const state = event.target.id || event.target.parentNode.id
@@ -35,10 +35,12 @@ const WhereToFind = ({ data }) => {
     setState(state)
     addSelection(state)
     setShowModal(true)
+    filterState(state)
   }
 
   const closeModal = () => {
     clearSelection(state)
+    setState('')
     setShowModal(false)
   }
 
@@ -63,6 +65,26 @@ const WhereToFind = ({ data }) => {
       document.removeEventListener('mousedown', handleCloseModalClick, false)
     }
   }, [showModal])
+
+  const filterState = state => {
+    const filteredList = stores
+      .filter(store => store.state === state.toLowerCase())
+      .map(state => state)
+
+    if (!filteredList) return setFilteredState([])
+    setFilteredState(filteredList)
+  }
+
+  const renderList = () => {
+    if (filteredState.length < 1) {
+      return <p>No stores in this state</p>
+    }
+    return filteredState.map(state => (
+      <h2 className="margin-bottom-20px city-link primary-link text-24px font-medium">
+        {state.city}
+      </h2>
+    ))
+  }
 
   return (
     <Layout>
@@ -113,35 +135,9 @@ const WhereToFind = ({ data }) => {
                       className="close-icon d-block"
                     />
                   </section>
-                  <section className="bg-white padding-top-40px padding-bottom-40px">
-                    <ul className="text-center relative">
-                      {whereToFind.map((state, index) => (
-                        <div
-                          key={state.name}
-                          className={`${
-                            whereToFind.length - 1 === index
-                              ? 'padding-bottom-none'
-                              : 'padding-bottom-45px'
-                          }`}
-                        >
-                          <h2 className="text-36px font-barlow">
-                            {state.name}
-                          </h2>
-                          {state.stores.map(store => (
-                            <address
-                              key={store.name}
-                              className="font-style-normal"
-                            >
-                              <p className="text-20px">
-                                <strong className="d-block">
-                                  {store.name}
-                                </strong>
-                                {store.address}
-                              </p>
-                            </address>
-                          ))}
-                        </div>
-                      ))}
+                  <section className="bg-white padding-top-30px padding-bottom-25px">
+                    <ul className="d-inline-flex align-items-center width-100 flex-column">
+                      {renderList()}
                     </ul>
                   </section>
                 </div>
@@ -162,8 +158,8 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            city
             state
+            city
             stores {
               name
               address
