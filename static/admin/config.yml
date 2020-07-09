@@ -8,720 +8,1003 @@ public_folder: /images
 # Create collection for each state!
 
 collections:
-  - name: 'store'
-    label: 'Stores'
-    folder: 'src/cms/stores'
-    label_singular: 'Store'
+  - name: 'alabama'
+    label: 'Alabama'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Alabama'
+    widget: 'list'
+    folder: 'src/cms/alabama'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
     create: true
     editor:
       preview: false
-    summary: 'List with all stores in each state and city'
     fields:
-      - name: 'states'
-        label: 'States'
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
         widget: 'list'
-        allow_add: false
-        collapsed: false
-        minimize_collapsed: false
-        slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}{{second}}-store'
+        label_singular: 'Store'
         fields:
-          - name: 'alabama'
-            label: 'Alabama'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Alabama'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'alaska'
-            label: 'Alaska'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Alaska'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'arizona'
-            label: 'Arizona'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Arizona'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'arkansas'
-            label: 'Arkansas'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Arkansas'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'california'
-            label: 'California'
-            summary: '{{fields.city}}'
-            label_singular: 'city to California'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'colorado'
-            label: 'Colorado'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Colorado'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'connecticut'
-            label: 'Connecticut'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Connecticut'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'delaware'
-            label: 'Delaware'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Delaware'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'florida'
-            label: 'Florida'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Florida'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'georgia'
-            label: 'Georgia'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Georgia'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'hawaii'
-            label: 'Hawaii'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Hawaii'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'idaho'
-            label: 'Idaho'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Idaho'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'illinois'
-            label: 'Illinois'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Illinois'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'indiana'
-            label: 'Indiana'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Indiana'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'iowa'
-            label: 'Iowa'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Iowa'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'kansas'
-            label: 'Kansas'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Kansas'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'kentucky'
-            label: 'Kentucky'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Kentucky'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'louisiana'
-            label: 'Louisiana'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Louisiana'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'maine'
-            label: 'Maine'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Maine'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'maryland'
-            label: 'Maryland'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Maryland'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'massachusetts'
-            label: 'Massachusetts'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Massachusetts'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'michigan'
-            label: 'Michigan'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Michigan'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'minnesota'
-            label: 'Minnesota'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Minnesota'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'mississippi'
-            label: 'Mississippi'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Mississippi'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'missouri'
-            label: 'Missouri'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Missouri'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'montana'
-            label: 'Montana'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Montana'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'nebraska'
-            label: 'Nebraska'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Nebraska'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'nevada'
-            label: 'Nevada'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Nevada'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'new hampshire'
-            label: 'New Hampshire'
-            summary: '{{fields.city}}'
-            label_singular: 'city to New Hampshire'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'new jersey'
-            label: 'New Jersey'
-            summary: '{{fields.city}}'
-            label_singular: 'city to New Jersey'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'new mexico'
-            label: 'New Mexico'
-            summary: '{{fields.city}}'
-            label_singular: 'city to New Mexico'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'new york'
-            label: 'New York'
-            summary: '{{fields.city}}'
-            label_singular: 'city to New York'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'north carolina'
-            label: 'North Carolina'
-            summary: '{{fields.city}}'
-            label_singular: 'city to North Carolina'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'north dakota'
-            label: 'North Dakota'
-            summary: '{{fields.city}}'
-            label_singular: 'city to North Dakota'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'ohio'
-            label: 'Ohio'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Ohio'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'oklahoma'
-            label: 'Oklahoma'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Oklahoma'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'oregon'
-            label: 'Oregon'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Oregon'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'pennsylvania'
-            label: 'Pennsylvania'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Pennsylvania'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'rhode island'
-            label: 'Rhode Island'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Rhode Island'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'south carolina'
-            label: 'South Carolina'
-            summary: '{{fields.city}}'
-            label_singular: 'city to South Carolina'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'south dakota'
-            label: 'South Dakota'
-            summary: '{{fields.city}}'
-            label_singular: 'city to South Dakota'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'tennessee'
-            label: 'Tennessee'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Tennessee'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'texas'
-            label: 'Texas'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Texas'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'utah'
-            label: 'Utah'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Utah'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'vermont'
-            label: 'Vermont'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Vermont'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'virginia'
-            label: 'Virginia'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Virginia'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'washington'
-            label: 'Washington'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Washington'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'west virginia'
-            label: 'West Virginia'
-            summary: '{{fields.city}}'
-            label_singular: 'city to West Virginia'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'wisconsin'
-            label: 'Wisconsin'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Wisconsin'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
-          - name: 'wyoming'
-            label: 'Wyoming'
-            summary: '{{fields.city}}'
-            label_singular: 'city to Wyoming'
-            widget: 'list'
-            fields:
-              - { label: 'City', name: 'city', widget: 'string' }
-              - name: 'stores'
-                label: 'Stores'
-                widget: 'list'
-                label_singular: 'Store'
-                fields:
-                  - { label: 'Name', name: 'name', widget: 'string' }
-                  - { label: 'Address', name: 'address', widget: 'string' }
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'alaska'
+    label: 'Alaska'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Alaska'
+    widget: 'list'
+    folder: 'src/cms/alaska'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'arizona'
+    label: 'Arizona'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Arizona'
+    widget: 'list'
+    folder: 'src/cms/arizona'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'arkansas'
+    label: 'Arkansas'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Arkansas'
+    widget: 'list'
+    folder: 'src/cms/arkansas'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'california'
+    label: 'California'
+    summary: '{{fields.city}}'
+    label_singular: 'city to California'
+    widget: 'list'
+    folder: 'src/cms/california'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'colorado'
+    label: 'Colorado'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Colorado'
+    widget: 'list'
+    folder: 'src/cms/colorado'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'connecticut'
+    label: 'Connecticut'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Connecticut'
+    widget: 'list'
+    folder: 'src/cms/connecticut'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'delaware'
+    label: 'Delaware'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Delaware'
+    widget: 'list'
+    folder: 'src/cms/delaware'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'florida'
+    label: 'Florida'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Florida'
+    widget: 'list'
+    folder: 'src/cms/florida'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'georgia'
+    label: 'Georgia'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Georgia'
+    widget: 'list'
+    folder: 'src/cms/georgia'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'hawaii'
+    label: 'Hawaii'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Hawaii'
+    widget: 'list'
+    folder: 'src/cms/hawaii'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'idaho'
+    label: 'Idaho'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Idaho'
+    widget: 'list'
+    folder: 'src/cms/idaho'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'illinois'
+    label: 'Illinois'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Illinois'
+    widget: 'list'
+    folder: 'src/cms/illinois'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'indiana'
+    label: 'Indiana'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Indiana'
+    widget: 'list'
+    folder: 'src/cms/indiana'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'iowa'
+    label: 'Iowa'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Iowa'
+    widget: 'list'
+    folder: 'src/cms/iowa'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'kansas'
+    label: 'Kansas'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Kansas'
+    widget: 'list'
+    folder: 'src/cms/kansas'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'kentucky'
+    label: 'Kentucky'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Kentucky'
+    widget: 'list'
+    folder: 'src/cms/kentucky'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'louisiana'
+    label: 'Louisiana'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Louisiana'
+    widget: 'list'
+    folder: 'src/cms/louisiana'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'maine'
+    label: 'Maine'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Maine'
+    widget: 'list'
+    folder: 'src/cms/maine'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'maryland'
+    label: 'Maryland'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Maryland'
+    widget: 'list'
+    folder: 'src/cms/maryland'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'massachusetts'
+    label: 'Massachusetts'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Massachusetts'
+    widget: 'list'
+    folder: 'src/cms/massachusetts'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'michigan'
+    label: 'Michigan'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Michigan'
+    widget: 'list'
+    folder: 'src/cms/michigan'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'minnesota'
+    label: 'Minnesota'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Minnesota'
+    widget: 'list'
+    folder: 'src/cms/minnesota'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'mississippi'
+    label: 'Mississippi'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Mississippi'
+    widget: 'list'
+    folder: 'src/cms/mississippi'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'missouri'
+    label: 'Missouri'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Missouri'
+    widget: 'list'
+    folder: 'src/cms/missouri'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'montana'
+    label: 'Montana'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Montana'
+    widget: 'list'
+    folder: 'src/cms/montana'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'nebraska'
+    label: 'Nebraska'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Nebraska'
+    widget: 'list'
+    folder: 'src/cms/nebraska'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'nevada'
+    label: 'Nevada'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Nevada'
+    widget: 'list'
+    folder: 'src/cms/nevada'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'new hampshire'
+    label: 'New Hampshire'
+    summary: '{{fields.city}}'
+    label_singular: 'city to New Hampshire'
+    widget: 'list'
+    folder: 'src/cms/new-hampshire'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'new jersey'
+    label: 'New Jersey'
+    summary: '{{fields.city}}'
+    label_singular: 'city to New Jersey'
+    widget: 'list'
+    folder: 'src/cms/new-jersey'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'new mexico'
+    label: 'New Mexico'
+    summary: '{{fields.city}}'
+    label_singular: 'city to New Mexico'
+    widget: 'list'
+    folder: 'src/cms/new-mexico'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'new york'
+    label: 'New York'
+    summary: '{{fields.city}}'
+    label_singular: 'city to New York'
+    widget: 'list'
+    folder: 'src/cms/new-york'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'north carolina'
+    label: 'North Carolina'
+    summary: '{{fields.city}}'
+    label_singular: 'city to North Carolina'
+    widget: 'list'
+    folder: 'src/cms/north-carolina'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'north dakota'
+    label: 'North Dakota'
+    summary: '{{fields.city}}'
+    label_singular: 'city to North Dakota'
+    widget: 'list'
+    folder: 'src/cms/north-dakota'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'ohio'
+    label: 'Ohio'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Ohio'
+    widget: 'list'
+    folder: 'src/cms/ohio'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'oklahoma'
+    label: 'Oklahoma'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Oklahoma'
+    widget: 'list'
+    folder: 'src/cms/oklahoma'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'oregon'
+    label: 'Oregon'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Oregon'
+    widget: 'list'
+    folder: 'src/cms/oregon'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'pennsylvania'
+    label: 'Pennsylvania'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Pennsylvania'
+    widget: 'list'
+    folder: 'src/cms/pennsylvania'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'rhode island'
+    label: 'Rhode Island'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Rhode Island'
+    widget: 'list'
+    folder: 'src/cms/rhode-island'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'south carolina'
+    label: 'South Carolina'
+    summary: '{{fields.city}}'
+    label_singular: 'city to South Carolina'
+    widget: 'list'
+    folder: 'src/cms/south-carolina'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'south dakota'
+    label: 'South Dakota'
+    summary: '{{fields.city}}'
+    label_singular: 'city to South Dakota'
+    widget: 'list'
+    folder: 'src/cms/south-dakota'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'tennessee'
+    label: 'Tennessee'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Tennessee'
+    widget: 'list'
+    folder: 'src/cms/tennessee'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'texas'
+    label: 'Texas'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Texas'
+    widget: 'list'
+    folder: 'src/cms/texas'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'utah'
+    label: 'Utah'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Utah'
+    widget: 'list'
+    folder: 'src/cms/utah'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'vermont'
+    label: 'Vermont'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Vermont'
+    widget: 'list'
+    folder: 'src/cms/vermont'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'virginia'
+    label: 'Virginia'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Virginia'
+    widget: 'list'
+    folder: 'src/cms/virginia'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'washington'
+    label: 'Washington'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Washington'
+    widget: 'list'
+    folder: 'src/cms/washington'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'west virginia'
+    label: 'West Virginia'
+    summary: '{{fields.city}}'
+    label_singular: 'city to West Virginia'
+    widget: 'list'
+    folder: 'src/cms/west-virginia'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'wisconsin'
+    label: 'Wisconsin'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Wisconsin'
+    widget: 'list'
+    folder: 'src/cms/wisconsin'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
+  - name: 'wyoming'
+    label: 'Wyoming'
+    summary: '{{fields.city}}'
+    label_singular: 'city to Wyoming'
+    widget: 'list'
+    folder: 'src/cms/wyoming'
+    slug: '{{year}}-{{month}}-{{day}}-{{fields.city}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'City', name: 'city', widget: 'string' }
+      - name: 'stores'
+        label: 'Stores'
+        widget: 'list'
+        label_singular: 'Store'
+        fields:
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Address', name: 'address', widget: 'string' }
