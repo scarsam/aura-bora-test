@@ -41,6 +41,7 @@ const WhereToFind = ({ data }) => {
   const closeModal = () => {
     clearSelection(state)
     setState('')
+    setFilteredState([])
     setShowModal(false)
   }
 
