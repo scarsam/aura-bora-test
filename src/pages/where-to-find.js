@@ -160,8 +160,11 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            title
-            state
+            city
+            stores {
+              name
+              address
+            }
           }
         }
       }

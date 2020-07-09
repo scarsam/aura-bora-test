@@ -40,7 +40,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `stores`,
-        path: `${__dirname}/src/cms/stores`,
+        path: `${__dirname}/src/cms/`,
       },
     },
     {
