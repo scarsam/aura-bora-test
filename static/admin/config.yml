@@ -21,7 +21,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'alabama', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'alabama' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -42,7 +42,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'alaska', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'alaska' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -63,7 +63,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'arizona', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'arizona' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -84,7 +84,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'arkansas', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'arkansas' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -105,7 +105,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'california', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'california',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -126,7 +131,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'colorado', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'colorado' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -147,7 +152,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'connecticut', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'connecticut',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -168,7 +178,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'delaware', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'delaware' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -189,7 +199,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'florida', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'florida' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -210,7 +220,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'georgia', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'georgia' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -231,7 +241,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'hawaii', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'hawaii' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -252,7 +262,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'idaho', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'idaho' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -273,7 +283,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'illinois', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'illinois' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -294,7 +304,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'indiana', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'indiana' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -315,7 +325,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'iowa', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'iowa' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -336,7 +346,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'kansas', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'kansas' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -357,7 +367,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'kentucky', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'kentucky' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -378,7 +388,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'louisiana', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'louisiana',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -399,7 +414,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'maine', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'maine' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -420,7 +435,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'maryland', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'maryland' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -441,7 +456,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'massachusetts', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'massachusetts',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -462,7 +482,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'michigan', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'michigan' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -483,7 +503,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'minnesota', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'minnesota',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -504,7 +529,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'mississippi', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'mississippi',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -525,7 +555,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'missouri', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'missouri' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -546,7 +576,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'montana', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'montana' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -567,7 +597,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'nebraska', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'nebraska' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -588,7 +618,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'nevada', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'nevada' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -609,7 +639,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'new hampshire', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'new hampshire',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -630,7 +665,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'new jersey', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'new jersey',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -651,7 +691,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'new mexico', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'new mexico',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -672,7 +717,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'new york', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'new york' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -693,7 +738,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'north carolina', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'north carolina',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -714,7 +764,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'north dakota', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'north dakota',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -735,7 +790,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'ohio', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'ohio' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -756,7 +811,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'oklahoma', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'oklahoma' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -777,7 +832,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'oregon', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'oregon' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -798,7 +853,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'pennsylvania', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'pennsylvania',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -819,7 +879,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'rhode island', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'rhode island',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -840,7 +905,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'south carolina', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'south carolina',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -861,7 +931,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'south dakota', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'south dakota',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -882,7 +957,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'tennessee', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'tennessee',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -903,7 +983,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'texas', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'texas' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -924,7 +1004,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'utah', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'utah' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -945,7 +1025,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'vermont', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'vermont' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -966,7 +1046,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'virginia', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'virginia' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -987,7 +1067,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'washington', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'washington',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -1008,7 +1093,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'west virginia', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'state',
+          widget: 'hidden',
+          default: 'west virginia',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -1029,7 +1119,12 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'wisconsin', widget: 'hidden' }
+      - {
+          label: 'State',
+          name: 'wisconsin',
+          widget: 'hidden',
+          default: 'wisconsin',
+        }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
@@ -1050,7 +1145,7 @@ collections:
       preview: false
     fields:
       - { label: 'City', name: 'city', widget: 'string' }
-      - { label: 'State', name: 'wyoming', widget: 'hidden' }
+      - { label: 'State', name: 'state', widget: 'hidden', default: 'wyoming' }
       - name: 'stores'
         label: 'Stores'
         widget: 'list'
