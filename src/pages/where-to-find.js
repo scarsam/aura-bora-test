@@ -19,8 +19,10 @@ const addSelection = state => {
 }
 
 const WhereToFind = ({ data }) => {
-  // const { title } = data.allMarkdownRemark.edges[0].node.frontmatter
-  console.log(data)
+  const stores = data?.allMarkdownRemark?.edges.map(
+    ({ node: { frontmatter } }) => frontmatter
+  )
+  console.log(stores)
 
   const innerModal = useRef()
   const [showModal, setShowModal] = useState(false)
