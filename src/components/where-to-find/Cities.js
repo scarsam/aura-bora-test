@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Cities = ({ cities }) => {
   const [selectedCity, setSelectedCity] = useState([])
 
-  if (cities.length <= 0) {
+  if (selectedCity.length > 0 && cities.length <= 0) {
     return <h3 className="text-center">No stores in this state</h3>
   }
 

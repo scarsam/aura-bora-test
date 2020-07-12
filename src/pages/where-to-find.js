@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
 import Modal from 'components/where-to-find/Modal'
+import Search from 'components/where-to-find/Search'
+import Cities from 'components/where-to-find/Cities'
 import heroImage from 'images/where-to-find/where-to-find-header.svg'
 import USMap from 'images/where-to-find/where-to-find-map.inline.svg'
 
@@ -37,10 +39,17 @@ const WhereToFind = ({ data }) => {
     setShowModal(true)
   }
 
-  const filterState = state =>
-    stores
+  const filterState = state => {
+    if (state.length === 2) {
+      return stores
+        .filter(store => store.state.startsWith(state.toLowerCase()))
+        .map(state => state)
+    }
+
+    return stores
       .filter(store => store.state === state.toLowerCase())
       .map(state => state)
+  }
 
   const closeModal = () => {
     clearSelection(state)
@@ -88,7 +97,15 @@ const WhereToFind = ({ data }) => {
               </p>
             </div>
           </div>
-          <div className="row padding-bottom-50px">
+          <div className="d-md-none mobile-search">
+            <Search handleState={setState} />
+            <section className="bg-white padding-top-30px padding-bottom-25px">
+              <ul className="text-center">
+                <Cities cities={filterState(state)} />
+              </ul>
+            </section>
+          </div>
+          <div className="row padding-bottom-50px d-none d-md-flex">
             <div className="col-12">
               <USMap
                 className="width-100 height-auto"

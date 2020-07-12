@@ -84,3 +84,13 @@ $where-to-find-yellow: #efde9e;
     }
   }
 }
+
+.mobile-search {
+  input {
+    border-width: 2px;
+    height: 56px;
+  }
+  li {
+    color: #828282;
+  }
+}
