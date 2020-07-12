@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Cities from './Cities'
 
 const Modal = ({ stores, state, handleCloseModal, innerModalRef }) => {
-  const [filteredState, setFilteredState] = useState([])
-
-  useEffect(() => {
-    filterState(state)
-  }, [state])
-
-  const filterState = state => {
-    const states = stores
+  const filterState = state =>
+    stores
       .filter(store => store.state === state.toLowerCase())
       .map(state => state)
-
-    setFilteredState(states)
-  }
 
   return (
     <div className="modal">
@@ -38,7 +29,7 @@ const Modal = ({ stores, state, handleCloseModal, innerModalRef }) => {
                 />
               </section>
               <section className="bg-white padding-top-30px padding-bottom-25px">
-                <Cities cities={filteredState} />
+                <Cities cities={filterState(state)} />
               </section>
             </div>
           </div>
