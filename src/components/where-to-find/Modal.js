@@ -1,11 +1,32 @@
-import React from 'react'
-import Cities from './Cities'
+import React, { useState } from 'react'
+import City from './City'
+import Store from './Store'
 
-const Modal = ({ stores, state, handleCloseModal, innerModalRef }) => {
-  const filterState = state =>
-    stores
-      .filter(store => store.state === state.toLowerCase())
-      .map(state => state)
+const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
+  const [selectedCity, setSelectedCity] = useState(null)
+
+  const renderSelectedCity = () => {
+    const city = cities.find(({ city }) => city === selectedCity)
+    return city?.stores.map(({ name, address }) => (
+      <Store name={name} address={address} />
+    ))
+  }
+
+  const backButton = () => {
+    setSelectedCity(null)
+  }
+
+  const renderCities = () => {
+    if (cities.length <= 0) {
+      return <h3 className="text-center">No stores in this state</h3>
+    }
+
+    return cities.map(({ city }) => (
+      <li onClick={() => setSelectedCity(city)}>
+        <City key={city} city={city} />
+      </li>
+    ))
+  }
 
   return (
     <div className="modal">
@@ -18,8 +39,9 @@ const Modal = ({ stores, state, handleCloseModal, innerModalRef }) => {
             >
               <section className="padding-none d-flex justify-content-center align-items-center text-center modal-title z-index-1">
                 <h2 className="margin-bottom-none text-30px absolute">
-                  {state}
+                  {selectedCity ? selectedCity : state}
                 </h2>
+                {selectedCity && <button onClick={backButton}>Back</button>}
                 <div
                   role="button"
                   tabIndex={0}
@@ -29,7 +51,9 @@ const Modal = ({ stores, state, handleCloseModal, innerModalRef }) => {
                 />
               </section>
               <section className="bg-white padding-top-30px padding-bottom-25px">
-                <Cities cities={filterState(state)} />
+                <ul className="text-center">
+                  {selectedCity ? renderSelectedCity() : renderCities()}
+                </ul>
               </section>
             </div>
           </div>

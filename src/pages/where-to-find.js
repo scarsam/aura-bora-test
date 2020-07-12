@@ -37,6 +37,11 @@ const WhereToFind = ({ data }) => {
     setShowModal(true)
   }
 
+  const filterState = state =>
+    stores
+      .filter(store => store.state === state.toLowerCase())
+      .map(state => state)
+
   const closeModal = () => {
     clearSelection(state)
     setState('')
@@ -95,8 +100,8 @@ const WhereToFind = ({ data }) => {
       </section>
       {showModal && (
         <Modal
-          stores={stores}
           state={state}
+          cities={filterState(state)}
           handleCloseModal={closeModal}
           innerModalRef={innerModal}
         />
