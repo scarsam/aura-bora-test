@@ -73,4 +73,14 @@ $where-to-find-yellow: #efde9e;
   .flex-50 {
     flex: 0 0 50%;
   }
+  .back-button {
+    background: none;
+    border: none;
+    img {
+      max-height: 38px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

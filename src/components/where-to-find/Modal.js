@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import City from './City'
 import Store from './Store'
+import BackButton from '../../images/where-to-find/where-to-find-back.svg'
 
 const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
   const [selectedCity, setSelectedCity] = useState(null)
@@ -37,11 +38,22 @@ const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
               ref={innerModalRef}
               className="col-12 col-md-10 offset-md-1 padding-bottom-60px"
             >
-              <section className="padding-none d-flex justify-content-center align-items-center text-center modal-title z-index-1">
+              <section className="padding-none d-flex justify-content-center align-items-center text-center modal-title z-index-1 padding-left-60px padding-right-50px">
                 <h2 className="margin-bottom-none text-30px absolute">
                   {selectedCity ? selectedCity : state}
                 </h2>
-                {selectedCity && <button onClick={backButton}>Back</button>}
+                {selectedCity && (
+                  <button
+                    className="text-20px back-button padding-none d-flex align-items-center"
+                    onClick={backButton}
+                  >
+                    <img
+                      className="margin-none padding-right-10px"
+                      src={BackButton}
+                    />
+                    Back
+                  </button>
+                )}
                 <div
                   role="button"
                   tabIndex={0}
