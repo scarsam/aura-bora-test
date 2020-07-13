@@ -3,7 +3,13 @@ import City from './City'
 import Store from './Store'
 import BackButton from '../../images/where-to-find/where-to-find-back.svg'
 
-const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
+const Results = ({
+  mobile,
+  state,
+  cities,
+  handleCloseResults,
+  innerResultsRef,
+}) => {
   const [selectedCity, setSelectedCity] = useState(null)
 
   const renderSelectedCity = () => {
@@ -30,19 +36,16 @@ const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content height-100 relative">
-        <div className="container padding-top-20px height-100">
+    <div className="results">
+      <div className="results-content height-100 relative">
+        <div className="padding-top-20px height-100">
           <div className="row padding-bottom-30px">
-            <div
-              ref={innerModalRef}
-              className="col-12 col-md-10 offset-md-1 margin-bottom-60px"
-            >
-              <section className="padding-none d-flex justify-content-center align-items-center text-center modal-title z-index-1 padding-left-60px padding-right-50px">
+            <div ref={innerResultsRef} className="col-12 margin-bottom-60px">
+              <section className="padding-none d-flex justify-content-center align-items-center text-center results-title z-index-1 padding-left-60px padding-right-50px">
                 <h2 className="margin-bottom-none text-30px absolute">
                   {selectedCity ? selectedCity : state}
                 </h2>
-                {selectedCity && (
+                {selectedCity && !mobile && (
                   <button
                     className="text-20px back-button padding-none d-flex align-items-center"
                     onClick={backButton}
@@ -54,13 +57,15 @@ const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
                     Back
                   </button>
                 )}
-                <div
-                  role="button"
-                  tabIndex={0}
-                  onClick={handleCloseModal}
-                  onKeyDown={handleCloseModal}
-                  className="close-icon d-block"
-                />
+                {!mobile && (
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onClick={handleCloseResults}
+                    onKeyDown={handleCloseResults}
+                    className="close-icon d-block"
+                  />
+                )}
               </section>
               <section className="bg-white padding-top-30px padding-bottom-25px">
                 <ul className="text-center">
@@ -75,4 +80,4 @@ const Modal = ({ state, cities, handleCloseModal, innerModalRef }) => {
   )
 }
 
-export default Modal
+export default Results

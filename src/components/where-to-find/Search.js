@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useGoogleAutocomplete from 'use-google-autocomplete'
 
 const Search = ({ handleState }) => {
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState(null)
 
   const { results, isLoading, error, getPlaceDetails } = useGoogleAutocomplete({
     apiKey: 'AIzaSyBWECI7Ct9Ga3j-47eLEQfgGmjwJ2FevJY',
@@ -12,10 +12,14 @@ const Search = ({ handleState }) => {
     },
   })
 
-  const formatState = description => {
-    const arrayDescription = description.split(',')
-    const state = arrayDescription[arrayDescription.length - 2]
-    handleState(state.trim())
+  const getState = async id => {
+    const { result } = await getPlaceDetails(id)
+
+    const state = result?.address_components.find(item =>
+      item.types.includes('administrative_area_level_1')
+    )
+
+    handleState(state.long_name)
     setAddress('')
   }
 
@@ -31,10 +35,10 @@ const Search = ({ handleState }) => {
           {isLoading ? (
             <p className="margin-bottom-5px">Searching...</p>
           ) : (
-            results?.predictions.map(({ id, description }) => (
+            results?.predictions.map(({ id, description, place_id }) => (
               <li
                 key={id}
-                onClick={() => formatState(description)}
+                onClick={() => getState(place_id)}
                 className="padding-bottom-5px"
               >
                 {description}
