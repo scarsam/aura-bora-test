@@ -100,6 +100,14 @@ function useCartCount() {
   return count
 }
 
+function useIsAddingCartItem() {
+  const {
+    store: { isAdding },
+  } = useContext(StoreContext)
+
+  return isAdding
+}
+
 function useCartTotals() {
   const {
     store: { checkout },
@@ -165,12 +173,16 @@ function useRemoveItemFromCart() {
   } = useContext(StoreContext)
 
   async function removeItemFromCart(itemId) {
+    setStore(prevState => {
+      return { ...prevState, isAdding: true }
+    })
+
     const newCheckout = await client.checkout.removeLineItems(checkout.id, [
       itemId,
     ])
 
     setStore(prevState => {
-      return { ...prevState, checkout: newCheckout }
+      return { ...prevState, checkout: newCheckout, isAdding: false }
     })
   }
 
@@ -195,6 +207,7 @@ export {
   useCartTotals,
   useRemoveItemFromCart,
   useCheckout,
+  useIsAddingCartItem,
 }
 
 export default StoreContextProvider

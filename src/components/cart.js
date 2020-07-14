@@ -7,6 +7,7 @@ import {
   useAddItemToCart,
   useRemoveItemFromCart,
   useCheckout,
+  useIsAddingCartItem,
 } from 'store'
 
 const Cart = () => {
@@ -16,6 +17,7 @@ const Cart = () => {
   const checkout = useCheckout()
   const addItemToCart = useAddItemToCart()
   const removeFromCart = useRemoveItemFromCart()
+  const isAdding = useIsAddingCartItem()
   const { total } = useCartTotals()
 
   useEffect(() => {
@@ -40,6 +42,17 @@ const Cart = () => {
       setShowMenu(false)
     }
   }
+
+  const handleProductQuantity = (itemQuantity, variantId, productId) => {
+    if (!isAdding) {
+      if (itemQuantity === 1 || (!itemQuantity && !variantId)) {
+        removeFromCart(productId)
+      } else if (itemQuantity > 1) {
+        addItemToCart(variantId, -1)
+      }
+    }
+  }
+
   return (
     <div className="cart relative" ref={cartMenu}>
       <button
@@ -112,10 +125,13 @@ const Cart = () => {
                     </span>
                     <div className="d-flex align-items-center">
                       <button
+                        disabled={isAdding}
                         onClick={() =>
-                          product.quantity <= 1
-                            ? removeFromCart(product.id)
-                            : addItemToCart(product.variant.id, -1)
+                          handleProductQuantity(
+                            product.quantity,
+                            product.variant.id,
+                            product.id
+                          )
                         }
                         className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
@@ -125,14 +141,18 @@ const Cart = () => {
                         {product.quantity}
                       </span>
                       <button
+                        disabled={isAdding}
                         onClick={() => addItemToCart(product.variant.id, 1)}
                         className="primary-btn padding-none d-flex align-items-center justify-content-center bg-white adjust-quantity-btn"
                       >
                         <span>+</span>
                       </button>
                       <button
+                        disabled={isAdding}
                         className="d-flex align-items-center item-remove-btn"
-                        onClick={() => removeFromCart(product.id)}
+                        onClick={() =>
+                          handleProductQuantity(null, null, product.id)
+                        }
                       >
                         <span>+</span>
                       </button>
@@ -148,7 +168,6 @@ const Cart = () => {
                 </div>
                 <button
                   onClick={checkout}
-                  // onClick={e => redirectToCheckout(e, items)}
                   className="primary-btn checkout-btn text-24px font-space-mono bg-white margin-top-45px margin-bottom-10px"
                 >
                   Check out
@@ -170,26 +189,26 @@ const Cart = () => {
 export default Cart
 const stripePromise = loadStripe(process.env.GATSBY_CHECKOUT_KEY)
 
-const redirectToCheckout = async (event, cart) => {
-  event.preventDefault()
-  const stripe = await stripePromise
-  const items =
-    cart &&
-    cart.map(item => {
-      return { sku: item.sku, quantity: item.quantity }
-    })
+// const redirectToCheckout = async (event, cart) => {
+//   event.preventDefault()
+//   const stripe = await stripePromise
+//   const items =
+//     cart &&
+//     cart.map(item => {
+//       return { sku: item.sku, quantity: item.quantity }
+//     })
 
-  try {
-    await stripe.redirectToCheckout({
-      billingAddressCollection: 'required',
-      shippingAddressCollection: {
-        allowedCountries: ['US'],
-      },
-      items,
-      successUrl: `${process.env.GATSBY_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: process.env.GATSBY_URL,
-    })
-  } catch (error) {
-    console.error('Error:', error)
-  }
-}
+//   try {
+//     await stripe.redirectToCheckout({
+//       billingAddressCollection: 'required',
+//       shippingAddressCollection: {
+//         allowedCountries: ['US'],
+//       },
+//       items,
+//       successUrl: `${process.env.GATSBY_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+//       cancelUrl: process.env.GATSBY_URL,
+//     })
+//   } catch (error) {
+//     console.error('Error:', error)
+//   }
+// }
