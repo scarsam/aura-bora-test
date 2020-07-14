@@ -1,4 +1,5 @@
 $where-to-find-yellow: #efde9e;
+$where-to-find-search: #828282;
 
 .where-to-find .hero img {
   transition: max-width 250ms ease-in-out;
@@ -42,12 +43,7 @@ $where-to-find-yellow: #efde9e;
     z-index: 9999;
     left: 0;
     top: 0;
-  }
-  .results-content {
-    top: 5%;
-    max-width: 800px;
-    overflow: scroll;
-    margin: 0 auto;
+    padding: 5%;
   }
   .results-title {
     background-color: $darkYellow;
@@ -59,10 +55,25 @@ $where-to-find-yellow: #efde9e;
       min-height: 64px;
     }
   }
+  .results-content {
+    max-width: 800px;
+    overflow: scroll;
+    margin: 0 auto;
+    @include media_min_break(md) {
+      height: 100%;
+    }
+  }
   .close-icon {
     margin-left: auto;
   }
-
+  .result-list {
+    margin-left: 23px;
+    h2 {
+      @include media_max_break(md) {
+        margin-left: 20px;
+      }
+    }
+  }
   .city-link {
     &:hover {
       cursor: pointer;
@@ -94,7 +105,19 @@ $where-to-find-yellow: #efde9e;
     border-width: 2px;
     height: 56px;
   }
-  li {
-    color: #828282;
+  .search-results {
+    li {
+      color: $where-to-find-search;
+      &:hover {
+        background-color: $where-to-find-yellow;
+        cursor: pointer;
+      }
+      &:first-child {
+        padding-top: 20px !important;
+      }
+      &:last-child {
+        padding-bottom: 20px !important;
+      }
+    }
   }
 }

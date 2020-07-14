@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useGoogleAutocomplete from 'use-google-autocomplete'
 
 const Search = ({ handleState }) => {
-  const [address, setAddress] = useState(null)
+  const [address, setAddress] = useState('')
 
   const { results, isLoading, error, getPlaceDetails } = useGoogleAutocomplete({
     apiKey: 'AIzaSyBWECI7Ct9Ga3j-47eLEQfgGmjwJ2FevJY',
@@ -11,6 +11,11 @@ const Search = ({ handleState }) => {
       types: 'address',
     },
   })
+
+  // Hide existing results after new search query
+  useEffect(() => {
+    handleState('')
+  }, [isLoading])
 
   const getState = async id => {
     const { result } = await getPlaceDetails(id)
@@ -29,17 +34,21 @@ const Search = ({ handleState }) => {
         className="padding-left-30px padding-right-30px width-100"
         type="text"
         onChange={e => setAddress(e.target.value)}
+        placeholder="Enter your address"
       />
-      {address && (
-        <ul className="bg-white padding-left-30px padding-right-30px padding-top-30px padding-bottom-20px">
+      {address && results.status === 'OK' && (
+        <ul className="bg-white margin-bottom-none search-results">
+          {error && <p>An error has occurred. Please try again</p>}
           {isLoading ? (
-            <p className="margin-bottom-5px">Searching...</p>
+            <p className="padding-left-30px padding-right-30px margin-bottom-10px padding-bottom-20px padding-top-15px">
+              Searching...
+            </p>
           ) : (
-            results?.predictions.map(({ id, description, place_id }) => (
+            results?.predictions.map(({ description, place_id }) => (
               <li
-                key={id}
+                key={place_id}
                 onClick={() => getState(place_id)}
-                className="padding-bottom-5px"
+                className="margin-bottom-none padding-left-30px padding-right-30px padding-bottom-15px padding-top-15px search-item"
               >
                 {description}
               </li>
