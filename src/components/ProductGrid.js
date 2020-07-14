@@ -74,38 +74,3 @@ export const useProducts = () => {
   )
   return data.edges
 }
-
-// export const useProducts = () => {
-//   const { skus } = useStaticQuery(
-//     graphql`
-//       query SkusForProduct {
-//         skus: allStripeSku {
-//           edges {
-//             node {
-//               localFiles {
-//                 name
-//               }
-//               product {
-//                 name
-//                 metadata {
-//                   description
-//                   isInStock
-//                   displayOrder
-//                 }
-//               }
-//               active
-//               image
-//               id
-//               currency
-//               price
-//               attributes {
-//                 name
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return skus.edges
-// }

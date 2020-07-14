@@ -5,7 +5,6 @@ import Hero from 'components/hero'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
 import Social from 'components/Social'
-import '@stripe/stripe-js'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const IndexPage = () => {
