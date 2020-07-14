@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
-import Modal from 'components/where-to-find/Modal'
+import Results from 'components/where-to-find/Results'
+import Search from 'components/where-to-find/Search'
 import heroImage from 'images/where-to-find/where-to-find-header.svg'
 import USMap from 'images/where-to-find/where-to-find-map.inline.svg'
 
@@ -24,8 +25,8 @@ const WhereToFind = ({ data }) => {
     ({ node: { frontmatter } }) => frontmatter
   )
 
-  const innerModal = useRef()
-  const [showModal, setShowModal] = useState(false)
+  const innerResults = useRef()
+  const [showResults, setShowResults] = useState(false)
   const [state, setState] = useState('')
 
   const handleStateSelection = event => {
@@ -34,7 +35,7 @@ const WhereToFind = ({ data }) => {
 
     setState(state)
     addSelection(state)
-    setShowModal(true)
+    setShowResults(true)
   }
 
   const filterState = state =>
@@ -42,33 +43,33 @@ const WhereToFind = ({ data }) => {
       .filter(store => store.state === state.toLowerCase())
       .map(state => state)
 
-  const closeModal = () => {
+  const closeResults = () => {
     clearSelection(state)
     setState('')
-    setShowModal(false)
+    setShowResults(false)
   }
 
-  const handleCloseModalClick = e => {
-    if (innerModal.current && !innerModal.current.contains(e.target)) {
-      closeModal()
+  const handleCloseResultsClick = e => {
+    if (innerResults.current && !innerResults.current.contains(e.target)) {
+      closeResults()
     }
   }
 
-  const handleCloseModalKey = e => {
+  const handleCloseResultsKey = e => {
     if (e.keyCode === 27) {
-      closeModal()
+      closeResults()
     }
   }
 
   useEffect(() => {
-    document.addEventListener('keydown', handleCloseModalKey, false)
-    document.addEventListener('mousedown', handleCloseModalClick, false)
+    document.addEventListener('keydown', handleCloseResultsKey, false)
+    document.addEventListener('mousedown', handleCloseResultsClick, false)
 
     return () => {
-      document.removeEventListener('keydown', handleCloseModalKey, false)
-      document.removeEventListener('mousedown', handleCloseModalClick, false)
+      document.removeEventListener('keydown', handleCloseResultsKey, false)
+      document.removeEventListener('mousedown', handleCloseResultsClick, false)
     }
-  }, [showModal])
+  }, [showResults])
 
   return (
     <Layout>
@@ -88,7 +89,15 @@ const WhereToFind = ({ data }) => {
               </p>
             </div>
           </div>
-          <div className="row padding-bottom-50px">
+          <div className="row d-md-none mobile-search">
+            <div className="col-12">
+              <Search handleState={setState} />
+              {state && (
+                <Results mobile state={state} cities={filterState(state)} />
+              )}
+            </div>
+          </div>
+          <div className="row padding-bottom-50px d-none d-md-flex">
             <div className="col-12">
               <USMap
                 className="width-100 height-auto"
@@ -98,14 +107,16 @@ const WhereToFind = ({ data }) => {
           </div>
         </div>
       </section>
-      {showModal && (
-        <Modal
-          state={state}
-          cities={filterState(state)}
-          handleCloseModal={closeModal}
-          innerModalRef={innerModal}
-        />
-      )}
+      <div className="d-none d-md-block">
+        {showResults && (
+          <Results
+            state={state}
+            cities={filterState(state)}
+            handleCloseResults={closeResults}
+            innerResultsRef={innerResults}
+          />
+        )}
+      </div>
     </Layout>
   )
 }

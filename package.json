@@ -36,7 +36,8 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "shopify-buy": "^2.10.0",
-    "typography": "^0.16.19"
+    "typography": "^0.16.19",
+    "use-google-autocomplete": "^0.1.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
