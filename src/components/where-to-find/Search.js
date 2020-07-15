@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { USStates } from './States'
 
-// Fix selecting a unsupported state issue
-
 const Search = ({ handleState }) => {
   const [searchQuery, setSearchQuery] = useState('')
 

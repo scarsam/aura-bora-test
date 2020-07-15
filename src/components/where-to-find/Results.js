@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import City from './City'
 import Store from './Store'
 import BackButton from '../../images/where-to-find/where-to-find-back.svg'
@@ -11,6 +11,10 @@ const Results = ({
   innerResultsRef,
 }) => {
   const [selectedCity, setSelectedCity] = useState(null)
+
+  useEffect(() => {
+    setSelectedCity(null)
+  }, [state])
 
   const renderSelectedCity = () => {
     const city = cities.find(({ city }) => city === selectedCity)
