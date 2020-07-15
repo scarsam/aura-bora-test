@@ -1,31 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import useGoogleAutocomplete from 'use-google-autocomplete'
+import { USStates } from './States'
+
+// Fix selecting a unsupported state issue
 
 const Search = ({ handleState }) => {
-  const [address, setAddress] = useState('')
-
-  const { results, isLoading, error, getPlaceDetails } = useGoogleAutocomplete({
-    apiKey: 'AIzaSyBWECI7Ct9Ga3j-47eLEQfgGmjwJ2FevJY',
-    query: address,
-    options: {
-      types: 'address',
-    },
-  })
+  const [searchQuery, setSearchQuery] = useState('')
 
   // Hide existing results after new search query
   useEffect(() => {
-    handleState('')
-  }, [isLoading])
+    filteredStates()
+  }, [searchQuery])
 
-  const getState = async id => {
-    const { result } = await getPlaceDetails(id)
-
-    const state = result?.address_components.find(item =>
-      item.types.includes('administrative_area_level_1')
+  const filteredStates = () =>
+    USStates.filter(state =>
+      state.toLowerCase().startsWith(searchQuery) ? true : false
     )
 
-    handleState(state.long_name)
-    setAddress('')
+  const selectState = state => {
+    handleState(state)
+    setSearchQuery('')
   }
 
   return (
@@ -33,27 +26,21 @@ const Search = ({ handleState }) => {
       <input
         className="padding-left-30px padding-right-30px width-100"
         type="text"
-        onChange={e => setAddress(e.target.value)}
-        placeholder="Enter your address"
+        value={searchQuery}
+        onChange={e => setSearchQuery(e.target.value)}
+        placeholder="Enter your state"
       />
-      {address && results.status === 'OK' && (
+      {searchQuery.length > 1 && (
         <ul className="bg-white margin-bottom-none search-results">
-          {error && <p>An error has occurred. Please try again</p>}
-          {isLoading ? (
-            <p className="padding-left-30px padding-right-30px margin-bottom-10px padding-bottom-20px padding-top-15px">
-              Searching...
-            </p>
-          ) : (
-            results?.predictions.map(({ description, place_id }) => (
-              <li
-                key={place_id}
-                onClick={() => getState(place_id)}
-                className="margin-bottom-none padding-left-30px padding-right-30px padding-bottom-15px padding-top-15px search-item"
-              >
-                {description}
-              </li>
-            ))
-          )}
+          {filteredStates().map(state => (
+            <li
+              key={state}
+              onClick={() => selectState(state)}
+              className="margin-bottom-none padding-left-30px padding-right-30px padding-bottom-15px padding-top-15px search-item"
+            >
+              {state}
+            </li>
+          ))}
         </ul>
       )}
     </>
