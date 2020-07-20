@@ -1,4 +1,4 @@
-const { createProxyMiddleware } = require('http-proxy-middleware')
+// const { createProxyMiddleware } = require('http-proxy-middleware')
 
 require('dotenv').config({
   path: `.env`,
@@ -17,7 +17,7 @@ module.exports = {
   //   app.use(
   //     '/.netlify/functions/',
   //     createProxyMiddleware({
-  //       target: 'http://localhost:9000',
+  //       target: 'http://localhost:8888',
   //       pathRewrite: {
   //         '/.netlify/functions/': '',
   //       },

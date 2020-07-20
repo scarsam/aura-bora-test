@@ -1,0 +1,16 @@
+.mood {
+  .mood-url {
+    height: 100%;
+  }
+  .mood-image {
+    object-fit: cover;
+    max-height: 465px;
+    max-width: 465px;
+    height: 100%;
+    width: 100%;
+    transition: outline 50ms ease-in-out;
+    &:hover {
+      outline: 8px solid #f6c168;
+    }
+  }
+}

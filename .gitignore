@@ -73,4 +73,6 @@ yarn-error.log
 .env.development
 .env.production
 
-functions/
+# functions/
+# Local Netlify folder
+# .netlify

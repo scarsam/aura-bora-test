@@ -69,7 +69,7 @@ const WhereToFind = ({ data }) => {
       document.removeEventListener('keydown', handleCloseResultsKey, false)
       document.removeEventListener('mousedown', handleCloseResultsClick, false)
     }
-  }, [showResults])
+  }, [showResults, handleCloseResultsKey, handleCloseResultsClick])
 
   return (
     <Layout>
