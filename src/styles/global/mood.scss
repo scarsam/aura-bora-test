@@ -4,13 +4,16 @@
   }
   .mood-image {
     object-fit: cover;
-    max-height: 465px;
+    max-height: 350px;
     max-width: 465px;
     height: 100%;
     width: 100%;
     transition: outline 50ms ease-in-out;
     &:hover {
       outline: 8px solid #f6c168;
+    }
+    @include media_min_break(md) {
+      max-height: 465px;
     }
   }
 }

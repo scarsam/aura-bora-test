@@ -4,7 +4,6 @@ import { ProductGrid } from 'components/ProductGrid'
 import Hero from 'components/hero'
 import SEO from 'components/seo'
 import ValueProps from 'components/value-props'
-import Social from 'components/Social'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const IndexPage = () => {
@@ -46,7 +45,6 @@ const IndexPage = () => {
       </Hero>
       <ValueProps />
       <ProductGrid />
-      <Social />
     </Layout>
   )
 }

@@ -35,7 +35,7 @@ const Mood = () => {
                   src={heroImage}
                 />
               </div>
-              <div className="d-flex justify-content-center align-items-center margin-bottom-30px">
+              <div className="d-flex justify-content-center align-items-center margin-bottom-10px margin-bottom-md-30px">
                 <img className="padding-right-25px" src={instagramLogo} />
                 <a
                   className="d-inline-block primary-link text-22px margin-bottom-15px"
@@ -49,7 +49,7 @@ const Mood = () => {
             </div>
             {images.length > 0 ? (
               images.map(image => (
-                <div className="col-md-6">
+                <div className="col-sm-6">
                   <a
                     className="d-inline-block mood-url padding-bottom-20px"
                     href={image.url}

@@ -25,8 +25,7 @@ const Footer = () => {
               </AnchorLink>
               <AnchorLink
                 className="primary-link margin-bottom-10px"
-                to="/#mood"
-                stripHash
+                to="/mood"
               >
                 Mood
               </AnchorLink>
