@@ -49,7 +49,7 @@ const Mood = () => {
             </div>
             {images.length > 0 ? (
               images.map(image => (
-                <div className="col-6">
+                <div className="col-md-6">
                   <a
                     className="d-inline-block mood-url padding-bottom-20px"
                     href={image.url}
