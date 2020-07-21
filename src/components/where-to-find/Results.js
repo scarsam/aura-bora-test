@@ -85,8 +85,8 @@ const Results = ({
                 />
               )}
             </section>
-            <section className="bg-white padding-top-30px padding-bottom-25px">
-              <ul className="text-center-md result-list">
+            <section className="bg-white">
+              <ul className="text-center-md result-list margin-bottom-none padding-bottom-20px padding-top-20px">
                 {selectedCity ? renderSelectedCity() : renderCities()}
               </ul>
             </section>

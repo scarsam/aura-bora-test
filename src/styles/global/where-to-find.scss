@@ -57,21 +57,16 @@ $where-to-find-search: #828282;
   }
   .results-content {
     max-width: 800px;
-    overflow: scroll;
+    overflow-x: hidden;
     margin: 0 auto;
-    @include media_min_break(md) {
-      height: 100%;
-    }
   }
   .close-icon {
     margin-left: auto;
   }
   .result-list {
     margin-left: 23px;
-    h2 {
-      @include media_max_break(md) {
-        margin-left: 20px;
-      }
+    @include media_min_break(md) {
+      margin-left: 0;
     }
   }
   .city-link {
