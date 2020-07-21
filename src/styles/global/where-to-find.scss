@@ -58,6 +58,8 @@ $where-to-find-search: #828282;
   .results-content {
     max-width: 800px;
     overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
     margin: 0 auto;
   }
   .close-icon {
