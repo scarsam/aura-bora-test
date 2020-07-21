@@ -20,15 +20,15 @@ const StoreContext = React.createContext({
   setStore: () => null,
 })
 
-function createNewCheckout(store) {
-  return store.checkout.create()
+const createNewCheckout = async store => {
+  return await store.checkout.create()
 }
 
-function fetchCheckout(store, id) {
-  return store.client.checkout.fetch(id)
+const fetchCheckout = async (store, id) => {
+  return await store.checkout.fetch(id)
 }
 
-function setCheckoutInState(checkout, setStore) {
+const setCheckoutInState = (checkout, setStore) => {
   const isBrowser = typeof window !== 'undefined'
   if (isBrowser) {
     localStorage.setItem(SHOPIFY_CHECKOUT_STORAGE_KEY, checkout.id)
@@ -87,7 +87,7 @@ function useStore() {
   return store
 }
 
-function useCartCount() {
+const useCartCount = () => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -100,7 +100,7 @@ function useCartCount() {
   return count
 }
 
-function useIsAddingCartItem() {
+const useIsAddingCartItem = () => {
   const {
     store: { isAdding },
   } = useContext(StoreContext)
@@ -108,7 +108,7 @@ function useIsAddingCartItem() {
   return isAdding
 }
 
-function useCartTotals() {
+const useCartTotals = () => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -126,7 +126,7 @@ function useCartTotals() {
   }
 }
 
-function useCartItems() {
+const useCartItems = () => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -134,13 +134,13 @@ function useCartItems() {
   return checkout.lineItems
 }
 
-function useAddItemToCart() {
+const useAddItemToCart = () => {
   const {
     store: { checkout, client },
     setStore,
   } = useContext(StoreContext)
 
-  async function addItemToCart(variantId, quantity) {
+  const addItemToCart = async (variantId, quantity) => {
     if (variantId === '' || !quantity) {
       console.error('Both a size and quantity are required.')
       return
@@ -166,13 +166,13 @@ function useAddItemToCart() {
   return addItemToCart
 }
 
-function useRemoveItemFromCart() {
+const useRemoveItemFromCart = () => {
   const {
     store: { client, checkout },
     setStore,
   } = useContext(StoreContext)
 
-  async function removeItemFromCart(itemId) {
+  const removeItemFromCart = async itemId => {
     setStore(prevState => {
       return { ...prevState, isAdding: true }
     })
@@ -189,13 +189,13 @@ function useRemoveItemFromCart() {
   return removeItemFromCart
 }
 
-function useCheckout() {
+const useCheckout = () => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
 
   return () => {
-    window.open(checkout.webUrl)
+    window.location.href = checkout.webUrl
   }
 }
 
