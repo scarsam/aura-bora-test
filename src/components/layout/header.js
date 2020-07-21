@@ -75,9 +75,8 @@ const Header = () => {
               >
                 <AnchorLink
                   className="primary-link text-36px shop-link"
-                  to="/#mood"
+                  to="/mood"
                   title="Mood"
-                  stripHash
                 />
               </li>
               <li

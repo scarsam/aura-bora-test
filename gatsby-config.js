@@ -1,5 +1,3 @@
-const { createProxyMiddleware } = require('http-proxy-middleware')
-
 require('dotenv').config({
   path: `.env`,
 })
@@ -13,17 +11,6 @@ module.exports = {
     url: 'https://www.aurabora.com',
     image: '/images/aura-bora-social.png',
   },
-  // developMiddleware: app => {
-  //   app.use(
-  //     '/.netlify/functions/',
-  //     createProxyMiddleware({
-  //       target: 'http://localhost:9000',
-  //       pathRewrite: {
-  //         '/.netlify/functions/': '',
-  //       },
-  //     })
-  //   )
-  // },
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-anchor-links`,
