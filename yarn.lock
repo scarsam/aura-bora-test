@@ -16765,13 +16765,6 @@ use@^3.1.0:
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
 
-user-instagram@^2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/user-instagram/-/user-instagram-2.0.9.tgz#37e1d297f4b321d41976f3aba3b826af86218d40"
-  integrity sha512-oRtnASCjVdtcEJXShtkjqo95YZvZ6BfnGl4IKF0dzZZy8HqPSpGPijqldqM3H9YMSF8BPUYrV8VDjSVKGyDOfw==
-  dependencies:
-    axios "^0.19.2"
-
 utf8-byte-length@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/utf8-byte-length/-/utf8-byte-length-1.0.4.tgz#f45f150c4c66eee968186505ab93fcbb8ad6bf61"

@@ -8,13 +8,29 @@ const Mood = () => {
   const [images, setImages] = useState([])
   const [error, setError] = useState(null)
 
+  const fetchInstagram = async () => {
+    try {
+      const res = await fetch('https://www.instagram.com/drinkaurabora?__a=1')
+      const {
+        graphql: { user },
+      } = await res.json()
+      const posts =
+        user.edge_owner_to_timeline_media.edges.map(edge => {
+          return {
+            id: edge.node.id,
+            url: `https://www.instagram.com/p/${edge.node.shortcode}/`,
+            imageUrl: edge.node.display_url,
+          }
+        }) || []
+      setImages(posts)
+    } catch (error) {
+      setImages([])
+      setError(error)
+    }
+  }
+
   useEffect(() => {
-    fetch('/.netlify/functions/aura-bora-instagram')
-      .then(res => res.json())
-      .then(({ posts }) => {
-        setImages(posts)
-      })
-      .catch(error => setError(error))
+    fetchInstagram()
   }, [])
 
   if (error) {
@@ -49,7 +65,7 @@ const Mood = () => {
             </div>
             {images.length > 0 ? (
               images.map(image => (
-                <div className="col-sm-6">
+                <div key={image.id} className="col-sm-6">
                   <a
                     className="d-inline-block mood-url padding-bottom-20px"
                     href={image.url}
