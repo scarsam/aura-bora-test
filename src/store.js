@@ -3,10 +3,8 @@ import Client from 'shopify-buy'
 const SHOPIFY_CHECKOUT_STORAGE_KEY = 'shopify_checkout_id'
 
 const client = Client.buildClient({
-  // storefrontAccessToken: process.env.SHOP_TOKEN,
-  // domain: `${process.env.SHOP_NAME}.myshopify.com`,
-  storefrontAccessToken: 'f30af409afd20a5f5f222039b3999249',
-  domain: `aura-bora-dev.myshopify.com`,
+  domain: `aura-bora-llc.myshopify.com`,
+  storefrontAccessToken: `f2ea2484c395247f0bb5747cb3858101`,
 })
 
 const initialStoreState = {

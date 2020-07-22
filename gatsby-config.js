@@ -61,10 +61,8 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        // The domain name of your Shopify shop.
-        shopName: `aura-bora-dev`,
-        // The storefront access token
-        accessToken: `f30af409afd20a5f5f222039b3999249`,
+        shopName: `aura-bora-llc`,
+        accessToken: `f2ea2484c395247f0bb5747cb3858101`,
       },
     },
     {
