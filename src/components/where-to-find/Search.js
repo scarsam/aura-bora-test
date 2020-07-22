@@ -10,9 +10,7 @@ const Search = ({ handleState }) => {
   }, [searchQuery])
 
   const filteredStates = () =>
-    USStates.filter(state =>
-      state.toLowerCase().startsWith(searchQuery) ? true : false
-    )
+    USStates.filter(state => state.toLowerCase().startsWith(searchQuery))
 
   const selectState = state => {
     handleState(state)
@@ -25,7 +23,7 @@ const Search = ({ handleState }) => {
         className="padding-left-30px padding-right-30px width-100"
         type="text"
         value={searchQuery}
-        onChange={e => setSearchQuery(e.target.value)}
+        onChange={e => setSearchQuery(e.target.value.toLowerCase())}
         placeholder="Enter your state"
       />
       {searchQuery.length > 1 && (
