@@ -65,12 +65,13 @@
   top: 0;
   width: 100%;
   @media (min-width: 500px) {
-    height: unset;
+    height: auto;
     overflow: unset;
-    padding: 50px 40px;
+    padding: 50px 55px;
     position: absolute;
     top: 120px;
     width: 440px;
+    min-height: 500px;
     margin-bottom: 30px;
     .close-icon {
       margin-left: auto;
@@ -101,7 +102,7 @@
     background-image: url('../images/flower-no-items.svg');
     background-position: bottom 10% right 15%;
     background-repeat: no-repeat;
-    background-size: 110px;
+    background-size: 100px;
     content: '';
     .cart-item-container {
       padding-bottom: 100px;
@@ -151,6 +152,7 @@
   margin-left: -10px;
   @include burger-icon(45px);
   @include close-icon(45px);
+  width: 40px;
 }
 .overflow-hidden {
   overflow: hidden;
