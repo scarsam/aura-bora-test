@@ -25,22 +25,14 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Hero>
-        <div className="text-center margin-bottom-60px">
-          <p className="margin-none intro-text">
+        <div className="text-center padding-top-10px padding-top-md-none margin-bottom-5px margin-bottom-md-55px">
+          <p className="margin-none text-24px ">
             Aura Bora is a sparkling water{' '}
             <span className="d-lg-block">
               made from herbs, fruits, and flowers for{' '}
             </span>
             earthly tastes and heavenly feelings.
           </p>
-          <div className="collection-btn">
-            <AnchorLink
-              className=" primary-btn bg-white text-22px c-black"
-              to="/#shop"
-              title="The Collection"
-              stripHash
-            ></AnchorLink>
-          </div>
         </div>
       </Hero>
       <ValueProps />

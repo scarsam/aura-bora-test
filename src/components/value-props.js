@@ -24,8 +24,8 @@ const ValueProp = ({ valueProp }) => (
 
 const ValueProps = () => {
   return (
-    <section className="bg-lightYellow padding-top-30px padding-bottom-20px padding-top-md-30px padding-bottom-md-40px">
-      <div className="container padding-top-none padding-bottom-10px padding-top-md-30px padding-bottom-md-30px">
+    <section className="bg-lightYellow padding-top-30px padding-bottom-20px padding-top-md-none padding-bottom-md-40px">
+      <div className="container padding-top-none padding-bottom-10px padding-top-md-none padding-bottom-md-30px">
         <div className="row d-none d-sm-flex">
           <div className="col-12 align-items-center padding-bottom-15px justify-content-center d-flex value-props-row">
             {valuesOneDesktop.map((valueProp, index) => (
