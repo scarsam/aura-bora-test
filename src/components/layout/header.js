@@ -62,6 +62,18 @@ const Header = () => {
               >
                 <AnchorLink
                   className="primary-link text-36px"
+                  to="/about-us"
+                  title="About us"
+                />
+              </li>
+              <li
+                className="margin-top-20px margin-bottom-30px"
+                onClick={handleLinkClick}
+                onKeyDown={handleKeyDown}
+                role="presentation"
+              >
+                <AnchorLink
+                  className="primary-link text-36px"
                   to="/where-to-find#menu-btn"
                   title="Where to find"
                   stripHash
