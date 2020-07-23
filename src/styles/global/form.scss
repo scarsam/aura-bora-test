@@ -2,12 +2,15 @@
   width: 100%;
   input,
   .input-wrapper {
-    width: 100%;
+    width: 80%;
+    @include media_min_break(sm) {
+      width: 100%;
+    }
   }
 
   input {
     border: 2px solid $black;
-    max-height: 40px;
+    min-height: 64px;
   }
   button {
     background-color: $white;

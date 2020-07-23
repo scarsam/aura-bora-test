@@ -27,7 +27,7 @@ const Subscribe = () => {
     <>
       {sent && <Toast text={'Subscribed'} />}
       <form
-        className="d-flex flex-column flex-md-row subscribe flex-fill padding-top-10px padding-left-lg-20px"
+        className="d-flex flex-column flex-md-row subscribe flex-fill padding-top-lg-10px"
         onSubmit={handleSubmit}
       >
         <div className="input-wrapper">
