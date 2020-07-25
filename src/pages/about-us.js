@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
@@ -8,9 +8,13 @@ import herbsImage from 'images/about/herbs.svg'
 import tastesImage from 'images/about/tastes.svg'
 import happyImage from 'images/about/carousel/carousel-header.svg'
 import lizardImage from 'images/about/carousel/grazzlizard.svg'
-import fruit from 'images/about/carousel/lavender.svg'
+import Carousel from 'components/Carousel'
 
-const About = () => {
+const About = ({ data }) => {
+  const testamonials = data?.allMarkdownRemark?.edges.map(
+    ({ node: { frontmatter } }) => frontmatter
+  )
+
   return (
     <Layout>
       <SEO title="About us" />
@@ -35,7 +39,7 @@ const About = () => {
       </section>
 
       <section className="selling-points">
-        <div className="container padding-top-none">
+        <div className="selling-points container padding-top-none">
           <div className="row">
             <div className="col-12 col-md-6 offset-md-2">
               <img
@@ -76,7 +80,7 @@ const About = () => {
               <p className="text-30px c-black font-barlow">
                 <strong>Heavenly tastes</strong>
               </p>
-              <p class="margin-bottom-none">
+              <p className="margin-bottom-none">
                 Aura Bora’s flavor profile is unlike any other{' '}
                 <span className="no-wrap">— it’s bold, </span>
                 refreshing, and dare we say…{' '}
@@ -91,7 +95,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="happy-thoughts bg-variety_pack-i w-100 ">
+      <section className="happy-thoughts bg-variety_pack-i">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -109,22 +113,8 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="d-flex justify-content-center w-100 padding-bottom-50px">
-          <div className="qoute-card bg-white d-flex align-items-center relative">
-            <div>
-              <p className="text-18px">
-                This drink makes me feel like I’m on a balcony in the south of
-                France (never been). I’m wearing a linen dress, about to bike to
-                the market to buy peaches to snack on while I oil paint the
-                sunset. I go to bed at 9pm every night (insomnia who?) and I
-                play the piano.
-              </p>
-              <p className="margin-none text-16px font-barlow">
-                <strong>-Katie, New York NY</strong>
-              </p>
-            </div>
-            <img className="margin-none" src={fruit} alt="" />
+          <div className="padding-top-60px padding-bottom-60px">
+            <Carousel testamonials={testamonials} />
           </div>
         </div>
       </section>
@@ -133,3 +123,21 @@ const About = () => {
 }
 
 export default About
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 12
+      filter: { fileAbsolutePath: { regex: "/testimonials/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            text
+            author
+          }
+        }
+      }
+    }
+  }
+`
