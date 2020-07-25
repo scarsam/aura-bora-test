@@ -1,5 +1,6 @@
 ---
-text: I don’t remember anything before my sip of Aura Bora. I don’t know my
-  wife’s name. I’m seeing colors I’ve never seen before. Thank you, Aura Bora.
-author: -Peter, Wichita KS
+text: These bubbly drinks exceeded my expectations! I’m not sure how many will
+  actually make it to my shelves as I may hoard them all for myself. The mint is
+  so wonderful and crisp!
+author: -Shantel, Parma ID
 ---
