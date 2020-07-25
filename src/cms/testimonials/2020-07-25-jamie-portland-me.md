@@ -1,4 +1,5 @@
 ---
-text: Dang, if this isn’t the best thing I’ve ever tasted.
-author: -Jamie, Portland ME
+text: Aura Bora makes me feel like Florence Pugh in Midsommar with her May Queen
+  cape (minus literally everything else that happens in that movie).
+author: Katie, New York NY
 ---
