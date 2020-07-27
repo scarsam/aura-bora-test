@@ -1,8 +1,28 @@
-.slick-slider {
-  .slick-list {
-    padding: 0px 200px !important;
-  }
+.carousel {
+  max-width: 2000px;
 }
-.slick-dots {
-  bottom: -120px;
+.carousel-prev-btn,
+.carousel-next-btn {
+  background: none;
+  border: 0;
+}
+
+.carousel__dot {
+  padding: 7px;
+  border-radius: 28px;
+  border: 0;
+  margin-left: 18px;
+  margin-right: 18px;
+  opacity: 0.6;
+}
+.carousel__dot--selected {
+  background: white;
+  opacity: 1;
+}
+.carousel__inner-slide {
+  display: flex;
+  justify-content: center;
+}
+.carousel__slider {
+  height: 430px;
 }

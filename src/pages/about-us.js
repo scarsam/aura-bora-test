@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import SEO from 'components/seo'
@@ -8,7 +8,7 @@ import herbsImage from 'images/about/herbs.svg'
 import tastesImage from 'images/about/tastes.svg'
 import happyImage from 'images/about/carousel/carousel-header.svg'
 import lizardImage from 'images/about/carousel/grazzlizard.svg'
-import Carousel from 'components/Carousel'
+import Carousel from '../components/Carousel'
 
 const About = ({ data }) => {
   const testamonials = data?.allMarkdownRemark?.edges.map(
@@ -96,7 +96,7 @@ const About = ({ data }) => {
       </section>
 
       <section className="happy-thoughts bg-variety_pack-i">
-        <div className="container">
+        <div className="container padding-bottom-none">
           <div className="row">
             <div className="col-12">
               <div className="text-center hero">
@@ -113,10 +113,8 @@ const About = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="padding-top-60px padding-bottom-60px">
-            <Carousel testamonials={testamonials} />
-          </div>
         </div>
+        <Carousel testamonials={testamonials} />
       </section>
     </Layout>
   )
