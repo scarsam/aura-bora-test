@@ -27,7 +27,7 @@
   @include shared-animation-styles;
   width: 150px;
   height: 65px;
-  top: 64%;
+  top: 63%;
   left: 13%;
   @include media_min_break(sm) {
     left: 54%;
@@ -35,7 +35,7 @@
   @include media_min_break(md) {
     height: 80px;
     left: 53.5%;
-    top: 63%;
+    top: 62%;
     width: 150px;
   }
   span {
@@ -48,7 +48,7 @@
   @include media_min_break(md) {
     height: 115px;
     left: 31.1%;
-    top: 35%;
+    top: 34%;
     width: 180px;
   }
   span {
@@ -62,13 +62,13 @@
   width: 55px;
   height: 38px;
   @include media_min_break(sm) {
-    top: 51.2%;
+    top: 50.2%;
     left: 62%;
   }
   @include media_min_break(md) {
     height: 50px;
     left: 62%;
-    top: 39%;
+    top: 38%;
     width: 70px;
   }
   span {
@@ -80,14 +80,14 @@
   @include shared-animation-styles;
   width: 55px;
   height: 38px;
-  top: 54%;
+  top: 52%;
   left: 1.5%;
   @include media_min_break(sm) {
-    top: 54.7%;
+    top: 53.7%;
     left: 42%;
   }
   @include media_min_break(md) {
-    top: 40.7%;
+    top: 39.7%;
     left: 42%;
     width: 60px;
   }

@@ -12,6 +12,16 @@ module.exports = {
     image: '/images/aura-bora-social.png',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-173914173-1',
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+        allowLinker: true,
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
