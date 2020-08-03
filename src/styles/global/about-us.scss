@@ -1,0 +1,67 @@
+.about-us .hero img {
+  transition: max-width 250ms ease-in-out;
+  max-width: 300px;
+  @include media_min_break(md) {
+    max-width: 450px;
+  }
+}
+
+.happy-thoughts .hero img {
+  transition: max-width 250ms ease-in-out;
+  @include media_max_break(md) {
+    max-width: 200px;
+  }
+}
+
+.about-intro-text {
+  margin-top: -40px;
+}
+.selling-points {
+  margin-top: -50px;
+  button {
+    padding: 22px 26px;
+    border-radius: 50px;
+  }
+  @include media_max_break(md) {
+    .container {
+      padding-bottom: 60px;
+    }
+    button {
+      padding: 17px 19px;
+    }
+  }
+}
+.no-wrap {
+  white-space: nowrap;
+}
+.happy-thoughts {
+  margin-bottom: 160px;
+}
+
+.selling-point {
+  @include media_min_break(md) {
+    &:not(:last-child) {
+      padding-bottom: 100px !important;
+    }
+  }
+}
+
+.qoute-card {
+  user-select: none;
+  min-height: 420px;
+  width: 530px;
+  border: 4px solid $black;
+  box-shadow: 13px 10px 0px 0px $black;
+  padding: 20px 55px;
+  img {
+    position: absolute;
+    bottom: 10px;
+    right: -44px;
+  }
+  @include media_max_break(md) {
+    min-height: 250px;
+    width: 80vw;
+    box-shadow: 7px 8px 0px 0px $black;
+    padding: 20px 35px;
+  }
+}
