@@ -59,12 +59,9 @@
     right: -44px;
   }
   @include media_max_break(md) {
-    min-height: 285px;
-    width: 315px;
+    min-height: 250px;
+    width: 80vw;
     box-shadow: 7px 8px 0px 0px $black;
     padding: 20px 35px;
-  }
-  @media (max-width: 600px) {
-    width: 100%;
   }
 }
