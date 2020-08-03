@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'components/image'
 import PropTypes from 'prop-types'
 import { formatPrice } from '../helpers/numberHelpers'
@@ -19,6 +19,14 @@ const Product = ({
 }) => {
   const colorRef = name.replace('-', '_')
   const addItemToCart = useAddItemToCart()
+  const [buttonText, setButtonText] = useState('Add to bouquet')
+
+  const addToCart = async id => {
+    console.log(buttonText)
+    setButtonText('Added')
+    await addItemToCart(id, 1)
+    setButtonText('Add to bouquet')
+  }
 
   return (
     <div className="col-12 col-md-6 padding-bottom-20px">
@@ -50,9 +58,9 @@ const Product = ({
               </p>
               <button
                 className="primary-btn bg-white padding-top-15px padding-bottom-15px padding-left-lg-30px padding-right-lg-30px margin-bottom-40px text-22px add-product-btn"
-                onClick={() => addItemToCart(id, 1)}
+                onClick={() => addToCart(id)}
               >
-                <span> Add to bouquet</span>
+                {buttonText}
               </button>
             </div>
             <ProductInfo
