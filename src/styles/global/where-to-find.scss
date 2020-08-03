@@ -70,6 +70,9 @@ $where-to-find-search: #828282;
     @include media_min_break(md) {
       margin-left: 0;
     }
+    h2:after {
+      top: 65%;
+    }
   }
   .city-link {
     &:hover {
@@ -99,7 +102,7 @@ $where-to-find-search: #828282;
 
 .mobile-search {
   input {
-    border-width: 2px;
+    border: 2px solid $black;
     height: 56px;
     font-size: 16px;
   }

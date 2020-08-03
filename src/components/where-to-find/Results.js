@@ -18,8 +18,15 @@ const Results = ({
 
   const renderSelectedCity = () => {
     const city = cities.find(({ city }) => city === selectedCity)
-    return city?.stores.map(({ name, address }) => (
-      <Store key={name} name={name} address={address} />
+    return city?.stores.map(({ name, address }, index) => (
+      <li
+        className={`col-12 col-md-6 ${
+          city?.stores.length - 1 === index ? '' : 'padding-bottom-20px'
+        }`}
+        key={name}
+      >
+        <Store key={name} name={name} address={address} />
+      </li>
     ))
   }
 
@@ -33,7 +40,11 @@ const Results = ({
     }
 
     return cities.map(({ city }) => (
-      <li key={city} onClick={() => setSelectedCity(city)}>
+      <li
+        className="col-12 col-md-6"
+        key={city}
+        onClick={() => setSelectedCity(city)}
+      >
         <City city={city} />
       </li>
     ))
@@ -59,8 +70,8 @@ const Results = ({
                 Back
               </button>
             )}
-            <section className="padding-none d-flex justify-content-md-center align-items-center text-md-center results-title z-index-1 padding-left-20px padding-right-20px padding-left-md-60px padding-right-md-50px">
-              <h2 className="margin-bottom-none text-30px absolute">
+            <section className="padding-none d-flex justify-content-md-center align-items-center text-md-center results-title z-index-2 padding-left-20px padding-right-20px padding-left-md-60px padding-right-md-50px">
+              <h2 className="margin-bottom-none text-30px absolute font-barlow">
                 {selectedCity ? selectedCity : state}
               </h2>
               {selectedCity && !mobile && (
@@ -86,8 +97,12 @@ const Results = ({
               )}
             </section>
             <section className="bg-white">
-              <ul className="text-center-md result-list margin-bottom-none padding-bottom-20px padding-top-20px">
-                {selectedCity ? renderSelectedCity() : renderCities()}
+              <ul className="result-list margin-bottom-none padding-bottom-20px padding-top-20px row">
+                <div className="col-12 col-md-10 offset-md-1">
+                  <div className="row">
+                    {selectedCity ? renderSelectedCity() : renderCities()}
+                  </div>
+                </div>
               </ul>
             </section>
           </div>
