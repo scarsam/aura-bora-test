@@ -27,57 +27,55 @@ const About = ({ data }) => {
               </div>
             </div>
             <div className="col-10 col-md-8 offset-md-2 about-intro-text c-black">
-              <p className="text-30px font-barlow margin-none">
-                <strong>
-                  Every bit of Aura Bora
-                  <span className="d-block">was inspired by the Earth.</span>
-                </strong>
-              </p>
+              <strong className="font-barlow margin-none about-page-headline">
+                Every bit of Aura Bora
+                <span className="d-block">was inspired by the Earth.</span>
+              </strong>
             </div>
           </div>
         </div>
       </section>
 
       <section className="selling-points">
-        <div className="selling-points container padding-top-none">
+        <div className="container padding-top-none">
           <div className="row">
-            <div className="col-12 col-md-6 offset-md-2">
+            <div className="col-12 col-md-6 offset-md-2 selling-point c-black padding-bottom-40px">
               <img
                 className="margin-bottom-5px"
                 src={varietiesImage}
                 alt="Two pink bushes"
               />
-              <p className="text-30px c-black font-barlow">
+              <p className="about-page-headline c-black font-barlow">
                 <strong>One-of-a-kind varieties</strong>
               </p>
-              <p>
+              <p className="margin-bottom-none">
                 Instead of artificial, uninspired fruit flavors, Aura Bora uses
                 plant-based ingredients to herb up (like spice up HAH) your
                 sparkling water experience.
               </p>
             </div>
-            <div className="col-12 col-md-6 offset-md-2">
+            <div className="col-12 col-md-6 offset-md-2 selling-point c-black padding-bottom-40px">
               <img
                 className="margin-bottom-5px"
                 src={herbsImage}
                 alt="Two green leefs"
               />
-              <p className="text-30px c-black font-barlow">
+              <p className="about-page-headline c-black font-barlow">
                 <strong>Real herbs</strong>
               </p>
-              <p>
+              <p className="margin-bottom-none">
                 It turns out, when you combine real herbal extracts and
                 sparkles, you get vivid flavors, floral aromas, and good
                 feelings.
               </p>
             </div>
-            <div className="col-12 col-md-6 offset-md-2">
+            <div className="col-12 col-md-6 offset-md-2 selling-point c-black">
               <img
                 className="margin-bottom-5px"
                 src={tastesImage}
                 alt="Rainbow above clouds"
               />
-              <p className="text-30px c-black font-barlow">
+              <p className="about-page-headline c-black font-barlow">
                 <strong>Heavenly tastes</strong>
               </p>
               <p className="margin-bottom-none">
@@ -96,17 +94,17 @@ const About = ({ data }) => {
       </section>
 
       <section className="happy-thoughts bg-variety_pack-i">
-        <div className="container padding-bottom-none">
-          <div className="row">
-            <div className="col-12">
-              <div className="text-center hero">
+        <div className="container padding-top-40px padding-top-lg-40px padding-bottom-none">
+          <div className="row padding-top-md-60px">
+            <div className="col-8 offset-1 col-md-12 offset-md-0">
+              <div className="hero text-left text-center-md">
                 <img
                   className="margin-none padding-right-15px"
                   alt="About us"
                   src={happyImage}
                 />
                 <img
-                  className="margin-bottom-15px"
+                  className="margin-bottom-15px d-none d-md-inline"
                   alt="About us"
                   src={lizardImage}
                 />
