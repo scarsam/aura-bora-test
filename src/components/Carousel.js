@@ -73,7 +73,6 @@ const Carousel = ({ testamonials }) => {
             <DotGroup
               showAsSelectedForCurrentSlideOnly={true}
               className="carousel-dots"
-              // dotNumbers={true}
             />
             <ButtonNext className="carousel-next-btn d-flex">
               <img className="margin-none" src={ArrowForward} alt="Link next" />
