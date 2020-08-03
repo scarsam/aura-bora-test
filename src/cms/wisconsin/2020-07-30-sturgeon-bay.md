@@ -1,7 +1,7 @@
 ---
 city: Sturgeon Bay
-wisconsin: wisconsin
+state: wisconsin
 stores:
   - name: Healthy Way Market
-    address: "216 South 3rd Avenue "
+    address: '216 South 3rd Avenue '
 ---

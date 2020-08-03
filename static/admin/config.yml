@@ -1121,7 +1121,7 @@ collections:
       - { label: 'City', name: 'city', widget: 'string' }
       - {
           label: 'State',
-          name: 'wisconsin',
+          name: 'state',
           widget: 'hidden',
           default: 'wisconsin',
         }

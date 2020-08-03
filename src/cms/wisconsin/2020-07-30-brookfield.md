@@ -1,6 +1,6 @@
 ---
-city: "Brookfield "
-wisconsin: wisconsin
+city: 'Brookfield '
+state: wisconsin
 stores:
   - name: Health Hut
     address: 19035 West Bluemound Road
