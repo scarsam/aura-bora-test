@@ -22,6 +22,12 @@ module.exports = {
         allowLinker: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '283656946065014',
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
