@@ -27,7 +27,7 @@ const About = ({ data }) => {
               </div>
             </div>
             <div className="col-10 col-md-8 offset-md-2 about-intro-text c-black">
-              <strong className="font-barlow margin-none about-page-headline">
+              <strong className="font-barlow margin-none text-30px">
                 Every bit of Aura Bora
                 <span className="d-block">was inspired by the Earth.</span>
               </strong>
@@ -45,7 +45,7 @@ const About = ({ data }) => {
                 src={varietiesImage}
                 alt="Two pink bushes"
               />
-              <p className="about-page-headline c-black font-barlow">
+              <p className="text-30px c-black font-barlow">
                 <strong>One-of-a-kind varieties</strong>
               </p>
               <p className="margin-bottom-none">
@@ -60,7 +60,7 @@ const About = ({ data }) => {
                 src={herbsImage}
                 alt="Two green leefs"
               />
-              <p className="about-page-headline c-black font-barlow">
+              <p className="text-30px c-black font-barlow">
                 <strong>Real herbs</strong>
               </p>
               <p className="margin-bottom-none">
@@ -75,7 +75,7 @@ const About = ({ data }) => {
                 src={tastesImage}
                 alt="Rainbow above clouds"
               />
-              <p className="about-page-headline c-black font-barlow">
+              <p className="text-30px c-black font-barlow">
                 <strong>Heavenly tastes</strong>
               </p>
               <p className="margin-bottom-none">

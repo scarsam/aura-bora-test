@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import CarouselImage from './CarouselImage'
 import ArrowBack from 'images/about/carousel/arrow-prev.svg'
 import ArrowForward from 'images/about/carousel/arrow-next.svg'
-
 import {
   CarouselProvider,
   Slider,
@@ -21,8 +20,8 @@ const Carousel = ({ testamonials }) => {
     const handleResize = () => {
       const innerWidth = window.innerWidth
       let testimonialsToShow = 2
-      if (innerWidth > 1900) testimonialsToShow = 3
-      else if (innerWidth < 1290) testimonialsToShow = 1
+      if (innerWidth > 1400) testimonialsToShow = 3
+      if (innerWidth < 600) testimonialsToShow = 1
 
       setTestimonialCount(testimonialsToShow)
     }
@@ -33,22 +32,23 @@ const Carousel = ({ testamonials }) => {
     }
   }, [])
   return (
-    <div className="container padding-top-40px padding-top-lg-60px padding-bottom-40px padding-bottom-lg-60px carousel">
+    <div className="padding-top-40px padding-top-lg-60px padding-bottom-40px padding-bottom-lg-60px carousel">
       <CarouselProvider
         naturalSlideWidth={530}
         naturalSlideHeight={420}
         visibleSlides={testimonialCount}
-        totalSlides={testamonials && testamonials.length}
+        totalSlides={testamonials.length}
         infinite={true}
         isIntrinsicHeight={true}
         currentSlide={5}
         isPlaying={true}
       >
-        <Slider>
+        <Slider className="padding-bottom-20px">
+          {console.log(testamonials)}
           {testamonials &&
             testamonials.map((item, index) => (
               <Slide key={index} index={index}>
-                <div className="qoute-card bg-white d-flex align-items-center relative">
+                <div className="qoute-card bg-white d-flex align-items-center relative padding-bottom-20px">
                   <div className="text-16px c-black">
                     <ReactMarkdown source={item.text} />
                     <p className="margin-none text-14px font-barlow">
@@ -58,7 +58,7 @@ const Carousel = ({ testamonials }) => {
                   <img
                     className="margin-none d-none d-md-block"
                     src={CarouselImage(index)}
-                    alt=""
+                    alt="Quote image"
                   />
                 </div>
               </Slide>
@@ -67,15 +67,16 @@ const Carousel = ({ testamonials }) => {
         <div className="container padding-top-50px padding-bottom-none padding-bottom-md-40px carousel-buttons">
           <div className="d-flex justify-content-center justify-content-md-between align-items-center">
             <ButtonBack className="carousel-prev-btn margin-left-5px d-flex">
-              <img className="margin-none" src={ArrowBack} alt="" />
+              <img className="margin-none" src={ArrowBack} alt="Link back" />
             </ButtonBack>
 
             <DotGroup
               showAsSelectedForCurrentSlideOnly={true}
               className="carousel-dots"
+              // dotNumbers={true}
             />
             <ButtonNext className="carousel-next-btn d-flex">
-              <img className="margin-none" src={ArrowForward} alt="" />
+              <img className="margin-none" src={ArrowForward} alt="Link next" />
             </ButtonNext>
           </div>
         </div>

@@ -35,17 +35,32 @@
 }
 .carousel__inner-slide {
   display: flex;
-  justify-content: center;
-}
-.carousel__slider {
-  height: 430px;
-  @include media_max_break(md) {
-    height: 295px;
+  @media (max-width: 600px) {
+    justify-content: center;
   }
 }
+
+.carousel__slide {
+  padding: 0 0.5% !important;
+  @media (min-width: 600px) {
+    padding: 0 0.95% !important;
+  }
+}
+
 .carousel-buttons {
   @include media_max_break(md) {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .carousel-dots button:nth-last-child(-n + 1) {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .carousel-dots button:nth-last-child(-n + 2) {
+    display: none;
   }
 }
