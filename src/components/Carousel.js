@@ -20,8 +20,8 @@ const Carousel = ({ testamonials }) => {
     const handleResize = () => {
       const innerWidth = window.innerWidth
       let testimonialsToShow = 2
-      if (innerWidth > 1400) testimonialsToShow = 3
-      if (innerWidth < 600) testimonialsToShow = 1
+      if (innerWidth > 1300) testimonialsToShow = 3
+      if (innerWidth < 768) testimonialsToShow = 1
 
       setTestimonialCount(testimonialsToShow)
     }

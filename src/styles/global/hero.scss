@@ -1,5 +1,5 @@
 .logo {
-  max-width: 200px;
+  max-width: 180px;
   transition: max-width 200ms ease-in-out;
   @include media_min_break(md) {
     max-width: 280px;

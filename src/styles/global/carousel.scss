@@ -36,14 +36,14 @@
 }
 .carousel__inner-slide {
   display: flex;
-  @media (max-width: 600px) {
+  @include media_max_break(md) {
     justify-content: center;
   }
 }
 
 .carousel__slide {
   padding: 0 0.5% !important;
-  @media (min-width: 600px) {
+  @include media_min_break(md) {
     padding: 0 0.95% !important;
   }
 }
@@ -55,7 +55,7 @@
   }
 }
 
-@media (min-width: 600px) {
+@include media_min_break(md) {
   .carousel-dots button:nth-last-child(-n + 1) {
     display: none;
   }

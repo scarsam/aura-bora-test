@@ -14,7 +14,9 @@
 }
 
 .about-intro-text {
-  margin-top: -40px;
+  @include media_min_break(sm) {
+    margin-top: -40px;
+  }
 }
 .selling-points {
   margin-top: -50px;
@@ -55,8 +57,9 @@
   padding: 20px 55px;
   img {
     position: absolute;
-    bottom: 10px;
-    right: -44px;
+    bottom: -10px;
+    right: 0px;
+    transform: scale(0.65);
   }
   @include media_max_break(md) {
     min-height: 250px;
